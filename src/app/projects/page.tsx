@@ -1,0 +1,151 @@
+'use client';
+
+import { motion } from 'framer-motion';
+import Link from 'next/link';
+
+const projects = [
+    {
+        title: "The Ivory Villa",
+        location: "Fairlands, Salem",
+        image: "https://images.unsplash.com/photo-1613490493576-7fde63acd811?auto=format&fit=crop&q=80&w=1200",
+        size: "4,500 Sq. Ft.",
+        status: "Completed",
+        number: "01"
+    },
+    {
+        title: "Geometric Terrace",
+        location: "Yercaud Hills",
+        image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=1200",
+        size: "3,200 Sq. Ft.",
+        status: "Handed Over",
+        number: "02"
+    },
+    {
+        title: "Structural Courtyard",
+        location: "Peramanur, Salem",
+        image: "https://images.unsplash.com/photo-1600607687940-c52fb0a4539c?auto=format&fit=crop&q=80&w=1200",
+        size: "5,800 Sq. Ft.",
+        status: "Completed",
+        number: "03"
+    },
+    {
+        title: "The Axis Manor",
+        location: "Alagapuram",
+        image: "https://images.unsplash.com/photo-1487958449943-2429e8be8625?auto=format&fit=crop&q=80&w=1200",
+        size: "4,000 Sq. Ft.",
+        status: "Completed",
+        number: "04"
+    }
+];
+
+import TrianglePattern from '@/components/TrianglePattern';
+
+export default function Projects() {
+    return (
+        <div className="bg-white min-h-screen">
+            {/* Cinematic Header with Architectural Background */}
+            <section className="relative pt-40 lg:pt-60 pb-20 lg:pb-32 px-6 lg:px-24 overflow-hidden min-h-[70vh] flex items-center bg-primary">
+                <TrianglePattern />
+
+                {/* Background Image */}
+                <div className="absolute inset-0 z-0 opacity-40">
+                    <img
+                        src="https://images.unsplash.com/photo-1487958449943-2429e8be8625?auto=format&fit=crop&q=80&w=2000"
+                        className="w-full h-full object-cover grayscale transition-transform duration-[10s]"
+                        alt="Project Portfolio Background"
+                    />
+                    <div className="absolute inset-0 bg-primary/60 mix-blend-multiply" />
+                </div>
+
+                {/* Architectural Grid */}
+                <div className="absolute inset-0 z-10 opacity-[0.15] pointer-events-none"
+                    style={{ backgroundImage: 'linear-gradient(#fff 1px, transparent 1px), linear-gradient(90deg, #fff 1px, transparent 1px)', backgroundSize: '80px 80px' }} />
+
+                <div className="max-w-[1400px] mx-auto relative z-20">
+                    <div className="relative z-10 text-center lg:text-left">
+                        <motion.h1
+                            initial={{ y: 30, opacity: 0 }}
+                            animate={{ y: 0, opacity: 1 }}
+                            transition={{ delay: 0.5, duration: 1 }}
+                            className="text-5xl sm:text-7xl lg:text-[120px] font-serif text-white leading-tight mb-10 font-bold"
+                        >
+                            Structural <br />
+                            <span className="text-accent italic">Dialogues.</span>
+                        </motion.h1>
+                        <motion.p
+                            initial={{ y: 20, opacity: 0 }}
+                            animate={{ y: 0, opacity: 1 }}
+                            transition={{ delay: 0.8, duration: 1 }}
+                            className="text-white/70 text-base lg:text-2xl max-w-3xl font-sans leading-relaxed tracking-wide font-medium"
+                        >
+                            A curation of our most mathematically challenging and architecturally profound residential developments in Salem.
+                        </motion.p>
+                    </div>
+                </div>
+            </section>
+
+            {/* Project List - Architectural Grid Style */}
+            <section className="pb-32 lg:pb-60 px-6 lg:px-24 bg-white relative">
+                <div className="max-w-7xl mx-auto space-y-32 lg:space-y-60">
+                    {projects.map((project) => (
+                        <ProjectItem key={project.number} project={project} />
+                    ))}
+                </div>
+            </section>
+        </div>
+    );
+}
+
+function ProjectItem({ project }: { project: any }) {
+    return (
+        <div className="group grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-24 items-center relative">
+            {/* Image Side - Architectural Focus */}
+            <div className="lg:col-span-7 order-1 lg:order-2 overflow-hidden shadow-3xl relative bg-gray-50 border-[1px] border-gray-100">
+                <motion.div
+                    initial={{ scale: 1.1 }}
+                    whileInView={{ scale: 1 }}
+                    transition={{ duration: 2 }}
+                    className="aspect-[16/9] relative"
+                >
+                    <img
+                        src={project.image}
+                        alt={project.title}
+                        className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-[1.5s] group-hover:scale-105"
+                    />
+                    {/* Architectural Overlay Lines */}
+                    <div className="absolute inset-0 border-t border-white/30 translate-y-[-100%] group-hover:translate-y-0 transition-transform duration-1000 delay-300 pointer-events-none" />
+                    <div className="absolute inset-0 border-b border-white/30 translate-y-[100%] group-hover:translate-y-0 transition-transform duration-1000 delay-300 pointer-events-none" />
+                </motion.div>
+            </div>
+
+            {/* Info Side */}
+            <div className="lg:col-span-5 order-2 lg:order-1 text-center lg:text-left px-4 lg:px-0 relative">
+                {/* Horizontal Accent Line */}
+                <div className="absolute -left-12 top-1/2 w-12 h-px bg-accent/30 hidden lg:block" />
+
+                <div className="flex items-center justify-center lg:justify-start gap-4 lg:gap-6 mb-6 lg:mb-8">
+                    <span className="text-accent text-lg lg:text-xl font-serif italic">{project.number}</span>
+                    <div className="w-12 h-[1px] bg-accent/40" />
+                    <span className="text-[8px] lg:text-[10px] uppercase tracking-[0.4em] font-bold text-gray-400">{project.status}</span>
+                </div>
+                <h3 className="text-3xl lg:text-6xl font-serif text-primary mb-6 lg:mb-8 tracking-tight">
+                    {project.title}
+                </h3>
+                <div className="grid grid-cols-2 gap-6 lg:gap-12 mb-8 lg:mb-12 py-8 border-y border-gray-100">
+                    <div>
+                        <p className="text-[8px] lg:text-[9px] uppercase tracking-[0.3em] font-bold text-gray-400 mb-2">Location</p>
+                        <p className="text-primary font-serif text-base lg:text-lg">{project.location}</p>
+                    </div>
+                    <div>
+                        <p className="text-[8px] lg:text-[9px] uppercase tracking-[0.3em] font-bold text-gray-400 mb-2">Structural Area</p>
+                        <p className="text-primary font-serif text-base lg:text-lg">{project.size}</p>
+                    </div>
+                </div>
+                <Link href={`/projects/${project.title.toLowerCase().replace(/ /g, '-')}`} className="group/link inline-flex items-center gap-6 text-[9px] lg:text-[10px] uppercase tracking-[0.4em] font-bold bg-primary text-white px-8 py-4 hover:bg-accent transition-all shadow-lg">
+                    Analysis
+                    <div className="w-6 h-[1px] bg-white group-hover/link:w-12 transition-all" />
+                </Link>
+            </div>
+        </div>
+    );
+}
