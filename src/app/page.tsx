@@ -33,10 +33,10 @@ export default function Home() {
   // Dynamic Hero Backgrounds with Mist Transitions
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const heroImages = [
-    "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=2000",
-    "https://images.unsplash.com/photo-1503387762-592cd58cc458?auto=format&fit=crop&q=80&w=2000",
-    "https://images.unsplash.com/photo-1487958449943-2429e8be8625?auto=format&fit=crop&q=80&w=2000",
-    "https://images.unsplash.com/photo-1600607687940-c52fb0a4539c?auto=format&fit=crop&q=80&w=2000",
+    "/images/hero/hero-1.jpg",
+    "/images/hero/hero-2.jpg",
+    "/images/hero/hero-3.jpg",
+    "/images/hero/hero-4.jpg",
   ];
 
   // Varied Mist Transitions
@@ -150,7 +150,7 @@ export default function Home() {
               className="aspect-[4/5] overflow-hidden bg-gray-100 relative group"
             >
               <img
-                src="https://images.unsplash.com/photo-1503387762-592cd58cc458?auto=format&fit=crop&q=80&w=1200"
+                src="/images/about/about-1.jpg"
                 className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105"
                 alt="Minimalist Concrete Architecture"
               />
@@ -178,12 +178,12 @@ export default function Home() {
           <ProjectCard
             title="The Geometric Villa"
             category="Minimalist Living"
-            img="https://images.unsplash.com/photo-1600607687940-c52fb0a4539c?auto=format&fit=crop&q=80&w=1200"
+            img="/images/projects/project-3.jpg"
           />
           <ProjectCard
             title="Structural Grace"
             category="Modern Concept"
-            img="https://images.unsplash.com/photo-1487958449943-2429e8be8625?auto=format&fit=crop&q=80&w=1200"
+            img="/images/projects/project-4.jpg"
             className="lg:mt-40"
           />
         </div>

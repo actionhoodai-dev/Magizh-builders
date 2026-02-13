@@ -7,7 +7,7 @@ const projects = [
     {
         title: "The Ivory Villa",
         location: "Fairlands, Salem",
-        image: "https://images.unsplash.com/photo-1613490493576-7fde63acd811?auto=format&fit=crop&q=80&w=1200",
+        image: "/images/projects/project-1.jpg",
         size: "4,500 Sq. Ft.",
         status: "Completed",
         number: "01"
@@ -15,7 +15,7 @@ const projects = [
     {
         title: "Geometric Terrace",
         location: "Yercaud Hills",
-        image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=1200",
+        image: "/images/projects/project-2.jpg",
         size: "3,200 Sq. Ft.",
         status: "Handed Over",
         number: "02"
@@ -23,7 +23,7 @@ const projects = [
     {
         title: "Structural Courtyard",
         location: "Peramanur, Salem",
-        image: "https://images.unsplash.com/photo-1600607687940-c52fb0a4539c?auto=format&fit=crop&q=80&w=1200",
+        image: "/images/projects/project-3.jpg",
         size: "5,800 Sq. Ft.",
         status: "Completed",
         number: "03"
@@ -31,7 +31,7 @@ const projects = [
     {
         title: "The Axis Manor",
         location: "Alagapuram",
-        image: "https://images.unsplash.com/photo-1487958449943-2429e8be8625?auto=format&fit=crop&q=80&w=1200",
+        image: "/images/projects/project-4.jpg",
         size: "4,000 Sq. Ft.",
         status: "Completed",
         number: "04"
@@ -50,7 +50,7 @@ export default function Projects() {
                 {/* Background Image */}
                 <div className="absolute inset-0 z-0 opacity-40">
                     <img
-                        src="https://images.unsplash.com/photo-1487958449943-2429e8be8625?auto=format&fit=crop&q=80&w=2000"
+                        src="/images/hero/hero-3.jpg"
                         className="w-full h-full object-cover grayscale transition-transform duration-[10s]"
                         alt="Project Portfolio Background"
                     />

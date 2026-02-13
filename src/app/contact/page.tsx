@@ -16,7 +16,7 @@ export default function Contact() {
                 {/* Background Image */}
                 <div className="absolute inset-0 z-0 opacity-40">
                     <img
-                        src="https://images.unsplash.com/photo-1423666639041-f56000c27a9a?auto=format&fit=crop&q=80&w=2000"
+                        src="/images/hero/hero-4.jpg"
                         className="w-full h-full object-cover grayscale"
                         alt="Contact Interface Background"
                     />

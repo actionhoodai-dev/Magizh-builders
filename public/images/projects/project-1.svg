@@ -1,0 +1,13 @@
+<svg width="1200" height="800" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="proj1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#e8dcc8;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#c9b896;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="800" fill="url(#proj1)"/>
+  <rect x="200" y="150" width="800" height="500" fill="rgba(61,79,61,0.1)" stroke="rgba(61,79,61,0.3)" stroke-width="3"/>
+  <rect x="300" y="250" width="250" height="300" fill="rgba(61,79,61,0.05)"/>
+  <rect x="650" y="250" width="250" height="300" fill="rgba(61,79,61,0.05)"/>
+  <text x="600" y="750" font-family="Arial, sans-serif" font-size="32" fill="rgba(61,79,61,0.4)" text-anchor="middle">THE IVORY VILLA</text>
+</svg>

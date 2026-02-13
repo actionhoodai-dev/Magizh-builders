@@ -25,7 +25,7 @@ export default function About() {
                 {/* Background Image */}
                 <div className="absolute inset-0 z-0 opacity-40">
                     <img
-                        src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80&w=2000"
+                        src="/images/hero/hero-2.jpg"
                         className="w-full h-full object-cover grayscale"
                         alt="Architectural Legacy"
                     />
@@ -90,7 +90,7 @@ export default function About() {
                             className="relative aspect-square bg-gray-100 overflow-hidden"
                         >
                             <img
-                                src="https://images.unsplash.com/photo-1511818966892-d7d671e672a2?auto=format&fit=crop&q=80&w=1200"
+                                src="/images/about/about-1.jpg"
                                 className="w-full h-full object-cover transition-transform duration-[3s] hover:scale-105"
                                 alt="Architectural Planning"
                             />

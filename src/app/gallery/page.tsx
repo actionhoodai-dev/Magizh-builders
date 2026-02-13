@@ -4,14 +4,14 @@ import { motion } from 'framer-motion';
 import { cn } from '@/lib/utils';
 
 const galleryImages = [
-    { src: "https://images.unsplash.com/photo-1518005020473-194950949682?q=80&w=1200&auto=format&fit=crop", size: "tall" },
-    { src: "https://images.unsplash.com/photo-1621871146757-1249787e9154?q=80&w=1200&auto=format&fit=crop", size: "small" },
-    { src: "https://images.unsplash.com/photo-1541888946425-d81bb19480c5?q=80&w=1200&auto=format&fit=crop", size: "wide" },
-    { src: "https://images.unsplash.com/photo-1503387762-592cd58cc458?q=80&w=1200&auto=format&fit=crop", size: "tall" },
-    { src: "https://images.unsplash.com/photo-1487958449943-2429e8be8625?q=80&w=1200&auto=format&fit=crop", size: "small" },
-    { src: "https://images.unsplash.com/photo-1511143314474-3bb703da993f?q=80&w=1200&auto=format&fit=crop", size: "wide" },
-    { src: "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?q=80&w=1200&auto=format&fit=crop", size: "tall" },
-    { src: "https://images.unsplash.com/photo-1541829070764-84a7d30dee62?q=80&w=1200&auto=format&fit=crop", size: "small" },
+    { src: "/images/gallery/gallery-1.jpg", size: "tall" },
+    { src: "/images/gallery/gallery-2.jpg", size: "small" },
+    { src: "/images/gallery/gallery-3.jpg", size: "wide" },
+    { src: "/images/gallery/gallery-4.jpg", size: "tall" },
+    { src: "/images/gallery/gallery-5.jpg", size: "small" },
+    { src: "/images/gallery/gallery-6.jpg", size: "wide" },
+    { src: "/images/gallery/gallery-7.jpg", size: "tall" },
+    { src: "/images/gallery/gallery-8.jpg", size: "small" },
 ];
 
 import TrianglePattern from '@/components/TrianglePattern';
@@ -27,7 +27,7 @@ export default function Gallery() {
                 {/* Background Image */}
                 <div className="absolute inset-0 z-0 opacity-40">
                     <img
-                        src="https://images.unsplash.com/photo-1518005020473-194950949682?auto=format&fit=crop&q=80&w=2000"
+                        src="/images/gallery/gallery-1.jpg"
                         className="w-full h-full object-cover grayscale"
                         alt="Gallery Exhibition Background"
                     />
