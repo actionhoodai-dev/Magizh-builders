@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 import Link from 'next/link';
 import TrianglePattern from '@/components/TrianglePattern';
 import Counter from '@/components/Counter';
+import CTA from '@/components/CTA';
 
 const fadeInUp = {
     hidden: { opacity: 0, y: 30 },
@@ -23,13 +24,13 @@ export default function About() {
                 <TrianglePattern />
 
                 {/* Background Image */}
-                <div className="absolute inset-0 z-0 opacity-40">
+                <div className="absolute inset-0 z-0 opacity-100">
                     <img
                         src="/images/hero/hero-2.jpg"
-                        className="w-full h-full object-cover grayscale"
+                        className="w-full h-full object-cover"
                         alt="Architectural Legacy"
                     />
-                    <div className="absolute inset-0 bg-primary/60 mix-blend-multiply" />
+                    <div className="absolute inset-0 bg-black/40" />
                 </div>
 
                 {/* Architectural Grid */}
@@ -59,45 +60,71 @@ export default function About() {
                 </div>
             </section>
 
-            {/* Our Story - Detail Driven */}
-            <section className="py-32 lg:py-60 px-6 lg:px-24">
-                <div className="max-w-[1200px] mx-auto">
-                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 lg:gap-32 items-center">
-                        <motion.div
-                            initial={{ opacity: 0, x: -50 }}
-                            whileInView={{ opacity: 1, x: 0 }}
-                            viewport={{ once: true }}
-                            transition={{ duration: 1 }}
-                        >
-                            <h2 className="text-[10px] uppercase tracking-[0.5em] text-accent font-bold mb-8">The Philosophy</h2>
-                            <h3 className="text-3xl lg:text-5xl font-serif text-primary leading-tight mb-12 font-bold italic">
-                                We don't just build structures; we draft <span className="italic text-accent">legacies.</span>
-                            </h3>
-                            <div className="space-y-8 text-gray-500 font-sans leading-relaxed">
-                                <p>
-                                    At Magizh Builders, we believe that architecture is the intersection of logic and beauty. Every project begins with a deep understanding of structural integrity, followed by the pursuit of aesthetic perfection.
-                                </p>
-                                <p>
-                                    Our approach is rooted in transparency and precision. We use advanced engineering simulations to ensure that every villa and residential space we create is not only stunning but fundamentally superior in its construction.
-                                </p>
-                            </div>
-                        </motion.div>
-                        <motion.div
-                            initial={{ opacity: 0, scale: 0.9 }}
-                            whileInView={{ opacity: 1, scale: 1 }}
-                            viewport={{ once: true }}
-                            transition={{ duration: 1.5 }}
-                            className="relative aspect-square bg-gray-100 overflow-hidden"
-                        >
+            {/* Leading Section - Centered Single Column Layout */}
+            <section className="py-24 lg:py-48 px-6 lg:px-12 bg-white">
+                <div className="max-w-[850px] mx-auto">
+                    <motion.div
+                        initial={{ opacity: 0, y: 30 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 1 }}
+                    >
+                        {/* Header Branding */}
+                        <div className="mb-16">
+                            <h2 className="text-[10px] uppercase tracking-[0.5em] text-accent font-bold mb-6">The Company</h2>
+                            <h2 className="text-3xl lg:text-5xl font-serif text-primary leading-tight font-bold">
+                                About Magizh Builders – Leading <br />
+                                <span className="text-accent italic">Construction Company</span> in Salem
+                            </h2>
+                            <div className="w-20 h-1 bg-accent mt-8" />
+                        </div>
+
+                        {/* Feature Narrative Image */}
+                        <div className="mb-16 relative aspect-[16/9] lg:aspect-[21/9] bg-gray-100 overflow-hidden shadow-2xl">
                             <img
                                 src="/images/about/about-1.jpg"
-                                className="w-full h-full object-cover transition-transform duration-[3s] hover:scale-105"
-                                alt="Architectural Planning"
+                                className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-1000"
+                                alt="Construction Company in Salem - Project Site"
                             />
                             {/* Structural Frame Overlay */}
-                            <div className="absolute inset-8 border border-white/20 pointer-events-none" />
-                        </motion.div>
-                    </div>
+                            <div className="absolute inset-6 border border-white/20 pointer-events-none" />
+                        </div>
+
+                        {/* Text Content */}
+                        <div className="space-y-10 text-gray-500 font-sans leading-relaxed text-lg lg:text-xl text-left">
+                            <p>
+                                Magizh Builders stands as a premier <strong>construction company in Salem</strong>, dedicated to building high-quality residential homes and premium villas for families throughout the city and surrounding districts. With a strong commitment to architectural elegance and localized expertise, we have established a significant portfolio in Salem's most sought-after residential neighborhoods, including Peramanur, Fairlands, Hasthampatti, Alagapuram, and Meyyanur. Our team focuses on delivering bespoke independent houses that seamlessly merge modern aesthetics with engineering precision, ensuring every client in the Salem city region receives a living space tailored to their lifestyle.
+                            </p>
+                            <p>
+                                Our firm is led by the distinguished <strong>Er. S. P. Hari Baaskar, M.E.</strong>, a Registered Civil Engineer in Salem with a deep commitment to structural integrity and safety. By choosing Magizh Builders, you benefit from professional engineering-based supervision that prioritizes structural longevity above all else. We possess an in-depth understanding of the unique soil conditions and climate variations unique to the Salem district, allowing us to implement foundation designs specifically optimized for local ground stability. Every project we undertake strictly adheres to the latest Salem municipal corporation approval norms, providing you with a completely transparent and legally compliant construction journey.
+                            </p>
+                            <p>
+                                We provide an extensive range of professional services designed to simplify the building process for homeowners. Whether you need specialized <strong>villa builders in Salem</strong> or comprehensive residential construction management, our services cover everything from initial 2D and 3D house plans to securing complex building plan approvals from the local authorities. We pride ourselves on our transparent construction cost planning and our refusal to compromise on the quality of raw materials used. Our turnkey construction solutions are designed to take the stress out of home building, allowing you to focus on the joy of creating a new legacy for your family in the heart of Salem.
+                            </p>
+
+                            <div className="py-12 border-t border-b border-gray-100 my-16 bg-[#FDFCFB] px-8 lg:px-12 -mx-8 lg:-mx-12">
+                                <h4 className="text-primary font-serif text-2xl mb-8 font-bold">Why Salem Homeowners Choose Magizh Builders:</h4>
+                                <ul className="space-y-6">
+                                    {[
+                                        "Extensive localized experience in Salem residential and villa projects",
+                                        "Scientific understanding of the specific Salem soil profiles and weather patterns",
+                                        "Comprehensive and transparent construction cost estimation and planning",
+                                        "Guaranteed compliance with all current Salem Corporation building regulations",
+                                        "Reliable end-to-end residential construction and project management services"
+                                    ].map((item, i) => (
+                                        <li key={i} className="flex items-start gap-4">
+                                            <div className="w-2 h-2 bg-accent rounded-full mt-2.5 shrink-0" />
+                                            <span className="text-gray-600 font-medium">{item}</span>
+                                        </li>
+                                    ))}
+                                </ul>
+                            </div>
+
+                            <p className="italic text-primary font-medium text-xl leading-relaxed">
+                                If you are searching for a reliable partner to transform your vision into reality, we encourage you to consult with us today for planning your dream home. Our engineering team is ready to guide you through every structural and design phase with professional expertise. Contact Magizh Builders today to find out why we are the most trusted <strong>construction company in Salem</strong> for homeowners who value global quality standards with a local touch.
+                            </p>
+                        </div>
+                    </motion.div>
                 </div>
             </section>
 
@@ -148,6 +175,8 @@ export default function About() {
                     />
                 </div>
             </section>
+
+            <CTA />
         </div>
     );
 }

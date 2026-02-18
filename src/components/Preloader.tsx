@@ -11,7 +11,7 @@ export default function Preloader() {
         // Simulate loading or wait for actual load
         const timer = setTimeout(() => {
             setLoading(false);
-        }, 4500); // Enough time for logo animation
+        }, 1500); // Faster, more responsive load
 
         return () => clearTimeout(timer);
     }, []);
@@ -28,19 +28,20 @@ export default function Preloader() {
                     }}
                     className="fixed inset-0 z-[999] flex flex-col items-center justify-center bg-white"
                 >
-                    <Logo size={250} />
+                    <Logo size={400} />
+
+                    {/* Minimal Technical Loading Indicator */}
                     <motion.div
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ delay: 1, duration: 1 }}
-                        className="mt-8 text-center"
+                        initial={{ width: 0 }}
+                        animate={{ width: "200px" }}
+                        transition={{ duration: 1.5, ease: "linear" }}
+                        className="h-[1px] bg-accent/30 mt-12 relative overflow-hidden"
                     >
-                        <h1 className="text-2xl font-serif tracking-[0.2em] uppercase text-primary">
-                            Magizh Builders
-                        </h1>
-                        <p className="mt-2 text-sm tracking-[0.3em] uppercase text-accent/80 font-sans">
-                            Architecting Dreams
-                        </p>
+                        <motion.div
+                            animate={{ x: ["-100%", "100%"] }}
+                            transition={{ duration: 1.5, repeat: Infinity, ease: "linear" }}
+                            className="absolute inset-0 bg-accent w-1/2"
+                        />
                     </motion.div>
                 </motion.div>
             )}

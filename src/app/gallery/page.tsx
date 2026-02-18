@@ -25,13 +25,13 @@ export default function Gallery() {
                 <TrianglePattern />
 
                 {/* Background Image */}
-                <div className="absolute inset-0 z-0 opacity-40">
+                <div className="absolute inset-0 z-0 opacity-100">
                     <img
                         src="/images/gallery/gallery-1.jpg"
-                        className="w-full h-full object-cover grayscale"
+                        className="w-full h-full object-cover"
                         alt="Gallery Exhibition Background"
                     />
-                    <div className="absolute inset-0 bg-primary/60 mix-blend-multiply" />
+                    <div className="absolute inset-0 bg-black/40" />
                 </div>
 
                 {/* Architectural Grid */}
@@ -46,8 +46,8 @@ export default function Gallery() {
                             transition={{ delay: 0.5, duration: 1 }}
                             className="text-5xl sm:text-7xl lg:text-[120px] font-serif text-white leading-tight mb-10 font-bold"
                         >
-                            Forms in <br />
-                            <span className="text-accent italic">Equilibrium.</span>
+                            Visual <br />
+                            <span className="text-accent italic">Gallery.</span>
                         </motion.h1>
                         <motion.p
                             initial={{ y: 20, opacity: 0 }}
@@ -55,45 +55,27 @@ export default function Gallery() {
                             transition={{ delay: 0.8, duration: 1 }}
                             className="text-white/70 text-base lg:text-2xl max-w-3xl font-sans leading-relaxed tracking-wide font-medium"
                         >
-                            A visual study of structural integrity, material textures, and the interplay between natural light and architectural shadows.
+                            A visual study of our structural work, material details, and finished architectural aesthetics.
                         </motion.p>
                     </div>
                 </div>
             </section>
 
-            {/* Asymmetric Gallery Grid - Structural Focus */}
-            <section className="pb-32 lg:pb-60 px-6 lg:px-24 relative pt-20">
-                <div className="max-w-[1700px] mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
-                    {galleryImages.map((image, idx) => (
-                        <motion.div
-                            key={idx}
-                            initial={{ opacity: 0, y: 30 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true }}
-                            transition={{ delay: idx * 0.05, duration: 1 }}
-                            className={cn(
-                                "group relative overflow-hidden bg-gray-50 border-[1px] border-gray-100",
-                                image.size === "tall" ? "md:row-span-2 aspect-[3/5]" :
-                                    image.size === "wide" ? "md:col-span-2 aspect-[16/10]" :
-                                        "aspect-square"
-                            )}
-                        >
-                            <img
-                                src={image.src}
-                                alt={`Architectural Study ${idx}`}
-                                className="w-full h-full object-cover transition-transform duration-[2s] group-hover:scale-105"
-                                loading="lazy"
-                            />
-                            {/* Geometric Frame Overlay */}
-                            <div className="absolute inset-4 border border-white/0 group-hover:border-white/20 transition-all duration-700 pointer-events-none" />
-
-                            <div className="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity duration-700 flex flex-col items-center justify-center p-8">
-                                <span className="text-white text-[9px] uppercase tracking-[0.4em] font-bold border-b border-accent pb-2">
-                                    Analysis 0{idx + 1}
-                                </span>
-                            </div>
-                        </motion.div>
-                    ))}
+            {/* Gallery Placeholder Section */}
+            <section className="py-32 lg:py-60 px-6 lg:px-24 bg-white relative">
+                <div className="max-w-4xl mx-auto text-center">
+                    <motion.div
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        className="space-y-8"
+                    >
+                        <div className="w-20 h-1 bg-accent mx-auto" />
+                        <h2 className="text-3xl lg:text-5xl font-serif text-primary font-bold">Gallery <br /><span className="text-accent italic">Updating Soon</span></h2>
+                        <p className="text-gray-500 text-lg lg:text-xl font-sans leading-relaxed tracking-wide max-w-2xl mx-auto">
+                            We are currently compiling high-resolution imagery of our finished projects. Our architectural gallery will be updated with new visual content soon.
+                        </p>
+                    </motion.div>
                 </div>
             </section>
 

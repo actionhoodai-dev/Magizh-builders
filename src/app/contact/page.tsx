@@ -14,13 +14,13 @@ export default function Contact() {
                 <TrianglePattern />
 
                 {/* Background Image */}
-                <div className="absolute inset-0 z-0 opacity-40">
+                <div className="absolute inset-0 z-0 opacity-100">
                     <img
                         src="/images/hero/hero-4.jpg"
-                        className="w-full h-full object-cover grayscale"
+                        className="w-full h-full object-cover"
                         alt="Contact Interface Background"
                     />
-                    <div className="absolute inset-0 bg-primary/60 mix-blend-multiply" />
+                    <div className="absolute inset-0 bg-black/40" />
                 </div>
 
                 {/* Architectural Grid */}

@@ -1,239 +1,360 @@
 'use client';
 
-import { motion, useScroll, useTransform, AnimatePresence } from 'framer-motion';
+import { motion } from 'framer-motion';
 import Link from 'next/link';
-import { ArrowRight, Phone, MessageCircle, ArrowDown } from 'lucide-react';
-import { useRef, useState, useEffect } from 'react';
-import { cn } from '@/lib/utils';
+import {
+  Phone,
+  Mail,
+  MapPin,
+  ChevronRight,
+  CheckCircle2,
+  Home,
+  Building2,
+  FileText,
+  Compass,
+  Zap,
+  Star,
+  ShieldCheck,
+  Clock,
+  Award,
+  Users
+} from 'lucide-react';
+import CTA from '@/components/CTA';
+import Counter from '@/components/Counter';
 import TrianglePattern from '@/components/TrianglePattern';
 
-const fadeInUp: any = {
-  hidden: { opacity: 0, y: 60 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: { duration: 1.2, ease: [0.16, 1, 0.3, 1] }
-  }
-};
-
-const staggerContainer = {
-  visible: {
-    transition: {
-      staggerChildren: 0.1
-    }
-  }
-};
-
-export default function Home() {
-  const containerRef = useRef<HTMLDivElement>(null);
-  const { scrollY } = useScroll();
-  const heroScale = useTransform(scrollY, [0, 800], [1, 1.1]);
-  const heroOpacity = useTransform(scrollY, [0, 800], [1, 0]);
-
-  // Dynamic Hero Backgrounds with Mist Transitions
-  const [currentImageIndex, setCurrentImageIndex] = useState(0);
-  const heroImages = [
-    "/images/hero/hero-1.jpg",
-    "/images/hero/hero-2.jpg",
-    "/images/hero/hero-3.jpg",
-    "/images/hero/hero-4.jpg",
-  ];
-
-  // Varied Mist Transitions
-  const transitionVariants = [
-    { initial: { opacity: 0, filter: "blur(20px)", scale: 1.1 }, animate: { opacity: 1, filter: "blur(0px)", scale: 1 } },
-    { initial: { opacity: 0, filter: "blur(10px)", x: -20 }, animate: { opacity: 1, filter: "blur(0px)", x: 0 } },
-    { initial: { opacity: 0, filter: "blur(40px)", scale: 1.2 }, animate: { opacity: 1, filter: "blur(0px)", scale: 1 } },
-    { initial: { opacity: 0, filter: "blur(5px)", y: 10 }, animate: { opacity: 1, filter: "blur(0px)", y: 0 } },
-  ];
-
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setCurrentImageIndex((prev) => (prev + 1) % heroImages.length);
-    }, 5000);
-    return () => clearInterval(timer);
-  }, []);
-
-  const currentVariant = transitionVariants[currentImageIndex % transitionVariants.length];
-
+export default function HomePage() {
   return (
-    <div className="bg-white" ref={containerRef}>
-
-      {/* Cinematic Hero */}
-      <section className="relative h-screen w-full overflow-hidden flex items-center justify-center bg-primary">
-        <TrianglePattern />
-
-        {/* High-Contrast Overlay for Text Visibility */}
-        <div className="absolute inset-0 z-20 bg-gradient-to-b from-primary/60 via-primary/30 to-primary/60 pointer-events-none" />
-
-        {/* Architectural Grid Overlay */}
-        <div className="absolute inset-0 z-20 opacity-20 pointer-events-none"
-          style={{ backgroundImage: 'linear-gradient(#fff 1px, transparent 1px), linear-gradient(90deg, #fff 1px, transparent 1px)', backgroundSize: '100px 100px' }} />
-
+    <div className="bg-white">
+      {/* 🏠 SECTION 1 – HERO SECTION (Cinematic Entry) */}
+      <section className="relative min-h-screen flex items-center pt-40 lg:pt-60 pb-24 lg:pb-32 overflow-hidden bg-primary">
+        {/* Background Image with Parallax-like effect via framer */}
         <motion.div
-          style={{ scale: heroScale, opacity: heroOpacity }}
+          initial={{ scale: 1.1 }}
+          animate={{ scale: 1 }}
+          transition={{ duration: 1.5 }}
           className="absolute inset-0 z-0"
         >
-          <AnimatePresence mode="wait">
-            <motion.img
-              key={currentImageIndex}
-              src={heroImages[currentImageIndex]}
-              initial={currentVariant.initial}
-              animate={currentVariant.animate}
-              exit={{ opacity: 0, filter: "blur(20px)" }}
-              transition={{ duration: 3, ease: "easeInOut" }}
-              className="w-full h-full object-cover"
-              loading="eager"
-            />
-          </AnimatePresence>
+          <img
+            src="/images/hero/hero-1.jpg"
+            alt="Construction Company in Salem - Professional Building Site"
+            className="w-full h-full object-cover opacity-60"
+          />
+          <div className="absolute inset-0 bg-gradient-to-b from-primary/80 via-transparent to-primary/90" />
         </motion.div>
 
-        <div className="relative z-30 container mx-auto px-6 lg:px-24 text-center lg:text-left">
-          <motion.div
-            initial="hidden"
-            animate="visible"
-            variants={staggerContainer}
-            className="max-w-5xl"
-          >
-            <motion.h1
-              variants={fadeInUp}
-              className="text-white text-5xl sm:text-7xl lg:text-[140px] font-serif leading-[1.1] lg:leading-[0.9] mb-8 lg:mb-12 drop-shadow-2xl font-bold"
+        <div className="container mx-auto px-6 lg:px-24 relative z-10">
+          <div className="grid lg:grid-cols-[1.5fr_1fr] gap-12 items-center">
+            <motion.div
+              initial={{ opacity: 0, x: -50 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8 }}
             >
-              The Art of <br />
-              <span className="italic pl-0 lg:pl-32 text-accent">Engineering.</span>
-            </motion.h1>
-            <motion.div variants={fadeInUp} className="flex flex-col sm:flex-row gap-8 items-center justify-center lg:justify-start">
-              <Link href="/projects" className="group flex items-center gap-4 text-white text-[10px] lg:text-xs uppercase tracking-[0.5em] font-bold">
-                View Portfolios
-                <div className="w-8 lg:w-16 h-[1px] bg-accent group-hover:w-24 transition-all duration-500" />
-              </Link>
+              <div className="flex flex-col gap-6 mb-8">
+                <span className="text-accent text-xs font-black uppercase tracking-[0.5em] bg-accent/10 w-fit px-4 py-2 border-l-2 border-accent">Architectural Excellence</span>
+                <h1 className="text-white text-5xl sm:text-7xl lg:text-9xl font-serif font-black leading-tight tracking-tighter">
+                  Magizh <br /><span className="text-accent italic">Builders</span>
+                </h1>
+              </div>
+
+              <h2 className="text-white text-2xl sm:text-3xl lg:text-4xl font-serif font-bold mb-10 leading-snug">
+                Engineering <span className="text-accent italic">Salem's</span> Civil Legacy With Mathematical Precision.
+              </h2>
+
+              <p className="text-white/60 text-lg lg:text-2xl font-sans mb-12 max-w-2xl leading-relaxed">
+                As a premier <strong>construction company in Salem</strong>, Magizh Builders bridges the gap between creative architectural visions and
+                mathematically perfect structural execution. Built by <strong>Er. S. P. Hari Baaskar</strong>, we deliver homes that stand the test of time.
+              </p>
+
+              <div className="flex flex-col sm:flex-row gap-8">
+                <Link
+                  href="/contact"
+                  className="inline-flex items-center justify-center px-12 py-6 bg-accent text-primary font-black uppercase tracking-[0.3em] text-xs hover:bg-white transition-all duration-500 shadow-2xl"
+                >
+                  Start Your Evolution
+                </Link>
+                <Link
+                  href="/projects"
+                  className="inline-flex items-center justify-center px-12 py-6 border-2 border-white/20 text-white font-bold uppercase tracking-[0.3em] text-xs hover:bg-white hover:text-primary transition-all duration-500 backdrop-blur-sm"
+                >
+                  View Our Mastery
+                </Link>
+              </div>
             </motion.div>
-          </motion.div>
+
+            {/* Cinematic Transparent Logo Showcase */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.9, y: 20 }}
+              animate={{ opacity: 1, scale: 1, y: 0 }}
+              transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
+              className="flex flex-col items-center justify-center relative group order-first lg:order-last mb-16 lg:mb-0"
+            >
+              {/* Dynamic Aura - Radial gradient that matches the logo's teal/gold tones */}
+              <div className="absolute inset-0 bg-gradient-to-tr from-accent/20 via-primary/0 to-accent/10 blur-[100px] rounded-full opacity-50 group-hover:opacity-100 transition-opacity duration-1000" />
+
+              {/* Floating Frame - Architectural Linework with Glassmorphism */}
+              <div className="relative p-4 lg:p-8 flex items-center justify-center">
+
+                {/* Technical Corner Markers */}
+                <div className="absolute -top-4 -left-4 w-16 h-16 border-t-[0.5px] border-l-[0.5px] border-accent/40" />
+                <div className="absolute -bottom-4 -right-4 w-16 h-16 border-b-[0.5px] border-r-[0.5px] border-accent/40" />
+
+                <motion.div
+                  animate={{
+                    y: [0, -15, 0],
+                    rotate: [0, 1, 0]
+                  }}
+                  transition={{
+                    duration: 6,
+                    repeat: Infinity,
+                    ease: "easeInOut"
+                  }}
+                  className="relative drop-shadow-[0_35px_35px_rgba(0,0,0,0.5)]"
+                >
+                  <img
+                    src="/images/logo-full.png"
+                    alt="Magizh Builders - Registered Civil Engineer & Construction Company in Salem Official Logo"
+                    className="w-full max-w-[320px] lg:max-w-[500px] h-auto relative z-10 brightness-110 contrast-110 drop-shadow-[0_0_15px_rgba(200,169,81,0.2)]"
+                  />
+
+                  {/* Internal Depth Shadow */}
+                  <div className="absolute inset-0 bg-black/10 blur-2xl rounded-full translate-y-12 opacity-40 -z-10" />
+                </motion.div>
+              </div>
+
+              {/* Floating Technical Status */}
+              <motion.div
+                initial={{ opacity: 0, x: 20 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ delay: 1, duration: 1 }}
+                className="absolute -bottom-4 lg:-bottom-12 right-0 lg:-right-8 bg-white/5 backdrop-blur-xl border border-accent/20 px-6 py-4 rounded-2xl shadow-2xl z-20 flex flex-col gap-1 sm:visible invisible"
+              >
+                <span className="text-white text-[8px] uppercase font-black tracking-[0.5em] opacity-40">Engineering Status</span>
+                <span className="text-accent text-xs font-serif font-bold italic tracking-wider">Precision Verified</span>
+              </motion.div>
+            </motion.div>
+          </div>
         </div>
 
-        {/* Clean Scroll Indicator */}
-        <div className="absolute bottom-12 right-6 lg:right-12 z-20">
-          <motion.div
-            animate={{ y: [0, 15, 0] }}
-            transition={{ repeat: Infinity, duration: 2.5 }}
-            className="w-[1px] h-12 lg:h-20 bg-accent/40 relative overflow-hidden"
-          >
-            <div className="absolute top-0 left-0 w-full h-1/2 bg-accent" />
-          </motion.div>
+        {/* Decorative Grid Overlay */}
+        <div className="absolute inset-0 z-10 opacity-[0.05] pointer-events-none"
+          style={{ backgroundImage: 'linear-gradient(#fff 1px, transparent 1px), linear-gradient(90deg, #fff 1px, transparent 1px)', backgroundSize: '100px 100px' }} />
+      </section>
+
+      {/* 📊 SECTION 2 – TRUST METRICS (Impact at a Glance) */}
+      <section className="py-20 lg:py-40 bg-white border-y border-gray-100">
+        <div className="container mx-auto px-6 lg:px-24">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-24">
+            {[
+              { label: "Villas Handed Over", val: 50, suffix: "+", icon: Home },
+              { label: "Years of Precision", val: 15, suffix: "+", icon: Clock },
+              { label: "Structural Audits", val: 200, suffix: "+", icon: ShieldCheck },
+              { label: "Family Smiles", val: 120, suffix: "+", icon: Users },
+            ].map((item, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.1 }}
+                className="text-center group"
+              >
+                <item.icon className="mx-auto mb-6 text-accent opacity-20 group-hover:opacity-100 transition-opacity" size={32} />
+                <h3 className="text-4xl lg:text-7xl font-serif font-bold text-primary mb-2">
+                  <Counter value={item.val} suffix={item.suffix} />
+                </h3>
+                <p className="text-gray-400 text-[10px] uppercase tracking-[0.5em] font-black">{item.label}</p>
+              </motion.div>
+            ))}
+          </div>
         </div>
       </section>
 
-      {/* Intro Section - Geometric Architecture Focused */}
-      <section className="py-24 lg:py-48 px-6 lg:px-24 overflow-hidden relative bg-white">
-        <div className="max-w-[1400px] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-24 items-center">
-          <div className="col-span-1 lg:col-span-1 hidden lg:block" />
-          <div className="col-span-1 lg:col-span-6 text-center lg:text-left">
-            <h2 className="text-4xl sm:text-6xl lg:text-8xl font-serif text-primary mb-10 lg:mb-14 leading-tight font-bold">
-              Precision is <br />
-              our primary <br />
-              <span className="text-accent italic">foundation.</span>
-            </h2>
-            <div className="w-20 lg:w-32 h-[2px] bg-accent mb-10 lg:mb-14 mx-auto lg:mx-0" />
-            <p className="text-lg lg:text-xl text-primary/60 font-sans mb-10 lg:mb-14 leading-relaxed max-w-lg mx-auto lg:mx-0 font-medium">
-              We translate abstract concepts into tangible structural masterpieces, where every line served a purpose and every angle defines a legacy.
-            </p>
-            <Link href="/about" className="inline-block px-12 lg:px-16 py-5 lg:py-6 bg-primary text-white text-[10px] lg:text-xs uppercase tracking-[0.4em] font-bold hover:bg-accent transition-all shadow-2xl">
-              The Studio
+      {/* 🏗 SECTION 3 – ABOUT & VISION (The Engineering Narrative) */}
+      <section className="py-24 lg:py-56 bg-white overflow-hidden">
+        <div className="container mx-auto px-6 lg:px-24">
+          <div className="grid lg:grid-cols-2 gap-32 items-center">
+            <motion.div
+              initial={{ opacity: 0, x: -50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+            >
+              <span className="text-accent text-xs font-black uppercase tracking-[0.5em] mb-4 block">Our Cultural DNA</span>
+              <h2 className="text-primary text-4xl lg:text-7xl font-serif font-bold mb-10 leading-[1.1]">
+                Precision. <br /><span className="text-accent italic">Integrity.</span> <br />Legacy.
+              </h2>
+              <div className="w-24 h-1.5 bg-accent mb-12" />
+              <div className="space-y-8 text-gray-500 text-lg lg:text-xl font-sans leading-relaxed">
+                <p>
+                  Magizh Builders is not just a <strong>construction company in Salem</strong>; we are technical guardians of your architectural dreams. Led by
+                  <strong>Er. S. P. Hari Baaskar, M.E.</strong>, our firm operates on the intersection of deep engineering traditions and modern
+                  smart-home technologies.
+                </p>
+                <p>
+                  In a City where average construction is common, we pursue excellence through rigorous <strong>structural audits</strong>, premium
+                  material sourcing (Double-Washed M-Sand, Grade 53 Cement), and a commitment to 100% Vastu-compliant layouts.
+                </p>
+                <div className="pt-8">
+                  <Link href="/about" className="inline-flex items-center gap-4 text-accent text-xs font-black uppercase tracking-[0.3em] border-b border-accent/20 pb-2 hover:gap-6 transition-all hover:border-accent">
+                    Learn the Engineering Behind Our Name <ChevronRight size={14} />
+                  </Link>
+                </div>
+              </div>
+            </motion.div>
+
+            <div className="relative">
+              <motion.div
+                initial={{ opacity: 0, scale: 0.9 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                className="relative z-10 p-6 lg:p-12 bg-gray-50 border border-gray-100"
+              >
+                <img
+                  src="/images/about/about-1.jpg"
+                  alt="Magizh Builders Engineering Site Supervision"
+                  className="w-full h-auto grayscale hover:grayscale-0 transition-all duration-1000 shadow-2xl"
+                />
+              </motion.div>
+              <div className="absolute -top-12 -right-12 w-64 h-64 bg-accent/5 rounded-full blur-3xl -z-10" />
+              <div className="absolute -bottom-12 -left-12 w-64 h-64 bg-primary/5 rounded-full blur-3xl -z-10" />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ⚙️ SECTION 4 – THE BLUEPRINT (Interactive-style Process) */}
+      <section className="py-24 lg:py-48 bg-primary text-white relative overflow-hidden">
+        <TrianglePattern opacity="opacity-[0.05]" />
+        <div className="container mx-auto px-6 lg:px-24">
+          <div className="text-center mb-32">
+            <span className="text-accent text-[10px] uppercase tracking-[0.5em] font-black mb-6 block">The Magizh Methodology</span>
+            <h2 className="text-4xl lg:text-7xl font-serif font-bold mb-10">How We Build Your <br /><span className="text-accent italic">Structural Legacy</span></h2>
+          </div>
+
+          <div className="grid lg:grid-cols-4 gap-8">
+            {[
+              { id: '01', title: 'Calculated planning', desc: 'Vastu-compliant 2D defaults and immersive 3D visualizations.', icon: Compass },
+              { id: '02', title: 'Legal fortification', desc: 'Seamless blueprint sanctions and legal approvals from Salem Corporation.', icon: FileText },
+              { id: '03', title: 'Engineering phase', desc: 'Rigorous structural casting with premium steel and grade-A concrete.', icon: Zap },
+              { id: '04', title: 'Aesthetic delivery', desc: 'Luxury finishing, custom interiors, and professional handover.', icon: Award },
+            ].map((step, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, scale: 0.95 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.1 }}
+                className="group relative p-10 bg-white/5 border border-white/10 hover:bg-white hover:text-primary transition-all duration-700"
+              >
+                <span className="text-accent text-5xl font-serif font-bold opacity-30 block mb-10 group-hover:opacity-100 transition-opacity">{step.id}</span>
+                <step.icon className="text-accent mb-8" size={32} />
+                <h3 className="text-xl font-bold uppercase tracking-widest mb-4">{step.title}</h3>
+                <p className="text-white/40 group-hover:text-primary/60 text-sm leading-relaxed">{step.desc}</p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* 🖼 SECTION 5 – PROJECT EXCELLENCE (Visual Showcase) */}
+      <section className="py-24 lg:py-56 bg-white overflow-hidden">
+        <div className="container mx-auto px-6 lg:px-24">
+          <div className="flex flex-col lg:flex-row justify-between items-end mb-24 gap-12">
+            <div className="max-w-2xl text-left">
+              <span className="text-accent text-xs font-black uppercase tracking-[0.5em] mb-4 block">The Portfolio</span>
+              <h2 className="text-primary text-4xl lg:text-7xl font-serif font-bold leading-tight">Salem's Finest <br /><span className="text-accent italic">Architectural Footprints</span></h2>
+            </div>
+            <Link href="/projects" className="px-10 py-5 bg-primary text-white text-[10px] uppercase font-bold tracking-[0.3em] hover:bg-accent hover:text-primary transition-all duration-500 shadow-xl">
+              Launch Full Portfolio
             </Link>
           </div>
-          <div className="col-span-1 lg:col-span-5 relative px-4 lg:px-0">
-            <motion.div
-              initial={{ scale: 1.1, opacity: 0 }}
-              whileInView={{ scale: 1, opacity: 1 }}
-              viewport={{ once: true }}
-              transition={{ duration: 1.5 }}
-              className="aspect-[4/5] overflow-hidden bg-gray-100 relative group"
-            >
-              <img
-                src="/images/about/about-1.jpg"
-                className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105"
-                alt="Minimalist Concrete Architecture"
-              />
-            </motion.div>
-            <div className="absolute -bottom-8 lg:-bottom-16 -right-8 lg:-right-16 w-32 lg:w-64 h-32 lg:h-64 border-[1px] border-accent/20 -z-10" />
+
+          <div className="grid lg:grid-cols-12 gap-8">
+            <div className="lg:col-span-8 overflow-hidden group">
+              <img src="/images/projects/project-1.jpg" className="w-full h-[600px] object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-[2s]" alt="Premium Villa in Salem" />
+            </div>
+            <div className="lg:col-span-4 grid grid-rows-2 gap-8">
+              <div className="overflow-hidden group">
+                <img src="/images/gallery/gallery-4.jpg" className="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-[2s]" alt="Modern Interior Salem" />
+              </div>
+              <div className="bg-accent p-12 flex flex-col justify-center text-primary group hover:bg-primary transition-all duration-500">
+                <Star className="mb-6 group-hover:text-accent" size={32} />
+                <h3 className="text-2xl font-serif font-bold mb-4 group-hover:text-white">Award-Winning Aesthetics</h3>
+                <p className="text-primary/60 group-hover:text-white/60 mb-8 font-serif italic text-lg line-clamp-2">"Their attention to the mathematical flow of rooms changed how we live."</p>
+                <p className="text-xs uppercase font-black tracking-[0.2em] group-hover:text-accent">— Mr. Selvam, Fairlands</p>
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Projects Spotlight - Geometric Dark Side */}
-      <section className="py-24 lg:py-48 bg-primary px-6 lg:px-24 relative overflow-hidden">
-        <TrianglePattern />
-
-        <div className="max-w-7xl mx-auto mb-20 lg:mb-32 flex flex-col md:row justify-between items-center md:items-end gap-12 relative z-10">
-          <div className="text-center md:text-left">
-            <p className="text-accent text-[10px] lg:text-xs uppercase tracking-[0.6em] font-bold mb-6">Selected Porfolio</p>
-            <h3 className="text-white text-5xl lg:text-8xl font-serif font-bold">Defined by <span className="italic">Angles.</span></h3>
+      {/* 💎 SECTION 6 – THE MAGIZH ADVANTAGE (Checklist) */}
+      <section className="py-24 lg:py-48 bg-gray-50">
+        <div className="container mx-auto px-6 lg:px-24">
+          <div className="grid lg:grid-cols-2 gap-24 items-center">
+            <div className="relative">
+              <img src="/images/hero/hero-3.jpg" className="w-full h-auto shadow-2xl" alt="Engineering Excellence" />
+              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-48 h-48 bg-accent/90 backdrop-blur-md rounded-full flex items-center justify-center p-8 text-center border-8 border-white">
+                <p className="text-primary font-serif font-black text-sm uppercase leading-tight tracking-widest">Salem's Number One Choice</p>
+              </div>
+            </div>
+            <div>
+              <span className="text-accent text-[10px] uppercase tracking-[0.5em] font-black mb-6 block">Why We Are Different</span>
+              <h2 className="text-primary text-3xl lg:text-5xl font-serif font-bold mb-12">The Engineering Standard <br /><span className="text-accent italic">in Salem</span></h2>
+              <ul className="space-y-8">
+                {[
+                  { t: "Registered engineering oversight", d: "Every brick laid is supervised by qualified structural engineers." },
+                  { t: "100% Vastu compliance", d: "Merging ancient wisdom with modern structural logic seamlessly." },
+                  { t: "Transparent material sourcing", d: "We provide full invoices and quality certificates for all materials used." },
+                  { t: "Fixed timeline guarantee", d: "We value your time as much as your investment. No endless delays." },
+                ].map((item, i) => (
+                  <motion.li
+                    key={i}
+                    initial={{ opacity: 0, x: 20 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: i * 0.1 }}
+                    className="flex gap-6 items-start group"
+                  >
+                    <div className="w-12 h-12 bg-white flex items-center justify-center border border-gray-100 group-hover:bg-accent transition-colors shrink-0">
+                      <CheckCircle2 className="text-accent group-hover:text-white" size={20} />
+                    </div>
+                    <div>
+                      <h4 className="text-primary font-bold text-lg mb-1 uppercase tracking-tighter">{item.t}</h4>
+                      <p className="text-gray-400 text-sm">{item.d}</p>
+                    </div>
+                  </motion.li>
+                ))}
+              </ul>
+            </div>
           </div>
-          <Link href="/projects" className="text-white hover:text-accent text-[10px] lg:text-xs uppercase tracking-[0.4em] font-bold pb-2 border-b border-accent transition-colors">
-            All Works
-          </Link>
-        </div>
-
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 lg:gap-40 relative z-10">
-          <ProjectCard
-            title="The Geometric Villa"
-            category="Minimalist Living"
-            img="/images/projects/project-3.jpg"
-          />
-          <ProjectCard
-            title="Structural Grace"
-            category="Modern Concept"
-            img="/images/projects/project-4.jpg"
-            className="lg:mt-40"
-          />
         </div>
       </section>
 
-      {/* CTA Section - Architectural Contact */}
-      <section className="py-32 lg:py-60 px-6 lg:px-24 flex flex-col items-center text-center relative bg-[#FDFCFB]">
-        <h4 className="text-primary text-4xl sm:text-6xl lg:text-9xl font-serif mb-16 lg:mb-24 leading-tight relative z-10 font-bold">
-          Begin your <br />
-          <span className="italic text-accent">journey.</span>
-        </h4>
-        <div className="flex flex-col sm:flex-row gap-8 lg:gap-16 w-full sm:w-auto relative z-10">
-          <Link href="tel:+918754764403" className="w-full sm:w-auto flex items-center justify-center gap-6 px-12 lg:px-18 py-6 lg:py-8 bg-primary text-white text-[10px] lg:text-xs uppercase tracking-[0.5em] font-bold shadow-3xl hover:bg-accent transition-all hover:-translate-y-2">
-            <Phone size={18} />
-            Consultation
-          </Link>
-          <Link href="https://wa.me/918754764403" className="w-full sm:w-auto flex items-center justify-center gap-6 px-12 lg:px-18 py-6 lg:py-8 border-2 border-primary text-primary text-[10px] lg:text-xs uppercase tracking-[0.5em] font-bold hover:bg-primary hover:text-white transition-all">
-            <MessageCircle size={18} />
-            WhatsApp
-          </Link>
+      {/* 🏡 SECTION 7 – GEOGRAPHIC FOOTPRINT */}
+      <section className="py-24 lg:py-40 bg-white">
+        <div className="container mx-auto px-6 lg:px-24">
+          <div className="max-w-4xl mx-auto text-center">
+            <h2 className="text-primary text-3xl lg:text-6xl font-serif font-bold mb-10 leading-tight">
+              A Geographic Legacy <span className="text-accent">Across Salem</span>
+            </h2>
+            <p className="text-gray-500 text-lg mb-16 max-w-2xl mx-auto leading-relaxed">
+              We focus our precision-building services in Salem's most established residential and development zones, ensuring
+              we are always on-site when the concrete pours.
+            </p>
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
+              {['Peramanur', 'Hasthampatti', 'Fairlands', 'Alagapuram', 'Steel Plant Road', 'Salem Corporation'].map((area) => (
+                <div key={area} className="px-6 py-6 bg-gray-50 border border-gray-100 text-primary text-[9px] uppercase font-black tracking-[0.2em] hover:bg-accent hover:border-accent hover:text-white transition-all cursor-default">
+                  {area}
+                </div>
+              ))}
+            </div>
+          </div>
         </div>
       </section>
 
+      {/* 📞 SECTION 8 – CALL TO ACTION */}
+      <CTA />
     </div>
-  );
-}
-
-function ProjectCard({ title, category, img, className }: { title: string, category: string, img: string, className?: string }) {
-  return (
-    <motion.div
-      initial={{ opacity: 0, y: 40 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      className={cn("group cursor-pointer", className)}
-    >
-      <div className="relative aspect-[16/10] overflow-hidden mb-8 bg-gray-100">
-        <img
-          src={img}
-          className="w-full h-full object-cover transition-transform duration-[2s] cubic-bezier(0.2, 1, 0.3, 1) group-hover:scale-110"
-          alt={title}
-        />
-        <div className="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
-      </div>
-      <div className="flex justify-between items-end border-b border-gray-100 lg:border-white/10 pb-6">
-        <div>
-          <p className="text-accent text-[10px] uppercase tracking-[0.4em] font-bold mb-2">{category}</p>
-          <h4 className="text-primary lg:text-white text-3xl font-serif group-hover:pl-4 transition-all duration-500">{title}</h4>
-        </div>
-        <ArrowRight className="text-accent group-hover:translate-x-2 transition-transform" />
-      </div>
-    </motion.div>
   );
 }

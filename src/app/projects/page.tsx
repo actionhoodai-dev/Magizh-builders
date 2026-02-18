@@ -48,13 +48,13 @@ export default function Projects() {
                 <TrianglePattern />
 
                 {/* Background Image */}
-                <div className="absolute inset-0 z-0 opacity-40">
+                <div className="absolute inset-0 z-0 opacity-100">
                     <img
                         src="/images/hero/hero-3.jpg"
-                        className="w-full h-full object-cover grayscale transition-transform duration-[10s]"
+                        className="w-full h-full object-cover transition-transform duration-[10s]"
                         alt="Project Portfolio Background"
                     />
-                    <div className="absolute inset-0 bg-primary/60 mix-blend-multiply" />
+                    <div className="absolute inset-0 bg-black/40" />
                 </div>
 
                 {/* Architectural Grid */}
@@ -69,8 +69,8 @@ export default function Projects() {
                             transition={{ delay: 0.5, duration: 1 }}
                             className="text-5xl sm:text-7xl lg:text-[120px] font-serif text-white leading-tight mb-10 font-bold"
                         >
-                            Structural <br />
-                            <span className="text-accent italic">Dialogues.</span>
+                            Our <br />
+                            <span className="text-accent italic">Projects.</span>
                         </motion.h1>
                         <motion.p
                             initial={{ y: 20, opacity: 0 }}
@@ -78,18 +78,32 @@ export default function Projects() {
                             transition={{ delay: 0.8, duration: 1 }}
                             className="text-white/70 text-base lg:text-2xl max-w-3xl font-sans leading-relaxed tracking-wide font-medium"
                         >
-                            A curation of our most mathematically challenging and architecturally profound residential developments in Salem.
+                            A showcase of our most technically advanced and architecturally unique developments in the region.
                         </motion.p>
                     </div>
                 </div>
             </section>
 
-            {/* Project List - Architectural Grid Style */}
-            <section className="pb-32 lg:pb-60 px-6 lg:px-24 bg-white relative">
-                <div className="max-w-7xl mx-auto space-y-32 lg:space-y-60">
-                    {projects.map((project) => (
-                        <ProjectItem key={project.number} project={project} />
-                    ))}
+            {/* Project Placeholder Section */}
+            <section className="py-32 lg:py-60 px-6 lg:px-24 bg-white relative">
+                <div className="max-w-4xl mx-auto text-center">
+                    <motion.div
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        className="space-y-8"
+                    >
+                        <div className="w-20 h-1 bg-accent mx-auto" />
+                        <h2 className="text-3xl lg:text-5xl font-serif text-primary font-bold">Latest Projects <br /><span className="text-accent italic">Coming Soon</span></h2>
+                        <p className="text-gray-500 text-lg lg:text-xl font-sans leading-relaxed tracking-wide max-w-2xl mx-auto">
+                            We are currently documenting our newest residential and commercial developments. Our full project portfolio will be available here soon.
+                        </p>
+                        <div className="pt-12">
+                            <Link href="/contact" className="inline-flex items-center justify-center px-10 py-5 bg-primary text-white font-bold uppercase tracking-widest text-sm hover:bg-accent hover:text-primary transition-all duration-300 shadow-xl">
+                                Inquire About Projects
+                            </Link>
+                        </div>
+                    </motion.div>
                 </div>
             </section>
         </div>

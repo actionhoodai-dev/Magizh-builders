@@ -1,103 +1,57 @@
 @import "tailwindcss";
 
 @theme {
-  --color-primary: #004D40;
-  --color-secondary: #002D20;
-  --color-accent: #C5A059;
-  --color-brand-green: #004D40;
+  --color-primary: #1F3A2E;
+  --color-accent: #C8A951;
   --font-serif: var(--font-playfair);
   --font-sans: var(--font-inter);
-
-  --spacing-section: 160px;
 }
 
-:root {
-  --background: #FFFFFF;
-  --foreground: #0A0A0A;
-  --accent: #C5A059;
-  --muted: #F8F8F8;
-}
+@layer base {
+  :root {
+    --background: #FFFFFF;
+    --foreground: #1F3A2E;
+    --primary: #1F3A2E;
+    --accent: #C8A951;
+  }
 
-[data-theme='dark'] {
-  --background: #0A0A0A;
-  --foreground: #FFFFFF;
-  --muted: #1A1A1A;
-}
+  body {
+    @apply bg-white text-primary antialiased;
+    font-family: var(--font-sans), sans-serif;
+  }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: var(--font-inter), sans-serif;
-  overflow-x: hidden;
-  -webkit-font-smoothing: antialiased;
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: var(--font-serif), serif;
+  }
 }
 
 /* Custom Scrollbar */
 ::-webkit-scrollbar {
-  width: 4px;
+  width: 6px;
 }
 
 ::-webkit-scrollbar-track {
-  background: var(--background);
+  background: #FFFFFF;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: var(--accent);
+  background: #C8A951;
 }
 
-/* Monolit Style Utilities */
-.text-stroke {
-  -webkit-text-stroke: 1px currentColor;
-  color: transparent;
+/* Utility Classes */
+.text-balance {
+  text-wrap: balance;
 }
 
-.vertical-text {
-  writing-mode: vertical-rl;
-  text-transform: uppercase;
+.section-padding {
+  @apply py-20 lg:py-32 px-6 lg:px-24;
 }
 
-.reveal-mask {
-  clip-path: inset(0 0 100% 0);
-  transition: clip-path 1.2s cubic-bezier(0.77, 0, 0.175, 1);
-}
-
-.reveal-mask.active {
-  clip-path: inset(0 0 0 0);
-}
-
-/* Grid Layouts */
-.masonry-grid {
-  display: grid;
-  grid-template-columns: repeat(12, 1fr);
-  gap: 2rem;
-}
-
-.hover-zoom {
-  transition: transform 1.5s cubic-bezier(0.2, 1, 0.3, 1);
-}
-
-.group:hover .hover-zoom {
-  transform: scale(1.1);
-}
-
-/* Smooth links */
-.nav-link {
-  position: relative;
-  overflow: hidden;
-}
-
-.nav-link::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 1px;
-  background: currentColor;
-  transform: translateX(-101%);
-  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-.nav-link:hover::after {
-  transform: translateX(0);
+.premium-border {
+  @apply border border-[#C8A951]/20;
 }
