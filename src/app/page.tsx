@@ -82,55 +82,53 @@ export default function HomePage() {
               </div>
             </motion.div>
 
-            {/* Cinematic Transparent Logo Showcase */}
+            {/* Premium Circular Logo Showcase */}
             <motion.div
               initial={{ opacity: 0, scale: 0.9, y: 20 }}
               animate={{ opacity: 1, scale: 1, y: 0 }}
               transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
               className="flex flex-col items-center justify-center relative group order-first lg:order-last mb-16 lg:mb-0"
             >
-              {/* Dynamic Aura - Radial gradient that matches the logo's teal/gold tones */}
-              <div className="absolute inset-0 bg-gradient-to-tr from-accent/20 via-primary/0 to-accent/10 blur-[100px] rounded-full opacity-50 group-hover:opacity-100 transition-opacity duration-1000" />
+              {/* Soft Ambient Glow */}
+              <div className="absolute inset-0 bg-accent/20 blur-[100px] rounded-full opacity-40 group-hover:opacity-60 transition-opacity duration-1000" />
 
-              {/* Floating Frame - Architectural Linework with Glassmorphism */}
-              <div className="relative p-4 lg:p-8 flex items-center justify-center">
+              <motion.div
+                animate={{
+                  y: [0, -10, 0],
+                }}
+                transition={{
+                  duration: 5,
+                  repeat: Infinity,
+                  ease: "easeInOut"
+                }}
+                className="relative"
+              >
+                {/* The Circular Placeholder (Profile-style) */}
+                <div className="w-[280px] h-[280px] lg:w-[480px] lg:h-[480px] bg-white rounded-full flex items-center justify-center shadow-[0_40px_100px_-15px_rgba(0,0,0,0.3)] border-[8px] lg:border-[16px] border-white/10 relative overflow-hidden p-10 lg:p-16">
+                  {/* Subtle inner shadow for depth */}
+                  <div className="absolute inset-0 shadow-[inset_0_2px_20px_rgba(0,0,0,0.05)] rounded-full" />
 
-                {/* Technical Corner Markers */}
-                <div className="absolute -top-4 -left-4 w-16 h-16 border-t-[0.5px] border-l-[0.5px] border-accent/40" />
-                <div className="absolute -bottom-4 -right-4 w-16 h-16 border-b-[0.5px] border-r-[0.5px] border-accent/40" />
-
-                <motion.div
-                  animate={{
-                    y: [0, -15, 0],
-                    rotate: [0, 1, 0]
-                  }}
-                  transition={{
-                    duration: 6,
-                    repeat: Infinity,
-                    ease: "easeInOut"
-                  }}
-                  className="relative drop-shadow-[0_35px_35px_rgba(0,0,0,0.5)]"
-                >
                   <img
                     src="/images/logo-full.png"
-                    alt="Magizh Builders - Registered Civil Engineer & Construction Company in Salem Official Logo"
-                    className="w-full max-w-[320px] lg:max-w-[500px] h-auto relative z-10 brightness-110 contrast-110 drop-shadow-[0_0_15px_rgba(200,169,81,0.2)]"
+                    alt="Magizh Builders Official Logo"
+                    className="w-full h-auto relative z-10 drop-shadow-sm"
                   />
+                </div>
 
-                  {/* Internal Depth Shadow */}
-                  <div className="absolute inset-0 bg-black/10 blur-2xl rounded-full translate-y-12 opacity-40 -z-10" />
-                </motion.div>
-              </div>
+                {/* Technical Corner Markers (Adapted for the Circle) */}
+                <div className="absolute -top-4 -left-4 w-12 h-12 border-t-[1px] border-l-[1px] border-accent/30 rounded-tl-3xl" />
+                <div className="absolute -bottom-4 -right-4 w-12 h-12 border-b-[1px] border-r-[1px] border-accent/30 rounded-br-3xl" />
+              </motion.div>
 
-              {/* Floating Technical Status */}
+              {/* Floating Engineering Badge */}
               <motion.div
                 initial={{ opacity: 0, x: 20 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ delay: 1, duration: 1 }}
-                className="absolute -bottom-4 lg:-bottom-12 right-0 lg:-right-8 bg-white/5 backdrop-blur-xl border border-accent/20 px-6 py-4 rounded-2xl shadow-2xl z-20 flex flex-col gap-1 sm:visible invisible"
+                className="absolute -bottom-6 lg:-bottom-8 right-0 lg:-right-4 bg-primary/90 backdrop-blur-xl border border-accent/30 px-6 py-3 rounded-2xl shadow-xl z-20 flex flex-col gap-0.5 sm:visible invisible"
               >
-                <span className="text-white text-[8px] uppercase font-black tracking-[0.5em] opacity-40">Engineering Status</span>
-                <span className="text-accent text-xs font-serif font-bold italic tracking-wider">Precision Verified</span>
+                <span className="text-white text-[8px] uppercase font-black tracking-[0.4em] opacity-50">Authorized By</span>
+                <span className="text-accent text-xs font-serif font-bold italic tracking-wide">Er. S. P. Hari Baaskar</span>
               </motion.div>
             </motion.div>
           </div>
