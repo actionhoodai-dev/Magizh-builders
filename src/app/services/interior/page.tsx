@@ -32,7 +32,7 @@ export default function InteriorPage() {
                         animate={{ opacity: 1, y: 0 }}
                         className="text-white text-4xl lg:text-7xl font-serif font-bold leading-tight"
                     >
-                        Interior <br /><span className="text-accent underline decoration-accent/30 underline-offset-8">Designing</span> <br /><span className="text-white/40">in Salem</span>
+                        Interior <br /><span className="text-accent underline decoration-accent/30 underline-offset-8">Designing</span> <br /><span className="text-accent italic">in Salem</span>
                     </motion.h1>
                 </div>
             </section>
@@ -68,7 +68,7 @@ export default function InteriorPage() {
                             </div>
                             <div className="bg-gray-100 relative overflow-hidden group">
                                 <img
-                                    src="/images/gallery/project-3.jpg"
+                                    src="/images/gallery/gallery-3.jpg"
                                     alt="Interior Design Salem"
                                     className="w-full h-full object-cover transition-transform duration-[4s] group-hover:scale-110"
                                 />

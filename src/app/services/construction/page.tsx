@@ -32,7 +32,7 @@ export default function ConstructionPage() {
                         animate={{ opacity: 1, y: 0 }}
                         className="text-white text-4xl lg:text-7xl font-serif font-bold leading-tight"
                     >
-                        Construction <br /><span className="text-accent underline decoration-accent/30 underline-offset-8">Company</span> <br /><span className="text-white/40">in Salem</span>
+                        Construction <br /><span className="text-accent underline decoration-accent/30 underline-offset-8">Company</span> <br /><span className="text-accent italic">in Salem</span>
                     </motion.h1>
                 </div>
             </section>
@@ -66,21 +66,31 @@ export default function ConstructionPage() {
                         </div>
 
                         <h2 className="text-primary font-serif text-3xl font-bold pt-8">The Building Lifecycle</h2>
-                        <div className="space-y-10">
-                            {[
-                                { title: "Phase 01: Groundwork", desc: "Soil testing, site clearing, and marking according to authorized blueprints." },
-                                { title: "Phase 02: Structural Frame", desc: "Foundation casting, beam reinforcement, and roofing with premium grade steel & cement." },
-                                { title: "Phase 03: Finishing", desc: "Walls, plumbing, electrical synthesis, and plastering with meticulous detail." },
-                                { title: "Phase 04: Delivery", desc: "Rigorous cleaning, final technical audit, and official handover of your Salem home." }
-                            ].map((step, i) => (
-                                <div key={i} className="flex gap-8 group">
-                                    <div className="text-accent font-serif text-3xl opacity-20 group-hover:opacity-100 transition-opacity">0{i + 1}</div>
-                                    <div className="pt-2">
-                                        <h3 className="text-primary font-serif text-xl font-bold mb-2">{step.title}</h3>
-                                        <p className="text-base text-gray-500">{step.desc}</p>
+                        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+                            <div className="space-y-10">
+                                {[
+                                    { title: "Phase 01: Groundwork", desc: "Soil testing, site clearing, and marking according to authorized blueprints." },
+                                    { title: "Phase 02: Structural Frame", desc: "Foundation casting, beam reinforcement, and roofing with premium grade steel & cement." },
+                                    { title: "Phase 03: Finishing", desc: "Walls, plumbing, electrical synthesis, and plastering with meticulous detail." },
+                                    { title: "Phase 04: Delivery", desc: "Rigorous cleaning, final technical audit, and official handover of your Salem home." }
+                                ].map((step, i) => (
+                                    <div key={i} className="flex gap-8 group">
+                                        <div className="text-accent font-serif text-3xl opacity-20 group-hover:opacity-100 transition-opacity">0{i + 1}</div>
+                                        <div className="pt-2">
+                                            <h3 className="text-primary font-serif text-xl font-bold mb-2">{step.title}</h3>
+                                            <p className="text-base text-gray-500">{step.desc}</p>
+                                        </div>
                                     </div>
-                                </div>
-                            ))}
+                                ))}
+                            </div>
+                            <div className="relative overflow-hidden group">
+                                <img
+                                    src="/images/about/about-1.jpg"
+                                    alt="Engineering Site Supervision"
+                                    className="w-full h-auto object-cover transition-all duration-1000"
+                                />
+                                <div className="absolute inset-0 bg-primary/10 pointer-events-none" />
+                            </div>
                         </div>
 
                         <div className="pt-24 border-t border-gray-100 mt-24 text-center">

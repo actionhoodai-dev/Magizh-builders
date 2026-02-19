@@ -32,7 +32,7 @@ export default function ConsultingPage() {
                         animate={{ opacity: 1, y: 0 }}
                         className="text-white text-4xl lg:text-7xl font-serif font-bold leading-tight"
                     >
-                        Construction <br /><span className="text-accent underline decoration-accent/30 underline-offset-8">Consulting</span> <br /><span className="text-white/40">in Salem</span>
+                        Construction <br /><span className="text-accent underline decoration-accent/30 underline-offset-8">Consulting</span> <br /><span className="text-accent italic">in Salem</span>
                     </motion.h1>
                 </div>
             </section>
@@ -76,18 +76,28 @@ export default function ConsultingPage() {
                         </div>
 
                         <h2 className="text-primary font-serif text-3xl font-bold pt-8 text-center lg:text-left">Strategic Advisory Services</h2>
-                        <div className="grid grid-cols-1 md:grid-cols-2 gap-10 lg:gap-16">
-                            {[
-                                { title: "Structural Audit", desc: "Independent assessment of ongoing or completed construction to ensure structural stability and load-bearing accuracy." },
-                                { title: "Economic Planning", desc: "Detailed bill of quantities (BOQ) and cost forecasting to prevent budget overruns in Salem construction projects." },
-                                { title: "Legal & Regulatory", desc: "Navigating Salem Corporation guidelines and ensuring your building's technical compliance with DTCP rules." },
-                                { title: "Technical Supervision", desc: "Periodic site visits by our expertise to verify material ratios and engineering adherence during critical phases." }
-                            ].map((service, i) => (
-                                <div key={i} className="group">
-                                    <h3 className="text-primary font-serif text-xl font-bold mb-4 group-hover:text-accent transition-colors">/ {service.title}</h3>
-                                    <p className="text-base text-gray-500">{service.desc}</p>
-                                </div>
-                            ))}
+                        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+                            <div className="grid grid-cols-1 md:grid-cols-2 gap-10 lg:gap-16">
+                                {[
+                                    { title: "Structural Audit", desc: "Independent assessment of ongoing or completed construction to ensure structural stability and load-bearing accuracy." },
+                                    { title: "Economic Planning", desc: "Detailed bill of quantities (BOQ) and cost forecasting to prevent budget overruns in Salem construction projects." },
+                                    { title: "Legal & Regulatory", desc: "Navigating Salem Corporation guidelines and ensuring your building's technical compliance with DTCP rules." },
+                                    { title: "Technical Supervision", desc: "Periodic site visits by our expertise to verify material ratios and engineering adherence during critical phases." }
+                                ].map((service, i) => (
+                                    <div key={i} className="group">
+                                        <h3 className="text-primary font-serif text-xl font-bold mb-4 group-hover:text-accent transition-colors">/ {service.title}</h3>
+                                        <p className="text-base text-gray-500">{service.desc}</p>
+                                    </div>
+                                ))}
+                            </div>
+                            <div className="relative overflow-hidden group">
+                                <img
+                                    src="/images/hero/hero-4.jpg"
+                                    alt="Structural Advisory Consultation"
+                                    className="w-full h-auto object-cover transition-all duration-1000"
+                                />
+                                <div className="absolute inset-0 bg-primary/20 mix-blend-multiply transition-opacity group-hover:opacity-0" />
+                            </div>
                         </div>
                     </div>
                 </div>

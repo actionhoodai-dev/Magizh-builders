@@ -32,7 +32,7 @@ export default function ApprovalsPage() {
                         animate={{ opacity: 1, y: 0 }}
                         className="text-white text-4xl lg:text-7xl font-serif font-bold leading-tight"
                     >
-                        Blue Prints & <span className="text-accent underline decoration-accent/30 underline-offset-8">Approvals</span> <br /><span className="text-white/40">in Salem</span>
+                        Blue Prints & <span className="text-accent underline decoration-accent/30 underline-offset-8">Approvals</span> <br /><span className="text-accent italic">in Salem</span>
                     </motion.h1>
                 </div>
             </section>
@@ -72,19 +72,29 @@ export default function ApprovalsPage() {
                         </div>
 
                         <h2 className="text-primary font-serif text-3xl font-bold pt-8">The Approval Journey</h2>
-                        <div className="space-y-12 relative border-l border-accent/20 pl-8 lg:pl-16">
-                            {[
-                                { title: "Document Collection", desc: "Gathering land records, patta, and identity proofs for Salem Corporation requirements." },
-                                { title: "Blueprint Preparation", desc: "Developing technical drawings that meet DTCP and LPA guidelines." },
-                                { title: "Online Submission", desc: "Uploading and tracking the application through official government portals." },
-                                { title: "Sanction Receipt", desc: "Final verification and obtaining the official build-permit for your project." }
-                            ].map((step, i) => (
-                                <div key={i} className="relative">
-                                    <div className="absolute -left-[41px] lg:-left-[73px] top-1 w-4 h-4 bg-accent rounded-full border-4 border-white shadow-sm" />
-                                    <h3 className="text-primary font-serif text-xl font-bold mb-2">{step.title}</h3>
-                                    <p className="text-base text-gray-500">{step.desc}</p>
-                                </div>
-                            ))}
+                        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+                            <div className="space-y-12 relative border-l border-accent/20 pl-8 lg:pl-16">
+                                {[
+                                    { title: "Document Collection", desc: "Gathering land records, patta, and identity proofs for Salem Corporation requirements." },
+                                    { title: "Blueprint Preparation", desc: "Developing technical drawings that meet DTCP and LPA guidelines." },
+                                    { title: "Online Submission", desc: "Uploading and tracking the application through official government portals." },
+                                    { title: "Sanction Receipt", desc: "Final verification and obtaining the official build-permit for your project." }
+                                ].map((step, i) => (
+                                    <div key={i} className="relative">
+                                        <div className="absolute -left-[41px] lg:-left-[73px] top-1 w-4 h-4 bg-accent rounded-full border-4 border-white shadow-sm" />
+                                        <h3 className="text-primary font-serif text-xl font-bold mb-2">{step.title}</h3>
+                                        <p className="text-base text-gray-500">{step.desc}</p>
+                                    </div>
+                                ))}
+                            </div>
+                            <div className="relative overflow-hidden group">
+                                <img
+                                    src="/images/hero/hero-2.jpg"
+                                    alt="Building Approval Documentation"
+                                    className="w-full h-auto object-cover transition-all duration-1000"
+                                />
+                                <div className="absolute inset-0 bg-primary/20 mix-blend-multiply" />
+                            </div>
                         </div>
 
                     </div>
