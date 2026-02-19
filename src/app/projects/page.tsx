@@ -124,7 +124,7 @@ function ProjectItem({ project }: { project: any }) {
                     <img
                         src={project.image}
                         alt={project.title}
-                        className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-[1.5s] group-hover:scale-105"
+                        className="w-full h-full object-cover transition-all duration-[1.5s] group-hover:scale-105"
                     />
                     {/* Architectural Overlay Lines */}
                     <div className="absolute inset-0 border-t border-white/30 translate-y-[-100%] group-hover:translate-y-0 transition-transform duration-1000 delay-300 pointer-events-none" />

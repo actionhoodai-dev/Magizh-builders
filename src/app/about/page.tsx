@@ -80,10 +80,10 @@ export default function About() {
                         </div>
 
                         {/* Feature Narrative Image */}
-                        <div className="mb-16 relative aspect-[16/9] lg:aspect-[21/9] bg-gray-100 overflow-hidden shadow-2xl">
+                        <div className="mb-16 relative aspect-[16/9] lg:aspect-[21/9] bg-gray-100 overflow-hidden">
                             <img
                                 src="/images/about/about-1.jpg"
-                                className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-1000"
+                                className="w-full h-full object-cover transition-all duration-1000"
                                 alt="Construction Company in Salem - Project Site"
                             />
                             {/* Structural Frame Overlay */}

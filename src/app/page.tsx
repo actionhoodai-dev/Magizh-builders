@@ -125,14 +125,14 @@ export default function HomePage() {
                   Vastu compliance, and mathematical perfection.
                 </p>
                 <div className="grid grid-cols-2 gap-8 pt-4">
-                   <div>
-                      <p className="text-primary font-black uppercase text-[10px] tracking-[0.2em] mb-1">Lead Engineer</p>
-                      <p className="text-accent font-serif italic text-sm">Er. S. P. Hari Baaskar</p>
-                   </div>
-                   <div>
-                      <p className="text-primary font-black uppercase text-[10px] tracking-[0.2em] mb-1">Registration</p>
-                      <p className="text-accent font-serif italic text-sm">A1 Class Contractor</p>
-                   </div>
+                  <div>
+                    <p className="text-primary font-black uppercase text-[10px] tracking-[0.2em] mb-1">Lead Engineer</p>
+                    <p className="text-accent font-serif italic text-sm">Er. S. P. Hari Baaskar</p>
+                  </div>
+                  <div>
+                    <p className="text-primary font-black uppercase text-[10px] tracking-[0.2em] mb-1">Registration</p>
+                    <p className="text-accent font-serif italic text-sm">A1 Class Contractor</p>
+                  </div>
                 </div>
               </div>
             </motion.div>
@@ -211,7 +211,7 @@ export default function HomePage() {
                 <img
                   src="/images/about/about-1.jpg"
                   alt="Magizh Builders Engineering Site Supervision"
-                  className="w-full h-auto grayscale hover:grayscale-0 transition-all duration-1000 shadow-2xl"
+                  className="w-full h-auto transition-all duration-1000"
                 />
               </motion.div>
               <div className="absolute -top-12 -right-12 w-64 h-64 bg-accent/5 rounded-full blur-3xl -z-10" />
@@ -270,11 +270,11 @@ export default function HomePage() {
 
           <div className="grid lg:grid-cols-12 gap-8">
             <div className="lg:col-span-8 overflow-hidden group">
-              <img src="/images/projects/project-1.jpg" className="w-full h-[600px] object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-[2s]" alt="Premium Villa in Salem" />
+              <img src="/images/projects/project-1.jpg" className="w-full h-[600px] object-cover group-hover:scale-105 transition-all duration-[2s]" alt="Premium Villa in Salem" />
             </div>
             <div className="lg:col-span-4 grid grid-rows-2 gap-8">
               <div className="overflow-hidden group">
-                <img src="/images/gallery/gallery-4.jpg" className="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-[2s]" alt="Modern Interior Salem" />
+                <img src="/images/gallery/gallery-4.jpg" className="w-full h-full object-cover group-hover:scale-105 transition-all duration-[2s]" alt="Modern Interior Salem" />
               </div>
               <div className="bg-accent p-12 flex flex-col justify-center text-primary group hover:bg-primary transition-all duration-500">
                 <Star className="mb-6 group-hover:text-accent" size={32} />
@@ -292,7 +292,7 @@ export default function HomePage() {
         <div className="container mx-auto px-6 lg:px-24">
           <div className="grid lg:grid-cols-2 gap-24 items-center">
             <div className="relative">
-              <img src="/images/hero/hero-3.jpg" className="w-full h-auto shadow-2xl" alt="Engineering Excellence" />
+              <img src="/images/hero/hero-3.jpg" className="w-full h-auto" alt="Engineering Excellence" />
               <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-48 h-48 bg-accent/90 backdrop-blur-md rounded-full flex items-center justify-center p-8 text-center border-8 border-white">
                 <p className="text-primary font-serif font-black text-sm uppercase leading-tight tracking-widest">Salem's Number One Choice</p>
               </div>

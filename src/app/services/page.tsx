@@ -236,7 +236,7 @@ export default function ServicesPage() {
                                     </p>
                                 </div>
                                 <div className="order-1 md:order-2 bg-primary p-1">
-                                    <img src="/images/gallery/gallery-3.jpg" className="w-full h-auto grayscale hover:grayscale-0 transition-all duration-700" alt="Interior Design Excellence" />
+                                    <img src="/images/gallery/gallery-3.jpg" className="w-full h-auto transition-all duration-700" alt="Interior Design Excellence" />
                                 </div>
                             </div>
 
