@@ -44,99 +44,100 @@ export default function HomePage() {
         </motion.div>
 
         <div className="container mx-auto px-6 lg:px-24 relative z-10">
-          <div className="grid lg:grid-cols-[1.5fr_1fr] gap-12 items-center">
-            <motion.div
-              initial={{ opacity: 0, x: -50 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8 }}
-            >
-              <div className="flex flex-col gap-6 mb-8">
-                <span className="text-accent text-xs font-black uppercase tracking-[0.5em] bg-accent/10 w-fit px-4 py-2 border-l-2 border-accent">Architectural Excellence</span>
-                <h1 className="text-white text-5xl sm:text-7xl lg:text-9xl font-serif font-black leading-tight tracking-tighter">
-                  Magizh <br /><span className="text-accent italic">Builders</span>
-                </h1>
-              </div>
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            className="max-w-4xl pt-12"
+          >
+            <div className="flex flex-col gap-6 mb-8">
+              <span className="text-accent text-xs font-black uppercase tracking-[0.5em] bg-accent/10 w-fit px-4 py-2 border-l-2 border-accent">Architectural Excellence</span>
+              <h1 className="text-white text-6xl sm:text-8xl lg:text-9xl font-serif font-black leading-tight tracking-tighter">
+                Magizh <br /><span className="text-accent italic">Builders</span>
+              </h1>
+            </div>
 
-              <h2 className="text-white text-2xl sm:text-3xl lg:text-4xl font-serif font-bold mb-10 leading-snug">
-                Engineering <span className="text-accent italic">Salem's</span> Civil Legacy With Mathematical Precision.
-              </h2>
+            <h2 className="text-white text-2xl sm:text-3xl lg:text-4xl font-serif font-bold mb-10 leading-snug max-w-3xl">
+              Engineering <span className="text-accent italic">Salem's</span> Civil Legacy With Mathematical Precision.
+            </h2>
 
-              <p className="text-white/60 text-lg lg:text-2xl font-sans mb-12 max-w-2xl leading-relaxed">
-                As a premier <strong>construction company in Salem</strong>, Magizh Builders bridges the gap between creative architectural visions and
-                mathematically perfect structural execution. Built by <strong>Er. S. P. Hari Baaskar</strong>, we deliver homes that stand the test of time.
-              </p>
+            <p className="text-white/60 text-lg lg:text-2xl font-sans mb-12 max-w-2xl leading-relaxed">
+              As a premier <strong>construction company in Salem</strong>, Magizh Builders bridges the gap between creative architectural visions and
+              mathematically perfect structural execution. Built by <strong>Er. S. P. Hari Baaskar</strong>, we deliver homes that stand the test of time.
+            </p>
 
-              <div className="flex flex-col sm:flex-row gap-8">
-                <Link
-                  href="/contact"
-                  className="inline-flex items-center justify-center px-12 py-6 bg-accent text-primary font-black uppercase tracking-[0.3em] text-xs hover:bg-white transition-all duration-500 shadow-2xl"
-                >
-                  Start Your Evolution
-                </Link>
-                <Link
-                  href="/projects"
-                  className="inline-flex items-center justify-center px-12 py-6 border-2 border-white/20 text-white font-bold uppercase tracking-[0.3em] text-xs hover:bg-white hover:text-primary transition-all duration-500 backdrop-blur-sm"
-                >
-                  View Our Mastery
-                </Link>
-              </div>
-            </motion.div>
-
-            {/* Premium Circular Logo Showcase */}
-            <motion.div
-              initial={{ opacity: 0, scale: 0.9, y: 20 }}
-              animate={{ opacity: 1, scale: 1, y: 0 }}
-              transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
-              className="flex flex-col items-center justify-center relative group order-first lg:order-last mb-16 lg:mb-0"
-            >
-              {/* Soft Ambient Glow */}
-              <div className="absolute inset-0 bg-accent/20 blur-[100px] rounded-full opacity-40 group-hover:opacity-60 transition-opacity duration-1000" />
-
-              <motion.div
-                animate={{
-                  y: [0, -10, 0],
-                }}
-                transition={{
-                  duration: 5,
-                  repeat: Infinity,
-                  ease: "easeInOut"
-                }}
-                className="relative"
+            <div className="flex flex-col sm:flex-row gap-8">
+              <Link
+                href="/contact"
+                className="inline-flex items-center justify-center px-12 py-6 bg-accent text-primary font-black uppercase tracking-[0.3em] text-xs hover:bg-white transition-all duration-500 shadow-2xl"
               >
-                {/* The Circular Placeholder (Profile-style) */}
-                <div className="w-[280px] h-[280px] lg:w-[480px] lg:h-[480px] bg-white rounded-full flex items-center justify-center shadow-[0_40px_100px_-15px_rgba(0,0,0,0.3)] border-[8px] lg:border-[16px] border-white/10 relative overflow-hidden p-10 lg:p-16">
-                  {/* Subtle inner shadow for depth */}
-                  <div className="absolute inset-0 shadow-[inset_0_2px_20px_rgba(0,0,0,0.05)] rounded-full" />
-
-                  <img
-                    src="/images/logo-full.png"
-                    alt="Magizh Builders Official Logo"
-                    className="w-full h-auto relative z-10 drop-shadow-sm"
-                  />
-                </div>
-
-                {/* Technical Corner Markers (Adapted for the Circle) */}
-                <div className="absolute -top-4 -left-4 w-12 h-12 border-t-[1px] border-l-[1px] border-accent/30 rounded-tl-3xl" />
-                <div className="absolute -bottom-4 -right-4 w-12 h-12 border-b-[1px] border-r-[1px] border-accent/30 rounded-br-3xl" />
-              </motion.div>
-
-              {/* Floating Engineering Badge */}
-              <motion.div
-                initial={{ opacity: 0, x: 20 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ delay: 1, duration: 1 }}
-                className="absolute -bottom-6 lg:-bottom-8 right-0 lg:-right-4 bg-primary/90 backdrop-blur-xl border border-accent/30 px-6 py-3 rounded-2xl shadow-xl z-20 flex flex-col gap-0.5 sm:visible invisible"
+                Start Your Evolution
+              </Link>
+              <Link
+                href="/projects"
+                className="inline-flex items-center justify-center px-12 py-6 border-2 border-white/20 text-white font-bold uppercase tracking-[0.3em] text-xs hover:bg-white hover:text-primary transition-all duration-500 backdrop-blur-sm"
               >
-                <span className="text-white text-[8px] uppercase font-black tracking-[0.4em] opacity-50">Authorized By</span>
-                <span className="text-accent text-xs font-serif font-bold italic tracking-wide">Er. S. P. Hari Baaskar</span>
-              </motion.div>
-            </motion.div>
-          </div>
+                View Our Mastery
+              </Link>
+            </div>
+          </motion.div>
         </div>
 
         {/* Decorative Grid Overlay */}
         <div className="absolute inset-0 z-10 opacity-[0.05] pointer-events-none"
           style={{ backgroundImage: 'linear-gradient(#fff 1px, transparent 1px), linear-gradient(90deg, #fff 1px, transparent 1px)', backgroundSize: '100px 100px' }} />
+      </section>
+
+      {/* 🏛️ BRANDING SHOWCASE SECTION */}
+      <section className="py-24 bg-white overflow-hidden border-b border-gray-100">
+        <div className="container mx-auto px-6 lg:px-24">
+          <div className="flex flex-col lg:flex-row items-center justify-between gap-16 lg:gap-32">
+            <motion.div
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              className="flex-1"
+            >
+              <img
+                src="/images/logo-full.png"
+                alt="Magizh Builders - Official Brand Identity"
+                className="w-full max-w-[500px] h-auto mx-auto lg:mx-0 drop-shadow-xl"
+              />
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, x: 30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              className="flex-1 max-w-2xl"
+            >
+              <div className="space-y-8">
+                <div className="flex items-center gap-4">
+                  <div className="h-[1px] w-12 bg-accent" />
+                  <span className="text-accent text-xs font-black uppercase tracking-[0.3em]">Corporate Identity</span>
+                </div>
+                <h2 className="text-primary text-4xl lg:text-5xl font-serif font-bold leading-tight">
+                  The Mark of <br /><span className="text-accent italic">Technical Authority</span>
+                </h2>
+                <p className="text-gray-500 text-lg leading-relaxed">
+                  Our symbol represents the synergy of traditional wisdom and modern civil engineering.
+                  Every project we undertake carries this seal as a guarantee of structural integrity,
+                  Vastu compliance, and mathematical perfection.
+                </p>
+                <div className="grid grid-cols-2 gap-8 pt-4">
+                   <div>
+                      <p className="text-primary font-black uppercase text-[10px] tracking-[0.2em] mb-1">Lead Engineer</p>
+                      <p className="text-accent font-serif italic text-sm">Er. S. P. Hari Baaskar</p>
+                   </div>
+                   <div>
+                      <p className="text-primary font-black uppercase text-[10px] tracking-[0.2em] mb-1">Registration</p>
+                      <p className="text-accent font-serif italic text-sm">A1 Class Contractor</p>
+                   </div>
+                </div>
+              </div>
+            </motion.div>
+          </div>
+        </div>
       </section>
 
       {/* 📊 SECTION 2 – TRUST METRICS (Impact at a Glance) */}
