@@ -119,28 +119,82 @@ export default function Contact() {
                         </div>
                     </motion.div>
 
-                    {/* Right: Narrative CTA */}
+                    {/* Right: Enquiry Form - Architectural Interface */}
                     <motion.div
                         initial={{ opacity: 0, x: 30 }}
                         animate={{ opacity: 1, x: 0 }}
                         transition={{ delay: 0.5, duration: 1 }}
-                        className="w-full lg:w-1/3 flex flex-col justify-center text-center lg:text-left"
+                        className="w-full lg:w-2/5 bg-gray-50 p-8 lg:p-16 border border-gray-100 relative group shadow-2xl"
                     >
-                        <h3 className="text-3xl lg:text-5xl font-serif text-primary leading-tight mb-8 lg:mb-12">
-                            Transforming <br />
-                            abstract concepts <br />
-                            into <span className="italic text-accent">reality.</span>
-                        </h3>
-                        <p className="text-gray-500 font-sans leading-relaxed text-base lg:text-lg mb-12">
-                            We are currently accepting new commissions for premium residential projects. Let's discuss your architectural requirements with structural precision.
-                        </p>
-                        <div className="w-20 lg:w-32 h-[1px] bg-accent mb-12 mx-auto lg:mx-0" />
-                        <div>
-                            <p className="text-[10px] tracking-[0.2em] uppercase text-gray-400 font-bold mb-4">Availability</p>
-                            <p className="text-xs lg:text-sm font-sans text-gray-400 uppercase tracking-[0.2em] leading-loose">
-                                Monday — Saturday <br />
-                                09:00 AM — 07:00 PM IST
-                            </p>
+                        <div className="absolute top-0 right-0 w-16 h-16 border-t-[1px] border-r-[1px] border-accent/20 -translate-x-2 translate-y-2 pointer-events-none" />
+
+                        <div className="mb-10 text-center lg:text-left">
+                            <h3 className="text-2xl lg:text-3xl font-serif text-primary font-bold mb-4 italic">Project Enquiry</h3>
+                            <p className="text-sm text-gray-500 font-medium">Send us your structural requirements for a technical audit.</p>
+                        </div>
+
+                        <form className="space-y-6">
+                            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                <div className="space-y-2">
+                                    <label className="text-[9px] uppercase tracking-widest font-black text-gray-400">Full Name</label>
+                                    <input
+                                        type="text"
+                                        placeholder="John Doe"
+                                        className="w-full bg-white border border-gray-200 px-6 py-4 text-sm font-sans focus:outline-none focus:border-accent transition-all placeholder:text-gray-300"
+                                    />
+                                </div>
+                                <div className="space-y-2">
+                                    <label className="text-[9px] uppercase tracking-widest font-black text-gray-400">Phone Number</label>
+                                    <input
+                                        type="tel"
+                                        placeholder="+91 00000 00000"
+                                        className="w-full bg-white border border-gray-200 px-6 py-4 text-sm font-sans focus:outline-none focus:border-accent transition-all placeholder:text-gray-300"
+                                    />
+                                </div>
+                            </div>
+
+                            <div className="space-y-2">
+                                <label className="text-[9px] uppercase tracking-widest font-black text-gray-400">Email Address</label>
+                                <input
+                                    type="email"
+                                    placeholder="john@example.com"
+                                    className="w-full bg-white border border-gray-200 px-6 py-4 text-sm font-sans focus:outline-none focus:border-accent transition-all placeholder:text-gray-300"
+                                />
+                            </div>
+
+                            <div className="space-y-2">
+                                <label className="text-[9px] uppercase tracking-widest font-black text-gray-400">Inquiry Type</label>
+                                <select className="w-full bg-white border border-gray-200 px-6 py-4 text-sm font-sans focus:outline-none focus:border-accent transition-all text-gray-500 appearance-none">
+                                    <option>Select Service</option>
+                                    <option>Bespoke Villa Construction</option>
+                                    <option>2D & 3D Architectural Drawings</option>
+                                    <option>Building Approvals & Sanctions</option>
+                                    <option>Luxury Interior Designing</option>
+                                    <option>Structural Consulting</option>
+                                </select>
+                            </div>
+
+                            <div className="space-y-2">
+                                <label className="text-[9px] uppercase tracking-widest font-black text-gray-400">Message / Requirements</label>
+                                <textarea
+                                    rows={4}
+                                    placeholder="Briefly describe your dream project..."
+                                    className="w-full bg-white border border-gray-200 px-6 py-4 text-sm font-sans focus:outline-none focus:border-accent transition-all placeholder:text-gray-300 resize-none"
+                                ></textarea>
+                            </div>
+
+                            <button
+                                type="submit"
+                                className="w-full bg-primary text-white py-6 text-[10px] tracking-[0.4em] font-black uppercase hover:bg-accent transition-all shadow-2xl relative overflow-hidden group"
+                            >
+                                <span className="relative z-10">Initialize Proposal</span>
+                                <div className="absolute inset-0 bg-white/10 -translate-x-full group-hover:translate-x-0 transition-transform duration-500" />
+                            </button>
+                        </form>
+
+                        <div className="mt-12 pt-8 border-t border-gray-200 flex items-center justify-between text-[9px] font-black uppercase tracking-widest text-gray-400">
+                            <div>Mon-Sat: 09AM-07PM</div>
+                            <div className="text-accent italic">Salem, TN</div>
                         </div>
                     </motion.div>
 
