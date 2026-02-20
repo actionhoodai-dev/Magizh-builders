@@ -201,6 +201,37 @@ export default function Contact() {
                 </div>
             </section>
 
+            {/* 📍 GEOGRAPHIC ANCHOR - GOOGLE MAPS EMBED */}
+            <section className="bg-gray-50 py-20 lg:py-32 px-6 lg:px-24 border-t border-gray-100">
+                <div className="max-w-7xl mx-auto">
+                    <motion.div
+                        initial={{ opacity: 0, y: 30 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        className="relative w-full h-[450px] lg:h-[600px] shadow-2xl border-8 border-white group overflow-hidden"
+                    >
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3907.2611480962073!2d78.11938897505532!3d11.675895488532891!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3babf04a6fffdbb7%3A0xea649dc90cb2ade0!2sMagizh%20Builders!5e0!3m2!1sen!2sin!4v1771557671349!5m2!1sen!2sin"
+                            width="100%"
+                            height="100%"
+                            style={{ border: 0 }}
+                            allowFullScreen={true}
+                            loading="lazy"
+                            referrerPolicy="no-referrer-when-downgrade"
+                            className="transition-all duration-1000 contrast-[1.1]"
+                        ></iframe>
+                        {/* Architectural Overlay Decoration */}
+                        <div className="absolute top-0 left-0 w-32 h-32 border-t border-l border-accent/20 translate-x-4 translate-y-4 pointer-events-none" />
+                        <div className="absolute bottom-0 right-0 w-32 h-32 border-b border-r border-accent/20 -translate-x-4 -translate-y-4 pointer-events-none" />
+                    </motion.div>
+
+                    <div className="mt-12 text-center">
+                        <p className="text-[10px] tracking-[0.5em] uppercase text-gray-400 font-bold mb-4">Strategic Location</p>
+                        <h4 className="text-primary font-serif text-2xl font-bold italic">Visit Our Headquarters in Salem</h4>
+                    </div>
+                </div>
+            </section>
+
         </div>
     );
 }
