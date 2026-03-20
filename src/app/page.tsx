@@ -127,7 +127,7 @@ export default function HomePage() {
                 <h2 className="text-primary text-4xl lg:text-5xl font-serif font-bold leading-tight">
                   The Mark of <br /><span className="text-accent italic">Technical Authority</span>
                 </h2>
-                <p className="text-gray-500 text-lg leading-relaxed">
+                <p className="text-gray-500 text-lg leading-relaxed text-justify">
                   Our symbol represents the synergy of traditional wisdom and modern civil engineering.
                   Every project we undertake carries this seal as a guarantee of structural integrity,
                   Vastu compliance, and mathematical perfection.
@@ -188,12 +188,12 @@ export default function HomePage() {
               </h2>
               <div className="w-24 h-1.5 bg-accent mb-12" />
               <div className="space-y-8 text-gray-500 text-lg lg:text-xl font-sans leading-relaxed">
-                <p>
+                <p className="text-justify">
                   MAGIZH BUILDERS is not just a <strong>construction company</strong>; we are technical guardians of your architectural dreams. Led by {" "}
                   <strong>Er. S. P. Hari Baaskar, M.E.</strong>, our firm operates on the intersection of deep engineering traditions and modern
                   smart-home technologies.
                 </p>
-                <p>
+                <p className="text-justify">
                   In a City where average construction is common, we pursue excellence through rigorous <strong>structural audits</strong>, premium
                   material sourcing, and a commitment to 100% Vastu-compliant layouts.
                 </p>
