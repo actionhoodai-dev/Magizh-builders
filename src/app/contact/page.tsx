@@ -66,14 +66,14 @@ export default function Contact() {
 
                         <div className="mb-12 lg:mb-20">
                             <h2 className="text-3xl lg:text-4xl font-serif text-primary mb-2 font-bold italic">Er. S. P. Hari Baaskar</h2>
-                            <p className="text-[9px] tracking-[0.4em] uppercase text-accent font-bold">Registered Structural Engineer</p>
+                            <p className="text-[9px] tracking-[0.4em] uppercase text-accent font-bold">Registered Civil Engineer</p>
                         </div>
 
                         <div className="space-y-12 lg:space-y-16">
                             <div className="flex gap-8 lg:gap-12 items-start">
                                 <MapPin size={24} className="text-accent shrink-0 mt-1" />
                                 <div>
-                                    <h4 className="text-[10px] tracking-[0.2em] uppercase text-gray-400 font-bold mb-4">Central Studios</h4>
+
                                     <p className="text-lg lg:text-xl text-primary font-serif leading-relaxed">
                                         46/2, 1st Floor, Swamy Towers, <br />
                                         Mayor Nagar, Peramanur, <br />
@@ -85,7 +85,7 @@ export default function Contact() {
                             <div className="flex gap-8 lg:gap-12 items-start">
                                 <Phone size={24} className="text-accent shrink-0 mt-1" />
                                 <div>
-                                    <h4 className="text-[10px] tracking-[0.2em] uppercase text-gray-400 font-bold mb-4">Project Synthesis</h4>
+
                                     <p className="text-lg lg:text-2xl text-primary font-serif tracking-tighter">
                                         +91 87547 64403 <br />
                                         +91 78670 18940
@@ -96,7 +96,7 @@ export default function Contact() {
                             <div className="flex gap-8 lg:gap-12 items-start">
                                 <Mail size={24} className="text-accent shrink-0 mt-1" />
                                 <div>
-                                    <h4 className="text-[10px] tracking-[0.2em] uppercase text-gray-400 font-bold mb-4">Digital Archives</h4>
+
                                     <p className="text-lg lg:text-xl text-primary font-serif italic border-b border-accent/20 pb-1">magizhbuilder@gmail.com</p>
                                 </div>
                             </div>
