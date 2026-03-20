@@ -65,7 +65,7 @@ export default function HomePage() {
               </h2>
             </div>
 
-            <p className="text-white/60 text-lg lg:text-2xl font-sans mb-12 max-w-2xl leading-relaxed">
+            <p className="text-white/60 text-lg lg:text-2xl font-sans mb-12 max-w-2xl leading-relaxed text-justify">
               As a premier <strong>construction company</strong>, MAGIZH BUILDERS bridges the gap between creative architectural visions and
               mathematically perfect structural execution. Built by <strong>Er. S. P. Hari Baaskar</strong>, we deliver homes that stand the test of time.
             </p>
