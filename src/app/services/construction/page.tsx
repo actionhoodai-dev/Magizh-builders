@@ -32,7 +32,7 @@ export default function ConstructionPage() {
                         animate={{ opacity: 1, y: 0 }}
                         className="text-white text-4xl lg:text-7xl font-serif font-bold leading-tight"
                     >
-                        Construction <br /><span className="text-accent underline decoration-accent/30 underline-offset-8">Company</span> <br /><span className="text-accent italic">in Salem</span>
+                        Construction <br /><span className="text-accent underline decoration-accent/30 underline-offset-8">Company</span> <br /><span className="text-accent italic">Services</span>
                     </motion.h1>
                 </div>
             </section>
@@ -42,13 +42,13 @@ export default function ConstructionPage() {
                 <div className="max-w-[850px] mx-auto">
                     <div className="space-y-12 text-gray-500 font-sans text-lg lg:text-xl leading-relaxed">
                         <p>
-                            As a premier <strong>construction company in Salem</strong>, Magizh Builders transforms architectural dreams into concrete reality. We specialize in turnkey residential building and luxury villa construction, merging high-grade materials with rigorous engineering supervision.
+                            As a premier <strong>construction company</strong>, MAGIZH BUILDERS transforms architectural dreams into concrete reality. We specialize in turnkey residential building and luxury villa construction, merging high-grade materials with rigorous engineering supervision.
                         </p>
 
                         <div className="bg-gray-50 border-y-2 border-accent/20 py-20 px-8 lg:px-16 text-center">
                             <h2 className="text-primary font-serif text-3xl lg:text-4xl mb-6 font-bold uppercase tracking-tight italic">Engineering-Led execution</h2>
                             <p className="max-w-2xl mx-auto mb-12 text-gray-400">
-                                Guided by the expertise of <strong>Er. S. P. Hari Baaskar</strong>, every site we manage in Salem undergoes multi-point structural quality audits.
+                                Guided by the expertise of <strong>Er. S. P. Hari Baaskar</strong>, every site we manage undergoes multi-point structural quality audits.
                             </p>
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 text-left">
                                 {[
@@ -72,7 +72,7 @@ export default function ConstructionPage() {
                                     { title: "Phase 01: Groundwork", desc: "Soil testing, site clearing, and marking according to authorized blueprints." },
                                     { title: "Phase 02: Structural Frame", desc: "Foundation casting, beam reinforcement, and roofing with premium grade steel & cement." },
                                     { title: "Phase 03: Finishing", desc: "Walls, plumbing, electrical synthesis, and plastering with meticulous detail." },
-                                    { title: "Phase 04: Delivery", desc: "Rigorous cleaning, final technical audit, and official handover of your Salem home." }
+                                    { title: "Phase 04: Delivery", desc: "Rigorous cleaning, final technical audit, and official handover of your home." }
                                 ].map((step, i) => (
                                     <div key={i} className="flex gap-8 group">
                                         <div className="text-accent font-serif text-3xl opacity-20 group-hover:opacity-100 transition-opacity">0{i + 1}</div>

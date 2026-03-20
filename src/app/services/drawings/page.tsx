@@ -32,7 +32,7 @@ export default function DrawingsPage() {
                         animate={{ opacity: 1, y: 0 }}
                         className="text-white text-4xl lg:text-7xl font-serif font-bold leading-tight"
                     >
-                        2D & 3D Drawings <br /><span className="text-accent italic">in Salem</span>
+                        2D & 3D Drawings <br /><span className="text-accent italic">Services</span>
                     </motion.h1>
                 </div>
             </section>
@@ -42,7 +42,7 @@ export default function DrawingsPage() {
                 <div className="max-w-[850px] mx-auto">
                     <div className="space-y-12 text-gray-500 font-sans text-lg lg:text-xl leading-relaxed">
                         <p>
-                            At Magizh Builders, we believe that every great structure begins with a mathematically precise and visually compelling draft. Our <strong>2D & 3D drawings in Salem</strong> provide homeowners and developers with a clear architectural roadmap before any ground is broken.
+                            At Magizh Builders, we believe that every great structure begins with a mathematically precise and visually compelling draft. Our <strong>2D & 3D drawings</strong> provide homeowners and developers with a clear architectural roadmap before any ground is broken.
                         </p>
 
                         <div className="bg-gray-50 p-10 lg:p-16 border-l-4 border-accent">
@@ -70,7 +70,7 @@ export default function DrawingsPage() {
                         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
                             <div className="space-y-12 relative before:absolute before:left-4 before:top-2 before:bottom-2 before:w-[1px] before:bg-accent/20">
                                 {[
-                                    { title: "Site Analysis", desc: "We study your plot in Salem to understand topography, orientation, and legal boundaries." },
+                                    { title: "Site Analysis", desc: "We study your plot to understand topography, orientation, and legal boundaries." },
                                     { title: "2D Floor Planning", desc: "Drafting the skeleton of your home with focus on Vastu, ventilation, and functional efficiency." },
                                     { title: "3D Visualization", desc: "Creating realistic 3D renderings to help you experience the textures, light, and depth of your future home." },
                                     { title: "Final Technical Drafts", desc: "Producing the final structural and working drawings required for on-site engineering execution." }

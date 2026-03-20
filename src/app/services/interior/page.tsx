@@ -32,7 +32,7 @@ export default function InteriorPage() {
                         animate={{ opacity: 1, y: 0 }}
                         className="text-white text-4xl lg:text-7xl font-serif font-bold leading-tight"
                     >
-                        Interior <br /><span className="text-accent underline decoration-accent/30 underline-offset-8">Designing</span> <br /><span className="text-accent italic">in Salem</span>
+                        Interior <br /><span className="text-accent underline decoration-accent/30 underline-offset-8">Designing</span> <br /><span className="text-accent italic">Services</span>
                     </motion.h1>
                 </div>
             </section>
@@ -42,14 +42,14 @@ export default function InteriorPage() {
                 <div className="max-w-[850px] mx-auto">
                     <div className="space-y-12 text-gray-500 font-sans text-lg lg:text-xl leading-relaxed">
                         <p>
-                            Beyond structural integrity, we focus on the soul of your home. Our <strong>interior designing in Salem</strong> services merge functional ergonomics with premium architectural aesthetics, creating living spaces that reflect your personality and prestige.
+                            Beyond structural integrity, we focus on the soul of your home. Our <strong>interior designing</strong> services merge functional ergonomics with premium architectural aesthetics, creating living spaces that reflect your personality and prestige.
                         </p>
 
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-stretch">
                             <div className="bg-[#FDFCFB] p-10 border border-gray-100 flex flex-col justify-center">
                                 <h2 className="text-primary font-serif text-3xl mb-6 font-bold italic">Bespoke Aesthetics</h2>
                                 <p className="text-base mb-8">
-                                    We don't believe in templates. Every interior project in Salem is treated as a unique canvas where we balance light, texture, and structural geometry.
+                                    We don't believe in templates. Every interior project is treated as a unique canvas where we balance light, texture, and structural geometry.
                                 </p>
                                 <ul className="space-y-4">
                                     {[
@@ -57,7 +57,6 @@ export default function InteriorPage() {
                                         "Modular Kitchen (Hettich Fittings)",
                                         "Gypsum False Ceiling & LED",
                                         "Italian Marble & Granite Flooring",
-                                        "Traditional Pooja Room Design",
                                         "Custom Wardrobes (Plywood/Veneer)"
                                     ].map((item, i) => (
                                         <li key={i} className="flex items-center gap-3 text-sm font-bold uppercase tracking-widest text-primary/80">
@@ -69,7 +68,7 @@ export default function InteriorPage() {
                             <div className="bg-gray-100 relative overflow-hidden group">
                                 <img
                                     src="/images/gallery/gallery-3.jpg"
-                                    alt="Interior Design Salem"
+                                    alt="Interior Design"
                                     className="w-full h-full object-cover transition-transform duration-[4s] group-hover:scale-110"
                                 />
                                 <div className="absolute inset-0 bg-primary/20 mix-blend-multiply" />
@@ -79,7 +78,7 @@ export default function InteriorPage() {
                         <h2 className="text-primary font-serif text-3xl font-bold pt-8">Design Philosophy</h2>
                         <div className="space-y-12">
                             {[
-                                { title: "Functional Ergonomics", desc: "Designing layouts that prioritize ease of movement and furniture utility within Salem's typical residential footprints." },
+                                { title: "Functional Ergonomics", desc: "Designing layouts that prioritize ease of movement and furniture utility within typical residential footprints." },
                                 { title: "Material Excellence", desc: "Sourcing premium veneers, marbles, and finishes that offer both visual luxury and long-term durability." },
                                 { title: "Lighting Synthesis", desc: "Expert placement of natural and artificial light sources to enhance structural depth and daily mood." }
                             ].map((value, i) => (

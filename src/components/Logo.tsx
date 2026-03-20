@@ -3,19 +3,19 @@
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 
-export default function Logo({ size = 180, animated = true }: { size?: number, animated?: boolean }) {
+export default function Logo({ size = 180, animated = true, className = "" }: { size?: number, animated?: boolean, className?: string }) {
     return (
         <motion.div
             initial={animated ? { opacity: 0, scale: 0.8 } : { opacity: 1, scale: 1 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-            className="relative flex flex-col items-center justify-center"
+            className={`relative flex flex-col items-center justify-center ${className}`}
             style={{ width: size, height: size * 1.2 }}
         >
             <div className="relative w-full h-full">
                 <Image
                     src="/images/logo-full.png"
-                    alt="Magizh Builders Logo"
+                    alt="MAGIZH BUILDERS Logo"
                     fill
                     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                     className="object-contain"

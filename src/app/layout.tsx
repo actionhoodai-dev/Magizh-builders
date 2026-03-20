@@ -17,7 +17,7 @@ const playfair = Playfair_Display({
 });
 
 export const metadata: Metadata = {
-  title: "Magizh Builders | Premium Residential & Villa Construction",
+  title: "MAGIZH BUILDERS | Premium Residential & Villa Construction",
   description: "World-class architectural excellence in villa construction and residential projects.",
 };
 

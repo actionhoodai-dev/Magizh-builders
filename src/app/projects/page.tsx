@@ -6,7 +6,7 @@ import Link from 'next/link';
 const projects = [
     {
         title: "The Ivory Villa",
-        location: "Fairlands, Salem",
+        location: "Fairlands",
         image: "/images/projects/project-1.jpg",
         size: "4,500 Sq. Ft.",
         status: "Completed",
@@ -22,7 +22,7 @@ const projects = [
     },
     {
         title: "Structural Courtyard",
-        location: "Peramanur, Salem",
+        location: "Peramanur",
         image: "/images/projects/project-3.jpg",
         size: "5,800 Sq. Ft.",
         status: "Completed",

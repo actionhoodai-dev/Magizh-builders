@@ -20,7 +20,7 @@ export default function Footer() {
                         <div className="bg-white p-2 w-12 h-12 flex items-center justify-center overflow-hidden">
                             <img
                                 src="/images/mb.jpeg"
-                                alt="Magizh Builders Logo"
+                                alt="MAGIZH BUILDERS Logo"
                                 className="w-full h-full object-contain"
                             />
                         </div>
@@ -30,7 +30,7 @@ export default function Footer() {
                         </div>
                     </Link>
                     <p className="max-w-sm text-white/70 font-sans leading-relaxed tracking-wide text-xs">
-                        Magizh Builders is a premier <strong>construction company in Salem</strong> dedicated to high-precision engineering and bespoke architectural aesthetics for residential and villa projects.
+                        MAGIZH BUILDERS is a premier <strong>construction company</strong> dedicated to high-precision engineering and bespoke architectural aesthetics for residential and villa projects.
                     </p>
                 </div>
 
@@ -60,7 +60,7 @@ export default function Footer() {
                     <ul className="flex flex-col gap-4 text-xs font-light text-white/80">
                         <li className="flex flex-col gap-1">
                             <span className="text-accent text-[8px] uppercase tracking-widest font-bold">Main Office</span>
-                            <span className="leading-tight opacity-90">Mayor Nagar, Peramanur, Salem – 636007</span>
+                            <span className="leading-tight opacity-90">Mayor Nagar, Peramanur – 636007</span>
                         </li>
                         <li className="flex flex-col gap-1">
                             <span className="text-accent text-[8px] uppercase tracking-widest font-bold">Project Desk</span>
@@ -71,7 +71,7 @@ export default function Footer() {
             </div>
 
             <div className="max-w-7xl mx-auto px-6 lg:px-12 mt-16 pt-6 border-t border-white/10 flex flex-col sm:flex-row justify-between items-center gap-4 text-[8px] uppercase tracking-[0.4em] text-white/50 font-bold relative z-10 text-center sm:text-left">
-                <p>© {currentYear} Magizh Builders. Precision Engineering.</p>
+                <p>© {currentYear} MAGIZH BUILDERS. Precision Engineering.</p>
                 <div className="flex gap-6">
                     <Link href="#" className="hover:text-white transition-colors">Documentation</Link>
                     <Link href="#" className="hover:text-white transition-colors">Privacy</Link>

@@ -1,0 +1,12 @@
+﻿Γû▓ Next.js 16.1.6 (Turbopack)
+- Local:         http://localhost:3000
+- Network:       http://192.168.1.2:3000
+
+Γ£ô Starting...
+Γ£ô Ready in 1492ms
+Γùï Compiling / ...
+ GET / 200 in 9.6s (compile: 9.2s, render: 458ms)
+ GET / 200 in 384ms (compile: 96ms, render: 287ms)
+Γ£ô Compiled in 304ms
+Γ£ô Compiled in 221ms
+Γ£ô Compiled in 261ms

@@ -54,7 +54,7 @@ export default function About() {
                             transition={{ delay: 0.8, duration: 1 }}
                             className="text-white/70 text-base lg:text-2xl max-w-3xl font-sans leading-relaxed tracking-wide font-medium"
                         >
-                            For over two decades, Magizh Builders has been the silent force behind Tamil Nadu's most prestigious architectural landmarks, merging precision engineering with mathematical grace.
+                            Since 2017, MAGIZH BUILDERS has been the force behind Tamil Nadu's most prestigious architectural landmarks, merging precision engineering with mathematical grace.
                         </motion.p>
                     </div>
                 </div>
@@ -74,7 +74,7 @@ export default function About() {
                             <h2 className="text-[10px] uppercase tracking-[0.5em] text-accent font-bold mb-6">The Company</h2>
                             <h2 className="text-3xl lg:text-5xl font-serif text-primary leading-tight font-bold">
                                 About Magizh Builders – Leading <br />
-                                <span className="text-accent italic">Construction Company</span> in Salem
+                                <span className="text-accent italic">Construction Company</span>
                             </h2>
                             <div className="w-20 h-1 bg-accent mt-8" />
                         </div>
@@ -84,7 +84,7 @@ export default function About() {
                             <img
                                 src="/images/about/about-1.jpg"
                                 className="w-full h-full object-cover transition-all duration-1000"
-                                alt="Construction Company in Salem - Project Site"
+                                alt="Construction Company - Project Site"
                             />
                             {/* Structural Frame Overlay */}
                             <div className="absolute inset-6 border border-white/20 pointer-events-none" />
@@ -93,23 +93,23 @@ export default function About() {
                         {/* Text Content */}
                         <div className="space-y-10 text-gray-500 font-sans leading-relaxed text-lg lg:text-xl text-left">
                             <p>
-                                Magizh Builders stands as a premier <strong>construction company in Salem</strong>, dedicated to building high-quality residential homes and premium villas for families throughout the city and surrounding districts. With a strong commitment to architectural elegance and localized expertise, we have established a significant portfolio in Salem's most sought-after residential neighborhoods, including Peramanur, Fairlands, Hasthampatti, Alagapuram, and Meyyanur. Our team focuses on delivering bespoke independent houses that seamlessly merge modern aesthetics with engineering precision, ensuring every client in the Salem city region receives a living space tailored to their lifestyle.
+                                MAGIZH BUILDERS stands as a premier <strong>construction company</strong>, dedicated to building high-quality residential homes and premium villas for families throughout the city and surrounding districts. With a strong commitment to architectural elegance and localized expertise, we have established a significant portfolio in the most sought-after residential neighborhoods. Our team focuses on delivering bespoke independent houses that seamlessly merge modern aesthetics with engineering precision, ensuring every client receives a living space tailored to their lifestyle.
                             </p>
                             <p>
-                                Our firm is led by the distinguished <strong>Er. S. P. Hari Baaskar, M.E.</strong>, a Registered Civil Engineer in Salem with a deep commitment to structural integrity and safety. By choosing Magizh Builders, you benefit from professional engineering-based supervision that prioritizes structural longevity above all else. We possess an in-depth understanding of the unique soil conditions and climate variations unique to the Salem district, allowing us to implement foundation designs specifically optimized for local ground stability. Every project we undertake strictly adheres to the latest Salem municipal corporation approval norms, providing you with a completely transparent and legally compliant construction journey.
+                                Our firm is led by the distinguished <strong>Er. S. P. Hari Baaskar, M.E.</strong>, a Registered Civil Engineer with a deep commitment to structural integrity and safety. By choosing Magizh Builders, you benefit from professional engineering-based supervision that prioritizes structural longevity above all else. We possess an in-depth understanding of the unique soil conditions and climate variations unique to the district, allowing us to implement foundation designs specifically optimized for local ground stability. Every project we undertake strictly adheres to the latest municipal corporation approval norms, providing you with a completely transparent and legally compliant construction journey.
                             </p>
                             <p>
-                                We provide an extensive range of professional services designed to simplify the building process for homeowners. Whether you need specialized <strong>villa builders in Salem</strong> or comprehensive residential construction management, our services cover everything from initial 2D and 3D house plans to securing complex building plan approvals from the local authorities. We pride ourselves on our transparent construction cost planning and our refusal to compromise on the quality of raw materials used. Our turnkey construction solutions are designed to take the stress out of home building, allowing you to focus on the joy of creating a new legacy for your family in the heart of Salem.
+                                We provide an extensive range of professional services designed to simplify the building process for homeowners. Whether you need specialized <strong>villa builders</strong> or comprehensive residential construction management, our services cover everything from initial 2D and 3D house plans to securing complex building plan approvals from the local authorities. We pride ourselves on our transparent construction cost planning and our refusal to compromise on the quality of raw materials used. Our turnkey construction solutions are designed to take the stress out of home building, allowing you to focus on the joy of creating a new legacy for your family.
                             </p>
 
                             <div className="py-12 border-t border-b border-gray-100 my-16 bg-[#FDFCFB] px-8 lg:px-12 -mx-8 lg:-mx-12">
-                                <h4 className="text-primary font-serif text-2xl mb-8 font-bold">Why Salem Homeowners Choose Magizh Builders:</h4>
+                                <h4 className="text-primary font-serif text-2xl mb-8 font-bold">Why MAGIZH BUILDERS:</h4>
                                 <ul className="space-y-6">
                                     {[
-                                        "Extensive localized experience in Salem residential and villa projects",
-                                        "Scientific understanding of the specific Salem soil profiles and weather patterns",
+                                        "Extensive localized experience in residential and villa projects",
+                                        "Scientific understanding of the specific soil profiles and weather patterns",
                                         "Comprehensive and transparent construction cost estimation and planning",
-                                        "Guaranteed compliance with all current Salem Corporation building regulations",
+                                        "Guaranteed compliance with all current Corporation building regulations",
                                         "Reliable end-to-end residential construction and project management services"
                                     ].map((item, i) => (
                                         <li key={i} className="flex items-start gap-4">
@@ -121,7 +121,7 @@ export default function About() {
                             </div>
 
                             <p className="italic text-primary font-medium text-xl leading-relaxed">
-                                If you are searching for a reliable partner to transform your vision into reality, we encourage you to consult with us today for planning your dream home. Our engineering team is ready to guide you through every structural and design phase with professional expertise. Contact Magizh Builders today to find out why we are the most trusted <strong>construction company in Salem</strong> for homeowners who value global quality standards with a local touch.
+
                             </p>
                         </div>
                     </motion.div>
@@ -137,7 +137,7 @@ export default function About() {
 
                 <div className="max-w-7xl mx-auto px-6 lg:px-24 relative z-10">
                     <div className="grid grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-20">
-                        <StatItem label="Years of Precision" value={12} suffix="+" />
+                        <StatItem label="Years of Precision" value={9} suffix="+" />
                         <StatItem label="Structural Works" value={250} suffix="+" />
                         <StatItem label="Expert Engineers" value={45} suffix="+" />
                         <StatItem label="Safety Rating" value={100} suffix="%" />

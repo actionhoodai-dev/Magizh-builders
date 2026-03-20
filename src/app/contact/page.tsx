@@ -77,7 +77,7 @@ export default function Contact() {
                                     <p className="text-lg lg:text-xl text-primary font-serif leading-relaxed">
                                         46/2, 1st Floor, Swamy Towers, <br />
                                         Mayor Nagar, Peramanur, <br />
-                                        Salem, Tamil Nadu - 636 007.
+                                        Tamil Nadu - 636 007.
                                     </p>
                                 </div>
                             </div>
@@ -194,7 +194,7 @@ export default function Contact() {
 
                         <div className="mt-12 pt-8 border-t border-gray-200 flex items-center justify-between text-[9px] font-black uppercase tracking-widest text-gray-400">
                             <div>Mon-Sat: 09AM-07PM</div>
-                            <div className="text-accent italic">Salem, TN</div>
+                            <div className="text-accent italic">Tamil Nadu</div>
                         </div>
                     </motion.div>
 
@@ -227,7 +227,7 @@ export default function Contact() {
 
                     <div className="mt-12 text-center">
                         <p className="text-[10px] tracking-[0.5em] uppercase text-gray-400 font-bold mb-4">Strategic Location</p>
-                        <h4 className="text-primary font-serif text-2xl font-bold italic">Visit Our Headquarters in Salem</h4>
+                        <h4 className="text-primary font-serif text-2xl font-bold italic">Visit Our Headquarters</h4>
                     </div>
                 </div>
             </section>

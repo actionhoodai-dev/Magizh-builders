@@ -32,7 +32,7 @@ export default function ApprovalsPage() {
                         animate={{ opacity: 1, y: 0 }}
                         className="text-white text-4xl lg:text-7xl font-serif font-bold leading-tight"
                     >
-                        Blue Prints & <span className="text-accent underline decoration-accent/30 underline-offset-8">Approvals</span> <br /><span className="text-accent italic">in Salem</span>
+                        Blue Prints & <span className="text-accent underline decoration-accent/30 underline-offset-8">Approvals</span> <br /><span className="text-accent italic">Services</span>
                     </motion.h1>
                 </div>
             </section>
@@ -42,14 +42,14 @@ export default function ApprovalsPage() {
                 <div className="max-w-[850px] mx-auto">
                     <div className="space-y-12 text-gray-500 font-sans text-lg lg:text-xl leading-relaxed">
                         <p>
-                            Navigating the legal landscape of construction can be complex. Magizh Builders specializes in securing <strong>building plan approvals in Salem</strong>, ensuring that your blueprints comply with all municipal corporation regulations and safety standards.
+                            Navigating the legal landscape of construction can be complex. Magizh Builders specializes in securing <strong>building plan approvals</strong>, ensuring that your blueprints comply with all municipal corporation regulations and safety standards.
                         </p>
 
                         <div className="bg-[#1F3A2E] text-white p-10 lg:p-16 relative overflow-hidden group">
                             <div className="relative z-10">
                                 <h2 className="text-accent font-serif text-3xl mb-8 font-bold">Comprehensive Approval Support</h2>
                                 <p className="mb-10 text-white/70">
-                                    We handle the entire documentation process for builders and individual homeowners in Salem, from initial blueprint preparation to final government sanctions.
+                                    We handle the entire documentation process for builders and individual homeowners, from initial blueprint preparation to final government sanctions.
                                 </p>
                                 <ul className="grid grid-cols-1 md:grid-cols-2 gap-6">
                                     {[
@@ -75,7 +75,7 @@ export default function ApprovalsPage() {
                         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
                             <div className="space-y-12 relative border-l border-accent/20 pl-8 lg:pl-16">
                                 {[
-                                    { title: "Document Collection", desc: "Gathering land records, patta, and identity proofs for Salem Corporation requirements." },
+                                    { title: "Document Collection", desc: "Gathering land records, patta, and identity proofs for Corporation requirements." },
                                     { title: "Blueprint Preparation", desc: "Developing technical drawings that meet DTCP and LPA guidelines." },
                                     { title: "Online Submission", desc: "Uploading and tracking the application through official government portals." },
                                     { title: "Sanction Receipt", desc: "Final verification and obtaining the official build-permit for your project." }

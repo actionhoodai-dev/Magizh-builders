@@ -32,7 +32,7 @@ export default function ConsultingPage() {
                         animate={{ opacity: 1, y: 0 }}
                         className="text-white text-4xl lg:text-7xl font-serif font-bold leading-tight"
                     >
-                        Construction <br /><span className="text-accent underline decoration-accent/30 underline-offset-8">Consulting</span> <br /><span className="text-accent italic">in Salem</span>
+                        Construction <br /><span className="text-accent underline decoration-accent/30 underline-offset-8">Consulting</span> <br /><span className="text-accent italic">Services</span>
                     </motion.h1>
                 </div>
             </section>
@@ -42,7 +42,7 @@ export default function ConsultingPage() {
                 <div className="max-w-[850px] mx-auto">
                     <div className="space-y-12 text-gray-500 font-sans text-lg lg:text-xl leading-relaxed">
                         <p>
-                            Knowledge is the foundation of structural safety. Our <strong>construction consulting in Salem</strong> provides independent homeowners and builders with expert technical advice, structural audits, and realistic cost estimations based on current Salem market trends.
+                            Knowledge is the foundation of structural safety. Our <strong>construction consulting</strong> provides independent homeowners and builders with expert technical advice, structural audits, and realistic cost estimations based on current market trends.
                         </p>
 
                         <div className="bg-[#F9F9F9] p-10 lg:p-16 border-t-8 border-primary">
@@ -80,8 +80,8 @@ export default function ConsultingPage() {
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-10 lg:gap-16">
                                 {[
                                     { title: "Structural Audit", desc: "Independent assessment of ongoing or completed construction to ensure structural stability and load-bearing accuracy." },
-                                    { title: "Economic Planning", desc: "Detailed bill of quantities (BOQ) and cost forecasting to prevent budget overruns in Salem construction projects." },
-                                    { title: "Legal & Regulatory", desc: "Navigating Salem Corporation guidelines and ensuring your building's technical compliance with DTCP rules." },
+                                    { title: "Economic Planning", desc: "Detailed bill of quantities (BOQ) and cost forecasting to prevent budget overruns in construction projects." },
+                                    { title: "Legal & Regulatory", desc: "Navigating Corporation guidelines and ensuring your building's technical compliance with DTCP rules." },
                                     { title: "Technical Supervision", desc: "Periodic site visits by our expertise to verify material ratios and engineering adherence during critical phases." }
                                 ].map((service, i) => (
                                     <div key={i} className="group">

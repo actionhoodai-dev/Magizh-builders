@@ -15,7 +15,7 @@ export default function CTA() {
                 >
                     <div className="w-12 h-1 bg-accent mx-auto mb-8" />
                     <h2 className="text-3xl lg:text-6xl font-serif font-bold text-primary mb-8 leading-tight">
-                        Ready to start your <br /><span className="text-accent italic">project in Salem?</span>
+                        Ready to start your <br /><span className="text-accent italic">dream project?</span>
                     </h2>
                     <p className="text-gray-500 text-lg lg:text-xl max-w-2xl mx-auto leading-relaxed font-sans">
                         Consult with our expert engineering team for a transparent cost estimation,

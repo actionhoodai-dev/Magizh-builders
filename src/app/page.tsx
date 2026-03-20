@@ -20,6 +20,7 @@ import {
   Users
 } from 'lucide-react';
 import CTA from '@/components/CTA';
+import Logo from '@/components/Logo';
 import Counter from '@/components/Counter';
 import TrianglePattern from '@/components/TrianglePattern';
 
@@ -37,7 +38,7 @@ export default function HomePage() {
         >
           <img
             src="/images/hero/hero-1.jpg"
-            alt="Construction Company in Salem - Professional Building Site"
+            alt="Construction Company - Professional Building Site"
             className="w-full h-full object-cover opacity-60"
           />
           <div className="absolute inset-0 bg-gradient-to-b from-primary/80 via-transparent to-primary/90" />
@@ -53,16 +54,19 @@ export default function HomePage() {
             <div className="flex flex-col gap-6 mb-8">
               <span className="text-accent text-xs font-black uppercase tracking-[0.5em] bg-accent/10 w-fit px-4 py-2 border-l-2 border-accent">Architectural Excellence</span>
               <h1 className="text-white text-6xl sm:text-8xl lg:text-9xl font-serif font-black leading-tight tracking-tighter">
-                Magizh <br /><span className="text-accent italic">Builders</span>
+                MAGIZH <br /><span className="text-accent italic">BUILDERS</span>
               </h1>
             </div>
 
-            <h2 className="text-white text-2xl sm:text-3xl lg:text-4xl font-serif font-bold mb-10 leading-snug max-w-3xl">
-              Engineering <span className="text-accent italic">Salem's</span> Civil Legacy With Mathematical Precision.
-            </h2>
+            <div className="flex flex-col gap-4 mb-10">
+              <h2 className="text-[#1A5F3B] font-serif font-black italic text-2xl sm:text-3xl lg:text-4xl tracking-wide relative z-10 sm:text-left text-center" 
+                  style={{ WebkitTextStroke: '1px white', textStroke: '1px white' } as any}>
+                Your Dream is Our Passion
+              </h2>
+            </div>
 
             <p className="text-white/60 text-lg lg:text-2xl font-sans mb-12 max-w-2xl leading-relaxed">
-              As a premier <strong>construction company in Salem</strong>, Magizh Builders bridges the gap between creative architectural visions and
+              As a premier <strong>construction company</strong>, MAGIZH BUILDERS bridges the gap between creative architectural visions and
               mathematically perfect structural execution. Built by <strong>Er. S. P. Hari Baaskar</strong>, we deliver homes that stand the test of time.
             </p>
 
@@ -96,13 +100,17 @@ export default function HomePage() {
               initial={{ opacity: 0, x: -30 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              className="flex-1"
+              className="flex-1 flex flex-col items-center lg:items-start"
             >
               <img
                 src="/images/logo-full.png"
-                alt="Magizh Builders - Official Brand Identity"
+                alt="MAGIZH BUILDERS - Official Brand Identity"
                 className="w-full max-w-[500px] h-auto mx-auto lg:mx-0 drop-shadow-xl"
               />
+              <h3 className="text-[#1A5F3B] font-serif font-black italic text-xl sm:text-2xl tracking-wide -mt-24 ml-16 whitespace-nowrap" 
+                  style={{ WebkitTextStroke: '0.8px white', textStroke: '0.8px white' } as any}>
+                Your Dream is Our Passion
+              </h3>
             </motion.div>
 
             <motion.div
@@ -129,10 +137,6 @@ export default function HomePage() {
                     <p className="text-primary font-black uppercase text-[10px] tracking-[0.2em] mb-1">Lead Engineer</p>
                     <p className="text-accent font-serif italic text-sm">Er. S. P. Hari Baaskar</p>
                   </div>
-                  <div>
-                    <p className="text-primary font-black uppercase text-[10px] tracking-[0.2em] mb-1">Registration</p>
-                    <p className="text-accent font-serif italic text-sm">A1 Class Contractor</p>
-                  </div>
                 </div>
               </div>
             </motion.div>
@@ -146,9 +150,9 @@ export default function HomePage() {
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-24">
             {[
               { label: "Villas Handed Over", val: 50, suffix: "+", icon: Home },
-              { label: "Years of Precision", val: 15, suffix: "+", icon: Clock },
+              { label: "Years of Precision", val: 9, suffix: "+", icon: Clock },
               { label: "Structural Audits", val: 200, suffix: "+", icon: ShieldCheck },
-              { label: "Family Smiles", val: 120, suffix: "+", icon: Users },
+              { label: "Family Smiles", val: 50, suffix: "+", icon: Users },
             ].map((item, i) => (
               <motion.div
                 key={i}
@@ -185,13 +189,13 @@ export default function HomePage() {
               <div className="w-24 h-1.5 bg-accent mb-12" />
               <div className="space-y-8 text-gray-500 text-lg lg:text-xl font-sans leading-relaxed">
                 <p>
-                  Magizh Builders is not just a <strong>construction company in Salem</strong>; we are technical guardians of your architectural dreams. Led by
+                  MAGIZH BUILDERS is not just a <strong>construction company</strong>; we are technical guardians of your architectural dreams. Led by {" "}
                   <strong>Er. S. P. Hari Baaskar, M.E.</strong>, our firm operates on the intersection of deep engineering traditions and modern
                   smart-home technologies.
                 </p>
                 <p>
                   In a City where average construction is common, we pursue excellence through rigorous <strong>structural audits</strong>, premium
-                  material sourcing (Double-Washed M-Sand, Grade 53 Cement), and a commitment to 100% Vastu-compliant layouts.
+                  material sourcing, and a commitment to 100% Vastu-compliant layouts.
                 </p>
                 <div className="pt-8">
                   <Link href="/about" className="inline-flex items-center gap-4 text-accent text-xs font-black uppercase tracking-[0.3em] border-b border-accent/20 pb-2 hover:gap-6 transition-all hover:border-accent">
@@ -233,7 +237,7 @@ export default function HomePage() {
           <div className="grid lg:grid-cols-4 gap-8">
             {[
               { id: '01', title: 'Calculated planning', desc: 'Vastu-compliant 2D defaults and immersive 3D visualizations.', icon: Compass },
-              { id: '02', title: 'Legal fortification', desc: 'Seamless blueprint sanctions and legal approvals from Salem Corporation.', icon: FileText },
+              { id: '02', title: 'Legal fortification', desc: 'Seamless blueprint sanctions and legal approvals from the local Corporation.', icon: FileText },
               { id: '03', title: 'Engineering phase', desc: 'Rigorous structural casting with premium steel and grade-A concrete.', icon: Zap },
               { id: '04', title: 'Aesthetic delivery', desc: 'Luxury finishing, custom interiors, and professional handover.', icon: Award },
             ].map((step, i) => (
@@ -261,7 +265,7 @@ export default function HomePage() {
           <div className="flex flex-col lg:flex-row justify-between items-end mb-24 gap-12">
             <div className="max-w-2xl text-left">
               <span className="text-accent text-xs font-black uppercase tracking-[0.5em] mb-4 block">The Portfolio</span>
-              <h2 className="text-primary text-4xl lg:text-7xl font-serif font-bold leading-tight">Salem's Finest <br /><span className="text-accent italic">Architectural Footprints</span></h2>
+              <h2 className="text-primary text-4xl lg:text-7xl font-serif font-bold leading-tight">Our Finest <br /><span className="text-accent italic">Architectural Footprints</span></h2>
             </div>
             <Link href="/projects" className="px-10 py-5 bg-primary text-white text-[10px] uppercase font-bold tracking-[0.3em] hover:bg-accent hover:text-primary transition-all duration-500 shadow-xl">
               Launch Full Portfolio
@@ -270,11 +274,11 @@ export default function HomePage() {
 
           <div className="grid lg:grid-cols-12 gap-8">
             <div className="lg:col-span-8 overflow-hidden group">
-              <img src="/images/projects/project-1.jpg" className="w-full h-[600px] object-cover group-hover:scale-105 transition-all duration-[2s]" alt="Premium Villa in Salem" />
+              <img src="/images/projects/project-1.jpg" className="w-full h-[600px] object-cover group-hover:scale-105 transition-all duration-[2s]" alt="Premium Villa" />
             </div>
             <div className="lg:col-span-4 grid grid-rows-2 gap-8">
               <div className="overflow-hidden group">
-                <img src="/images/gallery/gallery-4.jpg" className="w-full h-full object-cover group-hover:scale-105 transition-all duration-[2s]" alt="Modern Interior Salem" />
+                <img src="/images/gallery/gallery-4.jpg" className="w-full h-full object-cover group-hover:scale-105 transition-all duration-[2s]" alt="Modern Interior" />
               </div>
               <div className="bg-accent p-12 flex flex-col justify-center text-primary group hover:bg-primary transition-all duration-500">
                 <Star className="mb-6 group-hover:text-accent" size={32} />
@@ -294,12 +298,12 @@ export default function HomePage() {
             <div className="relative">
               <img src="/images/hero/hero-3.jpg" className="w-full h-auto" alt="Engineering Excellence" />
               <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-48 h-48 bg-accent/90 backdrop-blur-md rounded-full flex items-center justify-center p-8 text-center border-8 border-white">
-                <p className="text-primary font-serif font-black text-sm uppercase leading-tight tracking-widest">Salem's Number One Choice</p>
+                <p className="text-primary font-serif font-black text-sm uppercase leading-tight tracking-widest">The Number One Choice</p>
               </div>
             </div>
             <div>
               <span className="text-accent text-[10px] uppercase tracking-[0.5em] font-black mb-6 block">Why We Are Different</span>
-              <h2 className="text-primary text-3xl lg:text-5xl font-serif font-bold mb-12">The Engineering Standard <br /><span className="text-accent italic">in Salem</span></h2>
+              <h2 className="text-primary text-3xl lg:text-5xl font-serif font-bold mb-12">The Engineering Standard <br /><span className="text-accent italic">We Uphold</span></h2>
               <ul className="space-y-8">
                 {[
                   { t: "Registered engineering oversight", d: "Every brick laid is supervised by qualified structural engineers." },
@@ -335,15 +339,15 @@ export default function HomePage() {
         <div className="container mx-auto px-6 lg:px-24">
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="text-primary text-3xl lg:text-6xl font-serif font-bold mb-10 leading-tight">
-              A Geographic Legacy <span className="text-accent">Across Salem</span>
+              A Geographic Legacy <span className="text-accent">Across the Region</span>
             </h2>
             <p className="text-gray-500 text-lg mb-16 max-w-2xl mx-auto leading-relaxed">
-              We focus our precision-building services in Salem's most established residential and development zones, ensuring
+              We focus our precision-building services in the most established residential and development zones, ensuring
               we are always on-site when the concrete pours.
             </p>
-            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
-              {['Peramanur', 'Hasthampatti', 'Fairlands', 'Alagapuram', 'Steel Plant Road', 'Salem Corporation'].map((area) => (
-                <div key={area} className="px-6 py-6 bg-gray-50 border border-gray-100 text-primary text-[9px] uppercase font-black tracking-[0.2em] hover:bg-accent hover:border-accent hover:text-white transition-all cursor-default">
+            <div className="flex flex-wrap justify-center gap-4">
+              {['Salem & Surroundings'].map((area) => (
+                <div key={area} className="px-10 py-6 bg-gray-50 border border-gray-100 text-primary text-[10px] uppercase font-black tracking-[0.2em] hover:bg-accent hover:border-accent hover:text-white transition-all cursor-default text-center">
                   {area}
                 </div>
               ))}

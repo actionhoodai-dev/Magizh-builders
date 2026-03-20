@@ -7,13 +7,15 @@ import { cn } from '@/lib/utils';
 import { Menu, X, Instagram, Facebook, Twitter, ChevronDown, Phone, Mail } from 'lucide-react';
 import { useState, useEffect } from 'react';
 import TrianglePattern from './TrianglePattern';
+import Logo from './Logo';
 
 const navLinks = [
     { href: '/', label: 'Home', number: '01' },
+    { href: '/about', label: 'About', number: '02' },
     {
         href: '/services',
         label: 'Services',
-        number: '02',
+        number: '03',
         children: [
             { href: '/services/drawings', label: '2D & 3D Drawings' },
             { href: '/services/approvals', label: 'Blue Prints & Approvals' },
@@ -22,7 +24,6 @@ const navLinks = [
             { href: '/services/consulting', label: 'Consulting' },
         ]
     },
-    { href: '/about', label: 'About', number: '03' },
     { href: '/projects', label: 'Projects', number: '04' },
     { href: '/gallery', label: 'Gallery', number: '05' },
     { href: '/contact', label: 'Contact', number: '06' },
@@ -59,25 +60,11 @@ export default function Navbar() {
             )}>
                 <div className="max-w-[1800px] mx-auto h-full flex items-center justify-between">
                     {/* Logo */}
-                    <Link href="/" className="flex items-center gap-3 z-[130]">
-                        <img
-                            src="/images/mb.jpeg"
-                            alt="Logo"
-                            className={cn("transition-all duration-500", scrolled ? "w-8 h-8 lg:w-10 lg:h-10" : "w-12 h-12 lg:w-14 lg:h-14")}
+                    <Link href="/" className="flex items-center z-[130] -ml-2">
+                        <Logo 
+                            size={scrolled ? 64 : 100} 
+                            animated={false} 
                         />
-                        <div className="flex flex-col">
-                            <span className={cn(
-                                "font-serif tracking-[0.2em] uppercase transition-all",
-                                (isOpen || !scrolled) ? "text-white" : "text-primary",
-                                scrolled ? "text-base lg:text-lg" : "text-lg lg:text-xl"
-                            )}>
-                                Magizh
-                            </span>
-                            <span className={cn(
-                                "text-[9px] lg:text-[11px] tracking-[0.4em] uppercase font-black -mt-0.5 lg:-mt-1 transition-colors",
-                                scrolled ? "text-accent" : "text-accent/90"
-                            )}>Builders</span>
-                        </div>
                     </Link>
 
                     {/* Desktop Navigation Links */}
