@@ -85,7 +85,7 @@ export default function ConsultingPage() {
                                     { title: "Technical Supervision", desc: "Periodic site visits by our expertise to verify material ratios and engineering adherence during critical phases." }
                                 ].map((service, i) => (
                                     <div key={i} className="group">
-                                        <h3 className="text-primary font-serif text-xl font-bold mb-4 group-hover:text-accent transition-colors">/ {service.title}</h3>
+                                        <h3 className="text-primary font-serif text-xl font-bold mb-4 group-hover:text-accent transition-colors">{service.title}</h3>
                                         <p className="text-base text-gray-500 text-justify">{service.desc}</p>
                                     </div>
                                 ))}
