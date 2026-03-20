@@ -41,14 +41,14 @@ export default function InteriorPage() {
             <section className="py-24 lg:py-48 px-6 lg:px-12">
                 <div className="max-w-[850px] mx-auto">
                     <div className="space-y-12 text-gray-500 font-sans text-lg lg:text-xl leading-relaxed">
-                        <p>
+                        <p className="text-justify">
                             Beyond structural integrity, we focus on the soul of your home. Our <strong>interior designing</strong> services merge functional ergonomics with premium architectural aesthetics, creating living spaces that reflect your personality and prestige.
                         </p>
 
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-stretch">
                             <div className="bg-[#FDFCFB] p-10 border border-gray-100 flex flex-col justify-center">
                                 <h2 className="text-primary font-serif text-3xl mb-6 font-bold italic">Bespoke Aesthetics</h2>
-                                <p className="text-base mb-8">
+                                <p className="text-base mb-8 text-justify">
                                     We don't believe in templates. Every interior project is treated as a unique canvas where we balance light, texture, and structural geometry.
                                 </p>
                                 <ul className="space-y-4">
@@ -84,13 +84,13 @@ export default function InteriorPage() {
                             ].map((value, i) => (
                                 <div key={i} className="group border-l-2 border-transparent hover:border-accent pl-8 transition-all duration-500">
                                     <h3 className="text-primary font-serif text-xl font-bold mb-2 group-hover:text-accent transition-colors">{value.title}</h3>
-                                    <p className="text-base text-gray-500">{value.desc}</p>
+                                    <p className="text-base text-gray-500 text-justify">{value.desc}</p>
                                 </div>
                             ))}
                         </div>
 
                         <div className="pt-24 border-t border-gray-100 mt-24 text-center">
-                            <p className="text-gray-400 text-sm uppercase tracking-[0.3em] font-bold mb-4">Visual Documentation</p>
+                            <p className="text-gray-400 text-sm uppercase tracking-[0.3em] font-bold mb-4 text-justify">Visual Documentation</p>
                             <h3 className="text-2xl lg:text-3xl font-serif text-primary mb-8 font-bold">Experience Our Work</h3>
                             <Link
                                 href="/gallery"

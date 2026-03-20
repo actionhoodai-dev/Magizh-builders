@@ -41,14 +41,14 @@ export default function ApprovalsPage() {
             <section className="py-24 lg:py-48 px-6 lg:px-12">
                 <div className="max-w-[850px] mx-auto">
                     <div className="space-y-12 text-gray-500 font-sans text-lg lg:text-xl leading-relaxed">
-                        <p>
+                        <p className="text-justify">
                             Navigating the legal landscape of construction can be complex. Magizh Builders specializes in securing <strong>building plan approvals</strong>, ensuring that your blueprints comply with all municipal corporation regulations and safety standards.
                         </p>
 
                         <div className="bg-[#1F3A2E] text-white p-10 lg:p-16 relative overflow-hidden group">
                             <div className="relative z-10">
                                 <h2 className="text-accent font-serif text-3xl mb-8 font-bold">Comprehensive Approval Support</h2>
-                                <p className="mb-10 text-white/70">
+                                <p className="mb-10 text-white/70 text-justify">
                                     We handle the entire documentation process for builders and individual homeowners, from initial blueprint preparation to final government sanctions.
                                 </p>
                                 <ul className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -83,7 +83,7 @@ export default function ApprovalsPage() {
                                     <div key={i} className="relative">
                                         <div className="absolute -left-[41px] lg:-left-[73px] top-1 w-4 h-4 bg-accent rounded-full border-4 border-white shadow-sm" />
                                         <h3 className="text-primary font-serif text-xl font-bold mb-2">{step.title}</h3>
-                                        <p className="text-base text-gray-500">{step.desc}</p>
+                                        <p className="text-base text-gray-500 text-justify">{step.desc}</p>
                                     </div>
                                 ))}
                             </div>

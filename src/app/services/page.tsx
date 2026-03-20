@@ -102,14 +102,12 @@ export default function ServicesPage() {
                                     />
                                     {/* Standard subtle overlay for text/badge readability */}
                                     <div className="absolute inset-0 bg-black/10 transition-colors duration-500" />
-                                    <div className="absolute top-4 right-4 bg-white/90 backdrop-blur-md px-3 py-1 text-[8px] uppercase tracking-[0.3em] font-black text-primary">
-                                        Service 0{i + 1}
-                                    </div>
+
                                 </div>
 
                                 <div className="p-8 lg:p-10 flex flex-col flex-1">
                                     <h2 className="text-primary text-2xl font-serif font-bold mb-4">{service.title}</h2>
-                                    <p className="text-gray-500 font-sans leading-relaxed mb-auto text-sm">
+                                    <p className="text-gray-500 font-sans leading-relaxed mb-auto text-sm text-justify">
                                         {service.desc}
                                     </p>
                                     <div className="mt-10">

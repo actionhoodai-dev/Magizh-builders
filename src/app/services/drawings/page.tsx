@@ -41,13 +41,13 @@ export default function DrawingsPage() {
             <section className="py-24 lg:py-48 px-6 lg:px-12">
                 <div className="max-w-[850px] mx-auto">
                     <div className="space-y-12 text-gray-500 font-sans text-lg lg:text-xl leading-relaxed">
-                        <p>
+                        <p className="text-justify">
                             At Magizh Builders, we believe that every great structure begins with a mathematically precise and visually compelling draft. Our <strong>2D & 3D drawings</strong> provide homeowners and developers with a clear architectural roadmap before any ground is broken.
                         </p>
 
                         <div className="bg-gray-50 p-10 lg:p-16 border-l-4 border-accent">
                             <h2 className="text-primary font-serif text-3xl mb-8 font-bold">Why Technical Drawings Matter</h2>
-                            <p className="mb-8">
+                            <p className="mb-8 text-justify">
                                 Detailed drawings eliminate ambiguity during construction. By visualizing the structural flow and spatial distribution, we ensure that your dream home is not only aesthetically pleasing but structurally coherent and compliant with local regulations.
                             </p>
                             <ul className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -80,7 +80,7 @@ export default function DrawingsPage() {
                                             {i + 1}
                                         </div>
                                         <h3 className="text-primary font-serif text-xl font-bold mb-2">{step.title}</h3>
-                                        <p className="text-base text-gray-500">{step.desc}</p>
+                                        <p className="text-base text-gray-500 text-justify">{step.desc}</p>
                                     </div>
                                 ))}
                             </div>

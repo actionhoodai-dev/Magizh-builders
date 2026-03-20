@@ -41,7 +41,7 @@ export default function ConsultingPage() {
             <section className="py-24 lg:py-48 px-6 lg:px-12">
                 <div className="max-w-[850px] mx-auto">
                     <div className="space-y-12 text-gray-500 font-sans text-lg lg:text-xl leading-relaxed">
-                        <p>
+                        <p className="text-justify">
                             Knowledge is the foundation of structural safety. Our <strong>construction consulting</strong> provides independent homeowners and builders with expert technical advice, structural audits, and realistic cost estimations based on current market trends.
                         </p>
 
@@ -54,7 +54,7 @@ export default function ConsultingPage() {
                                 </div>
                                 <div className="lg:w-2/3 text-left">
                                     <h2 className="text-primary font-serif text-3xl mb-6 font-bold">Structural Intelligence</h2>
-                                    <p className="text-base text-gray-400 mb-8 italic">
+                                    <p className="text-base text-gray-400 mb-8 italic text-justify">
                                         "A second opinion from a Registered Civil Engineer can save millions in future repairs and legal overheads."
                                     </p>
                                     <ul className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -86,7 +86,7 @@ export default function ConsultingPage() {
                                 ].map((service, i) => (
                                     <div key={i} className="group">
                                         <h3 className="text-primary font-serif text-xl font-bold mb-4 group-hover:text-accent transition-colors">/ {service.title}</h3>
-                                        <p className="text-base text-gray-500">{service.desc}</p>
+                                        <p className="text-base text-gray-500 text-justify">{service.desc}</p>
                                     </div>
                                 ))}
                             </div>
