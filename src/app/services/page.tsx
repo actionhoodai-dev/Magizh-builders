@@ -152,7 +152,7 @@ export default function ServicesPage() {
                                 <div className="space-y-6">
                                     <h3 className="text-2xl font-serif text-primary font-bold border-l-4 border-accent pl-6">Professional 2D & 3D Architectural Drawings</h3>
                                     <p>
-                                        In the modern era of construction, visualization is the key to structural success. Our <strong>2D & 3D drawing services</strong>
+                                        In the modern era of construction, visualization is the key to structural success. Our <strong>2D & 3D drawing services</strong>{" "}
                                         allow clients to experience their dream properties before the foundation is even poured. Using advanced CAD and 3D modeling
                                         software, we provide Vastu-compliant floor plans, realistic 3D elevations, and detailed technical drafts.
                                     </p>
