@@ -98,7 +98,7 @@ export default function About() {
                             <p className="text-justify">
                                 Our firm is led by the distinguished <strong>Er. S. P. Hari Baaskar, M.E.</strong>, a Registered Civil Engineer with a deep commitment to structural integrity and safety. By choosing MAGIZH BUILDERS, you benefit from professional engineering-based supervision that prioritizes structural longevity above all else. We possess an in-depth understanding of the unique soil conditions and climate variations unique to the district, allowing us to implement foundation designs specifically optimized for local ground stability. Every project we undertake strictly adheres to the latest municipal corporation approval norms, providing you with a completely transparent and legally compliant construction journey.
                             </p>
-                            <p>
+                            <p className="text-justify">
                                 We provide an extensive range of professional services designed to simplify the building process for homeowners. Whether you need specialized <strong>villa builders</strong> or comprehensive residential construction management, our services cover everything from initial 2D and 3D house plans to securing complex building plan approvals from the local authorities. We pride ourselves on our transparent construction cost planning and our refusal to compromise on the quality of raw materials used. Our turnkey construction solutions are designed to take the stress out of home building, allowing you to focus on the joy of creating a new legacy for your family.
                             </p>
 
