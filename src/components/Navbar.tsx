@@ -58,7 +58,7 @@ export default function Navbar() {
         <>
             <nav className={cn(
                 "fixed top-0 left-0 w-full z-[120] transition-all duration-500 px-6 lg:px-12",
-                scrolled ? "h-20 bg-white shadow-md" : "h-24 lg:h-32 bg-transparent"
+                "h-20 bg-white shadow-md"
             )}>
                 <div className="max-w-[1800px] mx-auto h-full flex items-center justify-between">
                     {/* Logo */}
@@ -77,9 +77,7 @@ export default function Navbar() {
                                     href={link.href}
                                     className={cn(
                                         "text-[12.5px] uppercase tracking-[0.4em] font-bold transition-all hover:text-accent flex items-center gap-2",
-                                        scrolled
-                                            ? (pathname.startsWith(link.href) && link.href !== '/' || pathname === link.href ? "text-primary" : "text-primary/60")
-                                            : (pathname.startsWith(link.href) && link.href !== '/' || pathname === link.href ? "text-white" : "text-white/70")
+                                        pathname.startsWith(link.href) && link.href !== '/' || pathname === link.href ? "text-primary" : "text-primary/60"
                                     )}
                                 >
                                     {link.label}
