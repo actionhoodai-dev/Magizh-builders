@@ -32,7 +32,7 @@ export default function ApprovalsPage() {
                         animate={{ opacity: 1, y: 0 }}
                         className="text-white text-4xl lg:text-7xl font-serif font-bold leading-tight"
                     >
-                        Blue Prints & <span className="text-accent underline decoration-accent/30 underline-offset-8">Approvals</span> <br /><span className="text-accent italic">Services</span>
+                        Blue Prints & <span className="text-accent underline decoration-accent/30 underline-offset-8">Approvals</span>
                     </motion.h1>
                 </div>
             </section>
@@ -45,7 +45,7 @@ export default function ApprovalsPage() {
                             Navigating the legal landscape of construction can be complex. Magizh Builders specializes in securing <strong>building plan approvals</strong>, ensuring that your blueprints comply with all municipal corporation regulations and safety standards.
                         </p>
 
-                        <div className="bg-[#1F3A2E] text-white p-10 lg:p-16 relative overflow-hidden group">
+                        <div className="bg-[#1B6644] text-white p-10 lg:p-16 relative overflow-hidden group">
                             <div className="relative z-10">
                                 <h2 className="text-accent font-serif text-3xl mb-8 font-bold">Comprehensive Approval Support</h2>
                                 <p className="mb-10 text-white/70 text-justify">

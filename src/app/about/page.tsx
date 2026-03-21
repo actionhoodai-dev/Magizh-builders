@@ -33,9 +33,7 @@ export default function About() {
                     <div className="absolute inset-0 bg-black/40" />
                 </div>
 
-                {/* Architectural Grid */}
-                <div className="absolute inset-0 z-10 opacity-[0.15] pointer-events-none"
-                    style={{ backgroundImage: 'linear-gradient(#fff 1px, transparent 1px), linear-gradient(90deg, #fff 1px, transparent 1px)', backgroundSize: '80px 80px' }} />
+
 
                 <div className="max-w-[1400px] mx-auto relative z-20">
                     <div className="relative z-10">
@@ -93,7 +91,7 @@ export default function About() {
                         {/* Text Content */}
                         <div className="space-y-10 text-gray-500 font-sans leading-relaxed text-lg lg:text-xl text-left">
                             <p className="text-justify">
-                                <strong>MAGIZH BUILDERS</strong> stands as a premier construction company, dedicated to building high-quality residential homes and premium villas for families throughout the city and surrounding districts. With a strong commitment to architectural elegance and localized expertise, we have established a significant portfolio in the most sought-after residential neighborhoods. Our team focuses on delivering bespoke independent houses that seamlessly merge modern aesthetics with engineering precision, ensuring average client receives a living space tailored to their lifestyle.
+                                Formally established in 2017, <strong>MAGIZH BUILDERS</strong> stands as a premier construction company, dedicated to building high-quality residential homes and premium villas for families throughout the city and surrounding districts. With a strong commitment to architectural elegance and localized expertise, we have established a significant portfolio in the most sought-after residential neighborhoods. Our team focuses on delivering bespoke independent houses that seamlessly merge modern aesthetics with engineering precision, ensuring every client receives a living space tailored to their lifestyle.
                             </p>
                             <p className="text-justify">
                                 Our firm is led by the distinguished <strong>Er. S. P. Hari Baaskar, M.E.</strong>, a Registered Civil Engineer with a deep commitment to structural integrity and safety. By choosing MAGIZH BUILDERS, you benefit from professional engineering-based supervision that prioritizes structural longevity above all else. We possess an in-depth understanding of the unique soil conditions and climate variations unique to the district, allowing us to implement foundation designs specifically optimized for local ground stability. Every project we undertake strictly adheres to the latest municipal corporation approval norms, providing you with a completely transparent and legally compliant construction journey.

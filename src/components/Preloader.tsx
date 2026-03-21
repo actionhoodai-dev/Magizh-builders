@@ -2,19 +2,20 @@
 
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import Logo from './Logo';
+import { usePathname } from 'next/navigation';
 
 export default function Preloader() {
     const [loading, setLoading] = useState(true);
+    const pathname = usePathname();
 
     useEffect(() => {
-        // Simulate loading or wait for actual load
+        setLoading(true);
         const timer = setTimeout(() => {
             setLoading(false);
-        }, 1500); // Faster, more responsive load
+        }, 2000); // 2.0s duration animation clip node
 
         return () => clearTimeout(timer);
-    }, []);
+    }, [pathname]);
 
     return (
         <AnimatePresence>
@@ -28,19 +29,18 @@ export default function Preloader() {
                     }}
                     className="fixed inset-0 z-[999] flex flex-col items-center justify-center bg-white"
                 >
-                    <Logo size={400} />
-
-                    {/* Minimal Technical Loading Indicator */}
                     <motion.div
-                        initial={{ width: 0 }}
-                        animate={{ width: "200px" }}
-                        transition={{ duration: 1.5, ease: "linear" }}
-                        className="h-[1px] bg-accent/30 mt-12 relative overflow-hidden"
+                        initial={{ opacity: 0, scale: 0.8 }}
+                        animate={{ opacity: 1, scale: 1 }}
+                        exit={{ opacity: 0, scale: 0.9 }}
+                        transition={{ duration: 0.4 }}
                     >
-                        <motion.div
-                            animate={{ x: ["-100%", "100%"] }}
-                            transition={{ duration: 1.5, repeat: Infinity, ease: "linear" }}
-                            className="absolute inset-0 bg-accent w-1/2"
+                        <video 
+                            src="/magizh-logo-animation.mp4" 
+                            autoPlay 
+                            muted 
+                            playsInline 
+                            className="w-[280px] h-[280px] lg:w-[450px] lg:h-[450px] object-contain"
                         />
                     </motion.div>
                 </motion.div>

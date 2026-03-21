@@ -45,18 +45,32 @@ export default function InteriorPage() {
                             Beyond structural integrity, we focus on the soul of your home. Our <strong>interior designing</strong> services merge functional ergonomics with premium architectural aesthetics, creating living spaces that reflect your personality and prestige.
                         </p>
 
-                        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-stretch">
+                        <div className="pt-8 mb-16">
+                            <h2 className="text-primary font-serif text-3xl font-bold mb-8">Design Philosophy</h2>
+                            <div className="space-y-8">
+                                {[
+                                    { title: "Functional Ergonomics", desc: "Designing layouts that prioritize ease of movement and furniture utility within typical residential footprints." },
+                                    { title: "Material Excellence", desc: "Sourcing premium veneers, marbles, and finishes that offer both visual luxury and long-term durability." },
+                                    { title: "Lighting Synthesis", desc: "Expert placement of natural and artificial light sources to enhance structural depth and daily mood." }
+                                ].map((value, i) => (
+                                    <div key={i} className="group border-l-2 border-transparent hover:border-accent pl-8 transition-all duration-500">
+                                        <h3 className="text-primary font-serif text-xl font-bold mb-2 group-hover:text-accent transition-colors">{value.title}</h3>
+                                        <p className="text-base text-gray-500 text-justify">{value.desc}</p>
+                                    </div>
+                                ))}
+                            </div>
+                        </div>
+
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-stretch pt-8">
                             <div className="bg-[#FDFCFB] p-10 border border-gray-100 flex flex-col justify-center">
-                                <h2 className="text-primary font-serif text-3xl mb-6 font-bold italic">Bespoke Aesthetics</h2>
-                                <p className="text-base mb-8 text-justify">
-                                    We don't believe in templates. Every interior project is treated as a unique canvas where we balance light, texture, and structural geometry.
-                                </p>
+                                <h2 className="text-primary font-serif text-3xl mb-6 font-bold italic">We are specialized in</h2>
+
                                 <ul className="space-y-4">
                                     {[
                                         "Teak Wood Main Door Carving",
-                                        "Modular Kitchen (Hettich Fittings)",
+                                        "Modular Kitchen",
                                         "Gypsum False Ceiling & LED",
-                                        "Italian Marble & Granite Flooring",
+                                        "Marble & Granite Flooring",
                                         "Custom Wardrobes (Plywood/Veneer)"
                                     ].map((item, i) => (
                                         <li key={i} className="flex items-center gap-3 text-sm font-bold uppercase tracking-widest text-primary/80">
@@ -75,22 +89,8 @@ export default function InteriorPage() {
                             </div>
                         </div>
 
-                        <h2 className="text-primary font-serif text-3xl font-bold pt-8">Design Philosophy</h2>
-                        <div className="space-y-12">
-                            {[
-                                { title: "Functional Ergonomics", desc: "Designing layouts that prioritize ease of movement and furniture utility within typical residential footprints." },
-                                { title: "Material Excellence", desc: "Sourcing premium veneers, marbles, and finishes that offer both visual luxury and long-term durability." },
-                                { title: "Lighting Synthesis", desc: "Expert placement of natural and artificial light sources to enhance structural depth and daily mood." }
-                            ].map((value, i) => (
-                                <div key={i} className="group border-l-2 border-transparent hover:border-accent pl-8 transition-all duration-500">
-                                    <h3 className="text-primary font-serif text-xl font-bold mb-2 group-hover:text-accent transition-colors">{value.title}</h3>
-                                    <p className="text-base text-gray-500 text-justify">{value.desc}</p>
-                                </div>
-                            ))}
-                        </div>
-
                         <div className="pt-24 border-t border-gray-100 mt-24 text-center">
-                            <p className="text-gray-400 text-sm uppercase tracking-[0.3em] font-bold mb-4 text-justify">Visual Documentation</p>
+
                             <h3 className="text-2xl lg:text-3xl font-serif text-primary mb-8 font-bold">Experience Our Work</h3>
                             <Link
                                 href="/gallery"

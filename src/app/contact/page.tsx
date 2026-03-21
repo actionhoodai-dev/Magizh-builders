@@ -4,8 +4,10 @@ import { motion } from 'framer-motion';
 import { Phone, Mail, MapPin, MessageCircle } from 'lucide-react';
 import Link from 'next/link';
 import TrianglePattern from '@/components/TrianglePattern';
+import { useBusinessDetails } from '@/hooks/useBusinessDetails';
 
 export default function Contact() {
+    const { details } = useBusinessDetails();
     return (
         <div className="bg-[#FDFCFB] min-h-screen">
 
@@ -23,9 +25,7 @@ export default function Contact() {
                     <div className="absolute inset-0 bg-black/40" />
                 </div>
 
-                {/* Architectural Grid */}
-                <div className="absolute inset-0 z-10 opacity-[0.15] pointer-events-none"
-                    style={{ backgroundImage: 'linear-gradient(#fff 1px, transparent 1px), linear-gradient(90deg, #fff 1px, transparent 1px)', backgroundSize: '80px 80px' }} />
+
 
                 <div className="max-w-[1400px] mx-auto relative z-20">
                     <div className="relative z-10 text-center lg:text-left">
@@ -65,53 +65,49 @@ export default function Contact() {
                         <div className="absolute top-0 right-0 w-24 h-[1px] bg-accent/20 group-hover:w-full transition-all duration-1000" />
 
                         <div className="mb-12 lg:mb-20">
-                            <h2 className="text-3xl lg:text-4xl font-serif text-primary mb-2 font-bold italic">Er. S. P. Hari Baaskar</h2>
-                            <p className="text-[9px] tracking-[0.4em] uppercase text-accent font-bold">Registered Civil Engineer</p>
+                            <h2 className="text-3xl lg:text-4xl font-serif text-primary mb-2 font-bold italic">{details.ownerName}, M.E.</h2>
+                            <p className="text-[9px] tracking-[0.4em] uppercase text-accent font-bold">{details.ownerTitle}</p>
                         </div>
 
                         <div className="space-y-12 lg:space-y-16">
-                            <div className="flex gap-8 lg:gap-12 items-start">
-                                <MapPin size={24} className="text-accent shrink-0 mt-1" />
+                            <a href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent('Magizh Builders, Mayor Nagar, Salem')}`} target="_blank" rel="noopener noreferrer" className="flex gap-6 items-center group px-6 py-5 bg-[#FDFCFB] border border-gray-100/80 rounded-2xl shadow-sm hover:shadow-md hover:border-accent/30 hover:-translate-y-1 transition-all">
+                                <MapPin size={32} className="text-accent shrink-0 group-hover:scale-110 transition-transform" />
                                 <div>
-
-                                    <p className="text-lg lg:text-xl text-primary font-serif leading-relaxed">
-                                        46/2, 1st Floor, Swamy Towers, <br />
-                                        Mayor Nagar, Peramanur, <br />
-                                        Tamil Nadu - 636 007.
+                                    <p className="text-base lg:text-lg text-primary font-serif leading-relaxed transition-colors">
+                                        {details.address}, {details.city}, <br />
+                                        {details.state} - {details.pincode}
                                     </p>
                                 </div>
-                            </div>
+                            </a>
 
-                            <div className="flex gap-8 lg:gap-12 items-start">
-                                <Phone size={24} className="text-accent shrink-0 mt-1" />
+                            <a href={`tel:${details.phone1.replace(/\s/g, '')}`} className="flex gap-6 items-center group px-6 py-5 bg-[#FDFCFB] border border-gray-100/80 rounded-2xl shadow-sm hover:shadow-md hover:border-accent/30 hover:-translate-y-1 transition-all">
+                                <Phone size={32} className="text-accent shrink-0 group-hover:scale-110 transition-transform" />
                                 <div>
-
-                                    <p className="text-lg lg:text-2xl text-primary font-serif tracking-tighter">
-                                        +91 87547 64403 <br />
-                                        +91 78670 18940
+                                    <p className="text-lg lg:text-xl text-primary font-serif tracking-tight transition-colors font-bold">
+                                        {details.phone1} <br />
+                                        {details.phone2}
                                     </p>
                                 </div>
-                            </div>
+                            </a>
 
-                            <div className="flex gap-8 lg:gap-12 items-start">
-                                <Mail size={24} className="text-accent shrink-0 mt-1" />
+                            <a href={`mailto:${details.email}`} className="flex gap-6 items-center group px-6 py-5 bg-[#FDFCFB] border border-gray-100/80 rounded-2xl shadow-sm hover:shadow-md hover:border-accent/30 hover:-translate-y-1 transition-all">
+                                <Mail size={32} className="text-accent shrink-0 group-hover:scale-110 transition-transform" />
                                 <div>
-
-                                    <p className="text-lg lg:text-xl text-primary font-serif italic border-b border-accent/20 pb-1">magizhbuilder@gmail.com</p>
+                                    <p className="text-base lg:text-lg text-primary font-serif italic transition-colors font-medium border-b border-accent/20 pb-0.5">{details.email}</p>
                                 </div>
-                            </div>
+                            </a>
                         </div>
 
                         {/* CTA Buttons */}
                         <div className="mt-16 lg:mt-24 flex flex-col sm:flex-row gap-6">
                             <Link
-                                href="https://wa.me/918754764403"
+                                href={`https://wa.me/${details.whatsapp}`}
                                 className="flex-1 bg-primary text-white py-5 text-center text-[10px] tracking-[0.3em] uppercase font-bold flex items-center justify-center gap-4 hover:bg-accent transition-all shadow-xl"
                             >
                                 <MessageCircle size={16} /> WhatsApp
                             </Link>
                             <Link
-                                href="tel:+918754764403"
+                                href={`tel:${details.phone1.replace(/\s/g, '')}`}
                                 className="flex-1 border-2 border-primary text-primary py-5 text-center text-[10px] tracking-[0.3em] uppercase font-bold flex items-center justify-center gap-4 hover:bg-primary hover:text-white transition-all underline decoration-accent underline-offset-8"
                             >
                                 <Phone size={16} /> Direct Audio

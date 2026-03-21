@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 @theme {
-  --color-primary: #1F3A2E;
+  --color-primary: #1B6644;
   --color-accent: #C8A951;
   --font-serif: var(--font-playfair);
   --font-sans: var(--font-inter);
@@ -10,8 +10,8 @@
 @layer base {
   :root {
     --background: #FFFFFF;
-    --foreground: #1F3A2E;
-    --primary: #1F3A2E;
+    --foreground: #1B6644;
+    --primary: #1B6644;
     --accent: #C8A951;
   }
 

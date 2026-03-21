@@ -52,6 +52,8 @@ export default function Navbar() {
         if (isOpen) setMobileServicesOpen(false);
     };
 
+    if (pathname && pathname.startsWith('/admin')) return null;
+
     return (
         <>
             <nav className={cn(
@@ -62,7 +64,7 @@ export default function Navbar() {
                     {/* Logo */}
                     <Link href="/" className="flex items-center z-[130] -ml-2">
                         <Logo 
-                            size={scrolled ? 64 : 100} 
+                            size={100} 
                             animated={false} 
                         />
                     </Link>
@@ -74,7 +76,7 @@ export default function Navbar() {
                                 <Link
                                     href={link.href}
                                     className={cn(
-                                        "text-[10px] uppercase tracking-[0.4em] font-bold transition-all hover:text-accent flex items-center gap-2",
+                                        "text-[12.5px] uppercase tracking-[0.4em] font-bold transition-all hover:text-accent flex items-center gap-2",
                                         scrolled
                                             ? (pathname.startsWith(link.href) && link.href !== '/' || pathname === link.href ? "text-primary" : "text-primary/60")
                                             : (pathname.startsWith(link.href) && link.href !== '/' || pathname === link.href ? "text-white" : "text-white/70")
@@ -98,7 +100,7 @@ export default function Navbar() {
                                                         key={child.href}
                                                         href={child.href}
                                                         className={cn(
-                                                            "text-[10px] uppercase tracking-[0.2em] font-bold transition-all hover:text-accent hover:pl-2",
+                                                            "text-[12.5px] uppercase tracking-[0.2em] font-bold transition-all hover:text-accent hover:pl-2",
                                                             pathname === child.href ? "text-accent" : "text-primary/60"
                                                         )}
                                                     >
@@ -116,15 +118,10 @@ export default function Navbar() {
                     {/* Minimal Menu Toggle / Explore */}
                     <button
                         onClick={toggleMenu}
-                        className="group flex items-center gap-4 z-[130] relative"
+                        className="group flex lg:hidden items-center gap-4 z-[130] relative"
                         aria-label={isOpen ? "Close Menu" : "Open Menu"}
                     >
-                        <span className={cn(
-                            "hidden md:block text-[10px] uppercase tracking-[0.4em] font-bold transition-all",
-                            (isOpen || !scrolled) ? "text-white" : "text-primary"
-                        )}>
-                            {isOpen ? "Exit" : "Menu"}
-                        </span>
+                        {/* Remove Menu label */}
                         <div className={cn(
                             "w-10 h-10 lg:w-12 lg:h-12 flex items-center justify-center rounded-full transition-all duration-300 shadow-lg",
                             isOpen ? "bg-white text-primary" : "bg-primary text-white"
