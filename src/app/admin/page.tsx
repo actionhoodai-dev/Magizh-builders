@@ -242,6 +242,8 @@ export default function AdminDashboard() {
     whatsapp: '918754764403',
   });
 
+  const [websiteMedia, setWebsiteMedia] = useState<Record<string, string>>({});
+
   const [loading, setLoading] = useState(false);
 
   /* Auth Check */
@@ -286,13 +288,26 @@ export default function AdminDashboard() {
     }
   }, []);
 
+  const fetchWebsiteMedia = useCallback(async () => {
+    try {
+      const docRef = doc(db, 'settings', 'websiteMedia');
+      const docSnap = await getDoc(docRef);
+      if (docSnap.exists()) {
+        setWebsiteMedia(docSnap.data() as Record<string, string>);
+      }
+    } catch (err) {
+      console.error('Error fetching website media:', err);
+    }
+  }, []);
+
   useEffect(() => {
     if (authenticated) {
       fetchGallery();
       fetchProjects();
       fetchBusinessDetails();
+      fetchWebsiteMedia();
     }
-  }, [authenticated, fetchGallery, fetchProjects, fetchBusinessDetails]);
+  }, [authenticated, fetchGallery, fetchProjects, fetchBusinessDetails, fetchWebsiteMedia]);
 
   /* ─── Gallery Actions ─── */
   const addGalleryProject = async () => {
@@ -462,6 +477,21 @@ export default function AdminDashboard() {
       setToast({ message: 'Failed to save business details', type: 'error' });
     }
     setLoading(false);
+  };
+
+  const saveWebsiteMedia = async (updatedMedia: Record<string, string>) => {
+    setLoading(true);
+    try {
+      const docRef = doc(db, 'settings', 'websiteMedia');
+      await setDoc(docRef, updatedMedia, { merge: true });
+      setWebsiteMedia(updatedMedia);
+      setToast({ message: 'Website media updated successfully!', type: 'success' });
+    } catch (err) {
+      console.error(err);
+      setToast({ message: 'Failed to update website media', type: 'error' });
+    } finally {
+      setLoading(false);
+    }
   };
 
   const handleCmsChange = (field: keyof BusinessDetails, value: string) => {
@@ -915,6 +945,55 @@ export default function AdminDashboard() {
                     {loading ? <Loader2 size={14} className="animate-spin" /> : <Save size={14} />}
                     Save All Changes
                   </button>
+                </div>
+              </div>
+            </div>
+          )}
+
+          {/* ═══════════ MEDIA TAB ═══════════ */}
+          {activeTab === 'media' && (
+            <div>
+              <div className="mb-10">
+                <h1 className="text-3xl font-serif font-bold mb-2">Page Banners & Media</h1>
+                <p className="text-white/40 text-sm">Upload images to customize header backgrounds for pages</p>
+              </div>
+
+              <div className="bg-white/5 border border-white/10 rounded-xl p-8">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
+                  {[
+                    { key: 'aboutHeader', label: 'About Page - Header Banner' },
+                    { key: 'servicesHeader', label: 'Services Page - Header Banner' },
+                    { key: 'projectsHeader', label: 'Projects Page - Header Banner' },
+                    { key: 'galleryHeader', label: 'Gallery Page - Header Banner' },
+                    { key: 'contactHeader', label: 'Contact Page - Header Banner' },
+                    { key: 'homeAboutSection', label: 'Home Page - Cultural DNA Section Photo' },
+                    { key: 'servicesInteriorSection', label: 'Services Page - Interior Design Section Photo' },
+                  ].map((field, i) => (
+                    <div key={field.key} className="space-y-4 bg-white/5 p-6 rounded-lg border border-white/5">
+                      <label className="text-accent text-xs uppercase tracking-widest font-black block">
+                        {field.label}
+                      </label>
+                      <ImageUploader 
+                        folder="banners"
+                        onUpload={(img) => saveWebsiteMedia({ ...websiteMedia, [field.key]: img.url })}
+                      />
+                      {websiteMedia[field.key] && (
+                        <div className="relative rounded-lg overflow-hidden aspect-video border border-white/10">
+                          <img src={websiteMedia[field.key]} alt={field.label} className="w-full h-full object-cover" />
+                          <button
+                            onClick={() => {
+                              const updated = { ...websiteMedia };
+                              delete updated[field.key];
+                              saveWebsiteMedia(updated);
+                            }}
+                            className="absolute top-2 right-2 bg-red-600 p-1.5 rounded-full hover:bg-red-700 transition-all shadow-xl"
+                          >
+                            <Trash2 size={12} />
+                          </button>
+                        </div>
+                      )}
+                    </div>
+                  ))}
                 </div>
               </div>
             </div>

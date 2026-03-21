@@ -32,7 +32,7 @@ export default function ConstructionPage() {
                         animate={{ opacity: 1, y: 0 }}
                         className="text-white text-4xl lg:text-7xl font-serif font-bold leading-tight"
                     >
-                        Construction <br /><span className="text-accent underline decoration-accent/30 underline-offset-8">Company</span> <br /><span className="text-accent italic">Services</span>
+                        Construction <br /><span className="text-accent italic">Services</span>
                     </motion.h1>
                 </div>
             </section>
@@ -50,11 +50,11 @@ export default function ConstructionPage() {
                             <p className="max-w-2xl mx-auto mb-12 text-gray-400 text-justify">
                                 Guided by the expertise of <strong>Er. S. P. Hari Baaskar</strong>, every site we manage undergoes multi-point structural quality audits.
                             </p>
-                            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 text-left">
+                            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-left">
                                 {[
                                     { t: "Residential Villas", d: "Luxury G+1 and G+2 structures with premium teak finishing." },
                                     { t: "Commercial Complexes", d: "Wait-bearing structures for showrooms and rental properties." },
-                                    { t: "Material Specs", d: "Using only Red Bricks, M-Sand (Double Washed), and Grade 53 Cement." },
+
                                     { t: "Durability Focus", d: "Proper curing for 21 days and anti-termite foundation treatment." }
                                 ].map((item, i) => (
                                     <div key={i} className="bg-white p-6 shadow-sm border border-gray-100">
@@ -94,7 +94,7 @@ export default function ConstructionPage() {
                         </div>
 
                         <div className="pt-24 border-t border-gray-100 mt-24 text-center">
-                            <p className="text-gray-400 text-sm uppercase tracking-[0.3em] font-bold mb-4 text-justify">Portfolio Documentation</p>
+
                             <h3 className="text-2xl lg:text-3xl font-serif text-primary mb-8 font-bold">Explore Our Full Portfolio</h3>
                             <Link
                                 href="/projects"

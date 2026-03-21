@@ -65,9 +65,8 @@ export default function HomePage() {
               </h2>
             </div>
 
-            <p className="text-white/60 text-lg lg:text-2xl font-sans mb-12 max-w-2xl leading-relaxed text-justify">
-              As a premier <strong>construction company</strong>, MAGIZH BUILDERS bridges the gap between creative architectural visions and
-              mathematically perfect structural execution. Built by <strong>Er. S. P. Hari Baaskar</strong>, we deliver homes that stand the test of time.
+            <p className="text-white/70 text-lg lg:text-xl font-sans mb-12 max-w-2xl leading-relaxed text-justify">
+              At <strong>MAGIZH BUILDERS</strong>, we turn architectural visions into high-quality structural realities. By intersecting deep engineering traditions with modern smart-home upgrades, we ensure every project we craft serves as a beautiful, legally transparent, and structural masterpiece engineered with core Vastu compliance for your family.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-8">
@@ -125,12 +124,10 @@ export default function HomePage() {
                   <span className="text-accent text-xs font-black uppercase tracking-[0.3em]">Corporate Identity</span>
                 </div>
                 <h2 className="text-primary text-4xl lg:text-5xl font-serif font-bold leading-tight">
-                  The Mark of <br /><span className="text-accent italic">Technical Authority</span>
+                  Your Dream is <br /><span className="text-accent italic">Our Passion</span>
                 </h2>
-                <p className="text-gray-500 text-lg leading-relaxed text-justify">
-                  Our symbol represents the synergy of traditional wisdom and modern civil engineering.
-                  Every project we undertake carries this seal as a guarantee of structural integrity,
-                  Vastu compliance, and mathematical perfection.
+                <p className="text-gray-500 text-lg sm:text-lg leading-relaxed text-justify font-sans">
+                  At <strong>MAGIZH BUILDERS</strong>, we turn architectural visions into high-quality structural realities. By intersecting deep engineering traditions with modern smart-home upgrades, we ensure every project we craft serves as a beautiful, legally transparent, and structural masterpiece engineered with core Vastu compliance for your family.
                 </p>
                 <div className="grid grid-cols-2 gap-8 pt-4">
                   <div>
@@ -189,13 +186,10 @@ export default function HomePage() {
               <div className="w-24 h-1.5 bg-accent mb-12" />
               <div className="space-y-8 text-gray-500 text-lg lg:text-xl font-sans leading-relaxed">
                 <p className="text-justify">
-                  MAGIZH BUILDERS is not just a <strong>construction company</strong>; we are technical guardians of your architectural dreams. Led by {" "}
-                  <strong>Er. S. P. Hari Baaskar, M.E.</strong>, our firm operates on the intersection of deep engineering traditions and modern
-                  smart-home technologies.
+                  <strong>MAGIZH BUILDERS</strong> is a <strong>construction company</strong> led by <strong>Er. S. P. Hari Baaskar, M.E.</strong>, our firm operates on the intersection of deep engineering traditions and modern smart-home technologies.
                 </p>
                 <p className="text-justify">
-                  In a City where average construction is common, we pursue excellence through rigorous <strong>structural audits</strong>, premium
-                  material sourcing, and a commitment to 100% Vastu-compliant layouts.
+                  In a City where average construction is common, we are technical guardians of your architectural dreams through rigorous <strong>structural audits</strong>, premium material sourcing, and a commitment to 100% Vastu-compliant layouts.
                 </p>
                 <div className="pt-8">
                   <Link href="/about" className="inline-flex items-center gap-4 text-accent text-xs font-black uppercase tracking-[0.3em] border-b border-accent/20 pb-2 hover:gap-6 transition-all hover:border-accent">

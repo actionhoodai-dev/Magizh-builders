@@ -20,6 +20,11 @@
     font-family: var(--font-sans), sans-serif;
   }
 
+  p, .prose p {
+    text-align: justify;
+    margin-bottom: 1.5rem;
+  }
+
   h1,
   h2,
   h3,

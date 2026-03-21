@@ -1,13 +1,43 @@
 'use client';
 
+import { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Phone, Mail, MapPin, MessageCircle } from 'lucide-react';
+import { Phone, Mail, MapPin, MessageCircle, Loader2 } from 'lucide-react';
 import Link from 'next/link';
 import TrianglePattern from '@/components/TrianglePattern';
 import { useBusinessDetails } from '@/hooks/useBusinessDetails';
 
 export default function Contact() {
     const { details } = useBusinessDetails();
+    const [loading, setLoading] = useState(false);
+    const [status, setStatus] = useState<'idle' | 'success' | 'error'>('idle');
+
+    const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+        e.preventDefault();
+        setLoading(true);
+        setStatus('idle');
+        const formData = new FormData(e.currentTarget);
+        const data = Object.fromEntries(formData.entries());
+
+        try {
+            const res = await fetch('/api/send-email', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(data),
+            });
+            if (res.ok) {
+                setStatus('success');
+                (e.target as HTMLFormElement).reset();
+            } else {
+                setStatus('error');
+            }
+        } catch (err) {
+            setStatus('error');
+        } finally {
+            setLoading(false);
+        }
+    };
+
     return (
         <div className="bg-[#FDFCFB] min-h-screen">
 
@@ -129,12 +159,14 @@ export default function Contact() {
                             <p className="text-sm text-gray-500 font-medium">Send us your structural requirements for a technical audit.</p>
                         </div>
 
-                        <form className="space-y-6">
+                        <form className="space-y-6" onSubmit={handleSubmit}>
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                                 <div className="space-y-2">
                                     <label className="text-[9px] uppercase tracking-widest font-black text-gray-400">Full Name</label>
                                     <input
                                         type="text"
+                                        name="name"
+                                        required
                                         placeholder="John Doe"
                                         className="w-full bg-white border border-gray-200 px-6 py-4 text-sm font-sans focus:outline-none focus:border-accent transition-all placeholder:text-gray-300"
                                     />
@@ -143,6 +175,8 @@ export default function Contact() {
                                     <label className="text-[9px] uppercase tracking-widest font-black text-gray-400">Phone Number</label>
                                     <input
                                         type="tel"
+                                        name="phone"
+                                        required
                                         placeholder="+91 00000 00000"
                                         className="w-full bg-white border border-gray-200 px-6 py-4 text-sm font-sans focus:outline-none focus:border-accent transition-all placeholder:text-gray-300"
                                     />
@@ -153,6 +187,8 @@ export default function Contact() {
                                 <label className="text-[9px] uppercase tracking-widest font-black text-gray-400">Email Address</label>
                                 <input
                                     type="email"
+                                    name="email"
+                                    required
                                     placeholder="john@example.com"
                                     className="w-full bg-white border border-gray-200 px-6 py-4 text-sm font-sans focus:outline-none focus:border-accent transition-all placeholder:text-gray-300"
                                 />
@@ -160,30 +196,36 @@ export default function Contact() {
 
                             <div className="space-y-2">
                                 <label className="text-[9px] uppercase tracking-widest font-black text-gray-400">Inquiry Type</label>
-                                <select className="w-full bg-white border border-gray-200 px-6 py-4 text-sm font-sans focus:outline-none focus:border-accent transition-all text-gray-500 appearance-none">
-                                    <option>Select Service</option>
-                                    <option>Bespoke Villa Construction</option>
-                                    <option>2D & 3D Architectural Drawings</option>
-                                    <option>Building Approvals & Sanctions</option>
-                                    <option>Luxury Interior Designing</option>
-                                    <option>Structural Consulting</option>
+                                <select name="service" required className="w-full bg-white border border-gray-200 px-6 py-4 text-sm font-sans focus:outline-none focus:border-accent transition-all text-gray-500 appearance-none">
+                                    <option value="">Select Service</option>
+                                    <option value="Bespoke Villa Construction">Bespoke Villa Construction</option>
+                                    <option value="2D & 3D Architectural Drawings">2D & 3D Architectural Drawings</option>
+                                    <option value="Building Approvals & Sanctions">Building Approvals & Sanctions</option>
+                                    <option value="Luxury Interior Designing">Luxury Interior Designing</option>
+                                    <option value="Structural Consulting">Structural Consulting</option>
                                 </select>
                             </div>
 
                             <div className="space-y-2">
                                 <label className="text-[9px] uppercase tracking-widest font-black text-gray-400">Message / Requirements</label>
                                 <textarea
+                                    name="message"
+                                    required
                                     rows={4}
                                     placeholder="Briefly describe your dream project..."
                                     className="w-full bg-white border border-gray-200 px-6 py-4 text-sm font-sans focus:outline-none focus:border-accent transition-all placeholder:text-gray-300 resize-none"
                                 ></textarea>
                             </div>
 
+                            {status === 'success' && <p className="text-green-600 text-xs font-bold font-sans">Enquiry submitted successfully!</p>}
+                            {status === 'error' && <p className="text-red-500 text-xs font-bold font-sans">Something went wrong. Please try again.</p>}
+
                             <button
                                 type="submit"
-                                className="w-full bg-primary text-white py-6 text-[10px] tracking-[0.4em] font-black uppercase hover:bg-accent transition-all shadow-2xl relative overflow-hidden group"
+                                disabled={loading}
+                                className="w-full bg-primary text-white py-6 text-[10px] tracking-[0.4em] font-black uppercase hover:bg-accent transition-all shadow-2xl relative overflow-hidden group flex items-center justify-center gap-2 disabled:opacity-50"
                             >
-                                <span className="relative z-10">Initialize Proposal</span>
+                                {loading ? <Loader2 size={16} className="animate-spin" /> : <span className="relative z-10">Initialize Proposal</span>}
                                 <div className="absolute inset-0 bg-white/10 -translate-x-full group-hover:translate-x-0 transition-transform duration-500" />
                             </button>
                         </form>

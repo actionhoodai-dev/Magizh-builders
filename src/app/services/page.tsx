@@ -66,7 +66,7 @@ export default function ServicesPage() {
                         animate={{ y: 0, opacity: 1 }}
                         className="text-white text-5xl lg:text-8xl font-serif font-bold mb-8"
                     >
-                        Construction Services <span className="text-accent italic">We Offer</span>
+                        Services <span className="text-accent italic">We Offer</span>
                     </motion.h1>
                     <motion.p
                         initial={{ y: 20, opacity: 0 }}
@@ -148,9 +148,9 @@ export default function ServicesPage() {
                                 integrated approach ensures every brick laid is a testament to quality.
                             </p>
 
-                            <div className="grid md:grid-cols-2 gap-12 pt-12">
+                            <div className="grid md:grid-cols-2 gap-12 pt-12 items-start">
                                 <div className="space-y-6">
-                                    <h3 className="text-2xl font-serif text-primary font-bold border-l-4 border-accent pl-6">Professional 2D & 3D Architectural Drawings</h3>
+                                    <h3 className="text-2xl font-serif text-primary font-bold border-l-4 border-accent pl-6 md:min-h-[4rem]">Professional 2D & 3D Architectural Drawings</h3>
                                     <p>
                                         In the modern era of construction, visualization is the key to structural success. Our <strong>2D & 3D drawing services</strong>{" "}
                                         allow clients to experience their dream properties before the foundation is even poured. Using advanced CAD and 3D modeling
@@ -163,7 +163,7 @@ export default function ServicesPage() {
                                     </p>
                                 </div>
                                 <div className="space-y-6">
-                                    <h3 className="text-2xl font-serif text-primary font-bold border-l-4 border-accent pl-6">Legal Blueprints & Plan Approvals</h3>
+                                    <h3 className="text-2xl font-serif text-primary font-bold border-l-4 border-accent pl-6 md:min-h-[4rem]">Legal Blueprints & Plan Approvals</h3>
                                     <p>
                                         Navigating the complex landscape of <strong>building plan approvals</strong> can be overwhelming for homeowners.
                                         MAGIZH BUILDERS simplifies this process by handling all government compliance procedures. We specialize in preparing
@@ -177,37 +177,12 @@ export default function ServicesPage() {
                                 </div>
                             </div>
 
-                            <div className="bg-white p-10 lg:p-20 shadow-2xl border border-gray-100 my-24 relative">
-                                <div className="absolute top-0 right-0 w-32 h-32 bg-accent/5 -z-10 rounded-full blur-3xl" />
-                                <h3 className="text-3xl lg:text-4xl font-serif text-primary font-bold mb-10 text-center">Engineering Standards & Material Excellence</h3>
-                                <p className="text-center mb-12">
-                                    As a registered <strong>Civil Engineering firm</strong>, we do not compromise on structural integrity.
-                                    Our construction sites follow a rigorous "Material Quality Charter" which includes:
-                                </p>
-                                <ul className="grid md:grid-cols-2 gap-8 list-none p-0">
-                                    {[
-                                        { t: "Premium Red Bricks", d: "Sourced for maximum thermal insulation and structural longevity." },
-                                        { t: "Grade 53 Cement", d: "Ensures the highest compressive strength for pillars and beams." },
-                                        { t: "Double Washed M-Sand", d: "Superior bonding compared to river sand with zero impurities." },
-                                        { t: "Structural Steel", d: "Using only certified TMT bars (FE 500/550D) for earthquake resistance." },
-                                        { t: "Anti-Termite Treatment", d: "Carried out at the foundation level for all our villa projects." },
-                                        { t: "21-Day Curing Protocol", d: "Strictly monitored curing schedules to ensure concrete reaches full strength." }
-                                    ].map((item, idx) => (
-                                        <li key={idx} className="flex gap-4">
-                                            <CheckCircle2 className="text-accent shrink-0" size={20} />
-                                            <div>
-                                                <strong className="text-primary block mb-1">{item.t}</strong>
-                                                <span className="text-sm opacity-80">{item.d}</span>
-                                            </div>
-                                        </li>
-                                    ))}
-                                </ul>
-                            </div>
+
 
                             <div className="space-y-8">
                                 <h3 className="text-4xl font-serif text-primary font-bold">Turnkey Residential & Villa Construction</h3>
                                 <p>
-                                    Are you looking for <strong>villa builders</strong> who handle everything from earthwork to the final coat of paint?
+                                    Are you looking for <strong>villa builders</strong>{" "} who handle everything from earthwork to the final coat of paint?
                                     MAGIZH BUILDERS offers complete turnkey solutions. Our residential projects range from compact independent houses
                                     to sprawling luxury G+2 villas. We focus on "Bespoke Architecture," meaning your home is tailored to the specific
                                     topography of your plot, whether it's in the bustling heart of the City or the serene outskirts of Yercaud foothills.
@@ -223,7 +198,7 @@ export default function ServicesPage() {
                                 <div className="order-2 md:order-1">
                                     <h3 className="text-3xl font-serif text-primary font-bold mb-6">Interior Designing & Aesthetic Finishes</h3>
                                     <p className="mb-6">
-                                        Proper construction is only half the battle; the "soul" of a home lies in its interiors. Our <strong>interior designers</strong>
+                                        Proper construction is only half the battle; the "soul" of a home lies in its interiors. Our <strong>interior designers</strong>{" "}
                                         bridge the gap between structural geometry and daily comfort. We specialize in modular kitchen layouts, false ceiling
                                         engineering with Gypsum/LED integration, and custom cabinetry.
                                     </p>
@@ -241,7 +216,7 @@ export default function ServicesPage() {
                             <div className="space-y-8 py-12">
                                 <h3 className="text-3xl font-serif text-primary font-bold">Civil Engineering Consulting & Structural Audits</h3>
                                 <p>
-                                    Beyond building, we act as technical guardians for your structure. Our <strong>consulting services</strong>
+                                    Beyond building, we act as technical guardians for your structure. Our <strong>consulting services</strong>{" "}
                                     include site feasibility studies, soil stability testing, and detailed bill of quantities (BOQ) preparation.
                                     Registered civil engineers at MAGIZH BUILDERS also provide structural stability certificates for commercial
                                     complexes and bank loan estimation reports for residential projects.
@@ -257,8 +232,7 @@ export default function ServicesPage() {
                                 <h3 className="text-2xl font-serif text-primary font-bold mb-6 italic">Empowering Urban Growth</h3>
                                 <p className="text-lg">
                                     Since our inception, MAGIZH BUILDERS has been more than just a <strong>construction company</strong>. We are active contributors
-                                    to the modernization of the residential landscape. From the narrow streets of Shevapet to the premium colonies of
-                                    Fairlands and Peramanur, our buildings stand as landmarks of safety and style. We stay updated with the latest
+                                    to the modernization of the residential landscape. We stay updated with the latest
                                     Real Estate Regulatory Authority (RERA) guidelines and green building practices to ensure your home is future-proof.
                                 </p>
                             </div>
@@ -266,7 +240,7 @@ export default function ServicesPage() {
                             <div className="text-center space-y-6 max-w-3xl mx-auto py-12">
                                 <h3 className="text-3xl font-serif text-primary font-bold">Join the MAGIZH BUILDERS Legacy</h3>
                                 <p>
-                                    Building a home is a once-in-a-lifetime milestone. Don't leave it to chance. Choose the <strong>engineering experts</strong>
+                                    Building a home is a once-in-a-lifetime milestone. Don't leave it to chance. Choose the <strong>engineering experts</strong>{" "}
                                     who value your vision as much as you do. With over a decade of experience and hundreds of happy families served,
                                     MAGIZH BUILDERS is ready to turn your "Plan" into a "Home."
                                 </p>
