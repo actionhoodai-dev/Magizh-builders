@@ -59,7 +59,7 @@ export default function HomePage() {
             </div>
 
             <div className="flex flex-col gap-4 mb-10">
-              <h2 className="text-[#1A5F3B] font-serif font-black italic text-2xl sm:text-3xl lg:text-4xl tracking-wide relative z-10 sm:text-left text-center" 
+              <h2 className="text-[#1A5F3B] font-serif font-black italic text-2xl sm:text-3xl lg:text-4xl tracking-wide relative z-10 text-left" 
                   style={{ WebkitTextStroke: '1px white', textStroke: '1px white' } as any}>
                 Your Dream is Our Passion
               </h2>
@@ -106,7 +106,7 @@ export default function HomePage() {
                 alt="MAGIZH BUILDERS - Official Brand Identity"
                 className="w-full max-w-[500px] h-auto mx-auto lg:mx-0 drop-shadow-xl"
               />
-              <h3 className="text-[#1A5F3B] font-serif font-black italic text-xl sm:text-2xl tracking-wide -mt-24 ml-16 whitespace-nowrap" 
+              <h3 className="text-[#1A5F3B] font-serif font-black italic text-xl sm:text-2xl tracking-wide sm:-mt-24 sm:ml-16 -mt-16 ml-0 text-center sm:text-left whitespace-nowrap" 
                   style={{ WebkitTextStroke: '0.8px white', textStroke: '0.8px white' } as any}>
                 Your Dream is Our Passion
               </h3>

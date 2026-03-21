@@ -12,7 +12,7 @@ export default function Preloader() {
         setLoading(true);
         const timer = setTimeout(() => {
             setLoading(false);
-        }, 2000); // 2.0s duration animation clip node
+        }, 3000); // Expanded for full cinematic buffer Layout Node
 
         return () => clearTimeout(timer);
     }, [pathname]);

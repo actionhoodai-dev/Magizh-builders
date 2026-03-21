@@ -190,7 +190,17 @@ export default function Navbar() {
                                                             exit={{ height: 0, opacity: 0 }}
                                                             className="overflow-hidden bg-gray-50/50 rounded-xl mt-1 mb-2"
                                                         >
-                                                            {link.children.map((child) => (
+                                                            <div className="flex flex-col">
+                                                                <Link
+                                                                    href={link.href}
+                                                                    onClick={() => setIsOpen(false)}
+                                                                    className={cn(
+                                                                        "block py-3 px-4 text-[10px] uppercase tracking-[0.15em] font-black text-accent bg-accent/5 border-l-2 border-accent transition-all"
+                                                                    )}
+                                                                >
+                                                                    Explore All Services
+                                                                </Link>
+                                                                {link.children.map((child) => (
                                                                 <Link
                                                                     key={child.href}
                                                                     href={child.href}
@@ -203,7 +213,8 @@ export default function Navbar() {
                                                                     {child.label}
                                                                 </Link>
                                                             ))}
-                                                        </motion.div>
+                                                        
+                                                             </div></motion.div>
                                                     )}
                                                 </AnimatePresence>
                                             </div>
