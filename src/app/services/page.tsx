@@ -143,7 +143,7 @@ export default function ServicesPage() {
                                 MAGIZH BUILDERS stands at the forefront of the construction industry, delivering
                                 exceptional residential and commercial structural solutions. Led by <strong>Er. S. P. Hari Baaskar, M.E.</strong>,
                                 our firm prides itself on a legacy of precision engineering, transparent execution, and
-                                architectural innovation. Whether you are looking for the best <strong>construction company</strong>
+                                architectural innovation. Whether you are looking for the best <strong>construction company</strong>{" "}
                                 to build your family home or need expert assistance with building plan approvals, our
                                 integrated approach ensures every brick laid is a testament to quality.
                             </p>
