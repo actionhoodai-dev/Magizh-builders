@@ -60,3 +60,30 @@
 .premium-border {
   @apply border border-[#C8A951]/20;
 }
+
+/* Touch Hover Support for Mobile */
+@media (hover: none) {
+  .group:active .group-hover\:text-accent,
+  .group:hover .group-hover\:text-accent {
+    color: #C8A951 !important;
+  }
+  
+  .hover\:text-accent:active,
+  .hover\:text-accent:hover {
+    color: #C8A951 !important;
+  }
+
+  .group:active .group-hover\:bg-accent,
+  .group:hover .group-hover\:bg-accent {
+    background-color: #C8A951 !important;
+  }
+
+  /* Rotate / scale transitions on active */
+  .group:active .group-hover\:rotate-12 {
+    transform: rotate(12deg) !important;
+  }
+
+  .group:active .group-hover\:scale-110 {
+    transform: scale(1.1) !important;
+  }
+}
