@@ -113,7 +113,7 @@ export default function ServicesPage() {
                                     <div className="mt-10">
                                         <Link
                                             href={`/services/${service.slug}`}
-                                            className="inline-flex items-center gap-2 text-accent text-[10px] uppercase tracking-[0.3em] font-bold hover:gap-4 transition-all pb-1 border-b border-accent/20 hover:border-accent"
+                                            className="inline-flex items-center gap-2 text-primary text-[10px] uppercase tracking-[0.3em] font-bold hover:gap-4 transition-all pb-1 border-b border-primary/20 hover:border-primary"
                                         >
                                             Explore Service <ChevronRight size={14} />
                                         </Link>

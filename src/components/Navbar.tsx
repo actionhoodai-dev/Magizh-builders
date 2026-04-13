@@ -77,7 +77,7 @@ export default function Navbar() {
                                     href={link.href}
                                     className={cn(
                                         "text-[12.5px] uppercase tracking-[0.4em] font-bold transition-all hover:text-accent flex items-center gap-2",
-                                        pathname.startsWith(link.href) && link.href !== '/' || pathname === link.href ? "text-primary" : "text-primary/60"
+                                        pathname.startsWith(link.href) && link.href !== '/' || pathname === link.href ? "text-accent" : "text-primary"
                                     )}
                                 >
                                     {link.label}
@@ -99,7 +99,7 @@ export default function Navbar() {
                                                         href={child.href}
                                                         className={cn(
                                                             "text-[12.5px] uppercase tracking-[0.2em] font-bold transition-all hover:text-accent hover:pl-2",
-                                                            pathname === child.href ? "text-accent" : "text-primary/60"
+                                                            pathname === child.href ? "text-accent" : "text-primary"
                                                         )}
                                                     >
                                                         {child.label}
@@ -159,7 +159,7 @@ export default function Navbar() {
                                                 onClick={() => setIsOpen(false)}
                                                 className={cn(
                                                     "group flex items-center justify-between py-3 px-2 rounded-xl transition-all duration-300",
-                                                    pathname === link.href ? "bg-primary text-white" : "text-primary/60 hover:text-primary hover:bg-gray-50"
+                                                    pathname === link.href ? "bg-accent text-primary" : "text-primary hover:bg-gray-50"
                                                 )}
                                             >
                                                 <span className="text-xs font-black uppercase tracking-[0.2em]">{link.label}</span>
@@ -173,7 +173,7 @@ export default function Navbar() {
                                                     onClick={() => setMobileServicesOpen(!mobileServicesOpen)}
                                                     className={cn(
                                                         "w-full flex items-center justify-between py-3 px-2 rounded-xl transition-all duration-300",
-                                                        pathname.startsWith(link.href) ? "text-primary font-black" : "text-primary/60 hover:text-primary hover:bg-gray-50"
+                                                        pathname.startsWith(link.href) ? "text-accent font-black" : "text-primary hover:bg-gray-50"
                                                     )}
                                                 >
                                                     <span className="text-xs font-black uppercase tracking-[0.2em]">{link.label}</span>
@@ -205,7 +205,7 @@ export default function Navbar() {
                                                                     onClick={() => setIsOpen(false)}
                                                                     className={cn(
                                                                         "block py-3 px-4 text-[10px] uppercase tracking-[0.15em] font-bold border-l-2 transition-all",
-                                                                        pathname === child.href ? "text-accent border-accent bg-accent/5" : "text-primary/40 border-transparent hover:text-primary hover:pl-6"
+                                                                        pathname === child.href ? "text-accent border-accent bg-accent/5" : "text-primary border-transparent hover:text-primary hover:pl-6"
                                                                     )}
                                                                 >
                                                                     {child.label}
