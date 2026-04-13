@@ -16,7 +16,7 @@ export default function InteriorPage() {
                 {/* Background Image */}
                 <div className="absolute inset-0 z-0 scale-105">
                     <img
-                        src="/images/gallery/gallery-3.jpg"
+                        src="/images/gallery/interior-premium.png"
                         className="w-full h-full object-cover"
                         alt="Interior Design Background"
                     />
@@ -62,8 +62,8 @@ export default function InteriorPage() {
                         </div>
 
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-stretch pt-8">
-                            <div className="bg-[#FDFCFB] p-10 border border-gray-100 flex flex-col justify-center">
-                                <h2 className="text-primary font-serif text-3xl mb-6 font-bold italic">We are specialized in</h2>
+                            <div className="bg-primary/5 p-10 border-l-4 border-accent flex flex-col justify-center backdrop-blur-sm shadow-xl">
+                                <h2 className="text-primary font-serif text-3xl mb-6 font-bold italic">Specialized <span className="text-accent underline underline-offset-4">Solutions</span></h2>
 
                                 <ul className="space-y-4">
                                     {[
@@ -73,7 +73,7 @@ export default function InteriorPage() {
                                         "Marble & Granite Flooring",
                                         "Custom Wardrobes (Plywood/Veneer)"
                                     ].map((item, i) => (
-                                        <li key={i} className="flex items-center gap-3 text-sm font-bold uppercase tracking-widest text-primary/80">
+                                        <li key={i} className="flex items-center gap-3 text-sm font-bold uppercase tracking-widest text-primary/80 group-hover:translate-x-2 transition-transform duration-300">
                                             <div className="w-1.5 h-1.5 bg-accent rounded-full" /> {item}
                                         </li>
                                     ))}
@@ -81,7 +81,7 @@ export default function InteriorPage() {
                             </div>
                             <div className="bg-gray-100 relative overflow-hidden group">
                                 <img
-                                    src="/images/gallery/gallery-3.jpg"
+                                    src="/images/gallery/interior-premium.png"
                                     alt="Interior Design"
                                     className="w-full h-full object-cover transition-transform duration-[4s] group-hover:scale-110"
                                 />

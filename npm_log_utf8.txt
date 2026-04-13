@@ -1,0 +1,94 @@
+﻿node.exe : npm verbose cli 
+C:\Program 
+Files\nodejs\node.exe 
+C:\Program Files\nodejs\node_m
+odules\npm\bin\npm-cli.js
+At line:1 char:1
++ & "C:\Program 
+Files\nodejs/node.exe" 
+"C:\Program 
+Files\nodejs/node_mo ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~
+    + CategoryInfo          : 
+    NotSpecified: (npm verbo  
+  se cli...\bin\npm-cli.js:   
+ String) [], RemoteExcepti    
+on
+    + FullyQualifiedErrorId : 
+    NativeCommandError
+ 
+npm info using npm@11.6.2
+npm info using node@v24.13.0
+npm verbose title npm install
+npm verbose argv "install" 
+"--loglevel" "verbose"
+npm verbose logfile 
+logs-max:10 dir:C:\Users\ELCOT
+\AppData\Local\npm-cache\_logs
+\2026-03-16T09_35_43_906Z-
+npm verbose logfile C:\Users\E
+LCOT\AppData\Local\npm-cache\_
+logs\2026-03-16T09_35_43_906Z-
+debug-0.log
+npm http fetch GET 200 https:/
+/registry.npmjs.org/clsx 
+812ms (cache revalidated)
+npm http fetch GET 200 https:/
+/registry.npmjs.org/framer-mot
+ion 476ms (cache revalidated)
+npm http fetch GET 200 https:/
+/registry.npmjs.org/@emotion%2
+fis-prop-valid 245ms (cache 
+revalidated)
+npm http fetch GET 200 https:/
+/registry.npmjs.org/react 
+169ms (cache revalidated)
+npm http fetch GET 200 https:/
+/registry.npmjs.org/react-dom 
+241ms (cache revalidated)
+npm http fetch GET 200 https:/
+/registry.npmjs.org/lucide-rea
+ct 145ms (cache revalidated)
+npm http fetch GET 200 https:/
+/registry.npmjs.org/next 
+3895ms (cache updated)
+npm http fetch GET 200 https:/
+/registry.npmjs.org/@opentelem
+etry%2fapi 3178ms (cache 
+updated)
+npm http fetch GET 200 https:/
+/registry.npmjs.org/@playwrigh
+t%2ftest 5109ms (cache 
+updated)
+npm http fetch GET 200 https:/
+/registry.npmjs.org/babel-plug
+in-react-compiler 165ms 
+(cache updated)
+npm http fetch GET 200 https:/
+/registry.npmjs.org/sass 
+211ms (cache updated)
+npm http fetch GET 200 https:/
+/registry.npmjs.org/tailwind-m
+erge 275ms (cache updated)
+npm http fetch GET 200 https:/
+/registry.npmjs.org/@tailwindc
+ss%2fpostcss 334ms (cache 
+updated)
+npm http fetch GET 200 https:/
+/registry.npmjs.org/@types%2fn
+ode 2836ms (cache updated)
+npm http fetch GET 200 https:/
+/registry.npmjs.org/@types%2fr
+eact 179ms (cache revalidated)
+npm http fetch GET 200 https:/
+/registry.npmjs.org/@types%2fr
+eact-dom 147ms (cache 
+revalidated)
+npm http fetch GET 200 https:/
+/registry.npmjs.org/eslint 
+3279ms (cache updated)
+npm http fetch GET 200 https:/
+/registry.npmjs.org/jiti 
+175ms (cache revalidated)

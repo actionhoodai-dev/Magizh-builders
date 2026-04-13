@@ -16,7 +16,7 @@ export default function ConsultingPage() {
                 {/* Background Image */}
                 <div className="absolute inset-0 z-0 scale-105">
                     <img
-                        src="/images/hero/hero-4.jpg"
+                        src="/images/gallery/consulting-premium.png"
                         className="w-full h-full object-cover"
                         alt="Technical Consulting Background"
                     />
@@ -45,7 +45,7 @@ export default function ConsultingPage() {
                             Knowledge is the foundation of structural safety. Our <strong>construction consulting</strong> provides independent homeowners and builders with expert technical advice, structural audits, and realistic cost estimations based on current market trends.
                         </p>
 
-                        <div className="bg-[#F9F9F9] p-10 lg:p-16 border-t-8 border-primary">
+                        <div className="bg-primary/5 p-10 lg:p-16 border-l-8 border-accent backdrop-blur-sm shadow-xl">
                             <div className="flex flex-col lg:flex-row gap-12 items-center">
                                 <div className="lg:w-1/3">
                                     <div className="w-24 h-24 bg-accent flex items-center justify-center rounded-full shadow-lg">
@@ -53,8 +53,8 @@ export default function ConsultingPage() {
                                     </div>
                                 </div>
                                 <div className="lg:w-2/3 text-left">
-                                    <h2 className="text-primary font-serif text-3xl mb-6 font-bold">Structural Intelligence</h2>
-                                    <p className="text-base text-gray-400 mb-8 italic text-justify">
+                                    <h2 className="text-primary font-serif text-3xl mb-6 font-bold italic">Structural <span className="text-accent underline underline-offset-8">Intelligence</span></h2>
+                                    <p className="text-base text-gray-500 mb-8 italic text-justify">
                                         "A second opinion from a Registered Civil Engineer can save millions in future repairs and legal overheads."
                                     </p>
                                     <ul className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -66,8 +66,8 @@ export default function ConsultingPage() {
                                             "Crack Identification & Repair",
                                             "Renovation Feasibility Study"
                                         ].map((item, i) => (
-                                            <li key={i} className="flex items-center gap-2 text-xs font-black uppercase tracking-widest text-primary">
-                                                <CheckCircle2 size={16} className="text-accent" /> {item}
+                                            <li key={i} className="flex items-center gap-2 text-xs font-black uppercase tracking-widest text-primary group hover:translate-x-2 transition-transform duration-300">
+                                                <div className="w-1.5 h-1.5 bg-accent rounded-full" /> {item}
                                             </li>
                                         ))}
                                     </ul>
@@ -92,9 +92,9 @@ export default function ConsultingPage() {
                             </div>
                             <div className="relative overflow-hidden group">
                                 <img
-                                    src="/images/hero/hero-4.jpg"
+                                    src="/images/gallery/consulting-premium.png"
                                     alt="Structural Advisory Consultation"
-                                    className="w-full h-auto object-cover transition-all duration-1000"
+                                    className="w-full h-auto object-cover transition-all duration-1000 group-hover:scale-105"
                                 />
                                 <div className="absolute inset-0 bg-primary/20 mix-blend-multiply transition-opacity group-hover:opacity-0" />
                             </div>

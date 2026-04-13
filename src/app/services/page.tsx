@@ -11,7 +11,7 @@ const services = [
         id: 'drawings',
         title: '2D & 3D Drawings',
         slug: 'drawings',
-        image: '/images/hero/hero-1.jpg',
+        image: '/images/gallery/drawing-premium.png',
         desc: 'Professional architectural visualizations and detailed technical drawings for precise project planning.',
         seoTitle: '2D & 3D Drawings'
     },
@@ -19,7 +19,7 @@ const services = [
         id: 'approvals',
         title: 'Blue Prints & Approvals',
         slug: 'approvals',
-        image: '/images/hero/hero-2.jpg',
+        image: '/images/gallery/approvals-premium.png',
         desc: 'Expert assistance with building plan approvals and legally compliant blueprints for Corporation norms.',
         seoTitle: 'Building Plan Approvals'
     },
@@ -35,7 +35,7 @@ const services = [
         id: 'interior',
         title: 'Interior Designing',
         slug: 'interior',
-        image: '/images/gallery/gallery-4.jpg',
+        image: '/images/gallery/interior-premium.png',
         desc: 'Bespoke interior solutions that merge functional aesthetics with premium structural finishes.',
         seoTitle: 'Interior Designing'
     },
@@ -43,7 +43,7 @@ const services = [
         id: 'consulting',
         title: 'Consulting',
         slug: 'consulting',
-        image: '/images/projects/project-4.jpg',
+        image: '/images/gallery/consulting-premium.png',
         desc: 'Structural guidance, cost estimation, and technical consulting by registered civil engineers.',
         seoTitle: 'Construction Consulting'
     }
@@ -91,7 +91,7 @@ export default function ServicesPage() {
                                 whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ once: true }}
                                 transition={{ delay: i * 0.1 }}
-                                className="group bg-white border border-gray-100 flex flex-col hover:border-accent transition-all duration-500 shadow-sm hover:shadow-2xl overflow-hidden"
+                                className={`group bg-white border border-gray-100 flex flex-col hover:border-accent transition-all duration-500 shadow-sm hover:shadow-2xl overflow-hidden ${['interior', 'drawings', 'approvals', 'consulting'].includes(service.id) ? 'ring-1 ring-accent/20 border-accent/30' : ''}`}
                             >
                                 {/* Cover Image */}
                                 <div className="relative h-64 lg:h-72 overflow-hidden bg-gray-100">
@@ -209,7 +209,7 @@ export default function ServicesPage() {
                                     </p>
                                 </div>
                                 <div className="order-1 md:order-2 bg-primary p-1">
-                                    <img src="/images/gallery/gallery-3.jpg" className="w-full h-auto transition-all duration-700" alt="Interior Design Excellence" />
+                                    <img src="/images/gallery/interior-premium.png" className="w-full h-auto transition-all duration-700 hover:scale-105" alt="Interior Design Excellence" />
                                 </div>
                             </div>
 

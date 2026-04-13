@@ -16,7 +16,7 @@ export default function ApprovalsPage() {
                 {/* Background Image */}
                 <div className="absolute inset-0 z-0 scale-105">
                     <img
-                        src="/images/hero/hero-2.jpg"
+                        src="/images/gallery/approvals-premium.png"
                         className="w-full h-full object-cover"
                         alt="Building Approvals Background"
                     />
@@ -45,10 +45,10 @@ export default function ApprovalsPage() {
                             Navigating the legal landscape of construction can be complex. Magizh Builders specializes in securing <strong>building plan approvals</strong>, ensuring that your blueprints comply with all municipal corporation regulations and safety standards.
                         </p>
 
-                        <div className="bg-[#1B6644] text-white p-10 lg:p-16 relative overflow-hidden group">
+                        <div className="bg-primary/5 p-10 lg:p-16 border-l-8 border-accent backdrop-blur-sm shadow-xl">
                             <div className="relative z-10">
-                                <h2 className="text-accent font-serif text-3xl mb-8 font-bold">Comprehensive Approval Support</h2>
-                                <p className="mb-10 text-white/70 text-justify">
+                                <h2 className="text-primary font-serif text-3xl mb-8 font-bold italic">Legal <span className="text-accent underline underline-offset-8">Blueprint</span> Compliance</h2>
+                                <p className="mb-10 text-gray-500 text-justify">
                                     We handle the entire documentation process for builders and individual homeowners, from initial blueprint preparation to final government sanctions.
                                 </p>
                                 <ul className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -60,14 +60,11 @@ export default function ApprovalsPage() {
                                         "Field Measurement Sketch (FMS) Study",
                                         "Bank Valuation Reports"
                                     ].map((item, i) => (
-                                        <li key={i} className="flex items-center gap-3 text-sm font-bold uppercase tracking-widest text-white/90">
-                                            <CheckCircle2 size={18} className="text-accent" /> {item}
+                                        <li key={i} className="flex items-center gap-3 text-sm font-bold uppercase tracking-widest text-primary group hover:translate-x-2 transition-transform duration-300">
+                                            <div className="w-1.5 h-1.5 bg-accent rounded-full" /> {item}
                                         </li>
                                     ))}
                                 </ul>
-                            </div>
-                            <div className="absolute -bottom-10 -right-10 opacity-[0.05] group-hover:scale-110 transition-transform duration-1000">
-                                <FileCheck size={280} />
                             </div>
                         </div>
 
@@ -89,9 +86,9 @@ export default function ApprovalsPage() {
                             </div>
                             <div className="relative overflow-hidden group">
                                 <img
-                                    src="/images/hero/hero-2.jpg"
+                                    src="/images/gallery/approvals-premium.png"
                                     alt="Building Approval Documentation"
-                                    className="w-full h-auto object-cover transition-all duration-1000"
+                                    className="w-full h-auto object-cover transition-all duration-1000 group-hover:scale-105"
                                 />
                                 <div className="absolute inset-0 bg-primary/20 mix-blend-multiply" />
                             </div>

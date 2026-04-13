@@ -1,0 +1,23 @@
+.git
+.gitignore
+eslint.config.mjs
+Magizh-Builders.code-workspace
+next.config.ts
+package.json
+postcss.config.mjs
+public
+README.md
+src
+tsconfig.json
+
+$RECYCLE.BIN
+actionhood_ai_website
+backend
+candidate-portal
+gmtek-talent-platform
+java_learning
+magizh-builders
+movies
+New folder
+recording-20260312_134407.mp4
+System Volume Information

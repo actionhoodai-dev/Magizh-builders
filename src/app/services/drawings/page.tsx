@@ -16,7 +16,7 @@ export default function DrawingsPage() {
                 {/* Background Image */}
                 <div className="absolute inset-0 z-0 scale-105">
                     <img
-                        src="/images/hero/hero-1.jpg"
+                        src="/images/gallery/drawing-premium.png"
                         className="w-full h-full object-cover"
                         alt="Architectural Drawings Background"
                     />
@@ -45,8 +45,8 @@ export default function DrawingsPage() {
                             At Magizh Builders, we believe that every great structure begins with a mathematically precise and visually compelling draft. Our <strong>2D & 3D drawings</strong> provide homeowners and developers with a clear architectural roadmap before any ground is broken.
                         </p>
 
-                        <div className="bg-gray-50 p-10 lg:p-16 border-l-4 border-accent">
-                            <h2 className="text-primary font-serif text-3xl mb-8 font-bold">Why Technical Drawings Matter</h2>
+                        <div className="bg-primary/5 p-10 lg:p-16 border-l-8 border-accent backdrop-blur-sm shadow-xl">
+                            <h2 className="text-primary font-serif text-3xl mb-8 font-bold">Service <span className="text-accent underline underline-offset-8">Specifications</span></h2>
                             <p className="mb-8 text-justify">
                                 Detailed drawings eliminate ambiguity during construction. By visualizing the structural flow and spatial distribution, we ensure that your dream home is not only aesthetically pleasing but structurally coherent and compliant with local regulations.
                             </p>
@@ -59,8 +59,8 @@ export default function DrawingsPage() {
                                     "Joinery (Door/Window) Schedule",
                                     "Future Expansion Planning"
                                 ].map((item, i) => (
-                                    <li key={i} className="flex items-center gap-3 text-sm font-bold uppercase tracking-wider text-primary">
-                                        <CheckCircle2 size={18} className="text-accent" /> {item}
+                                    <li key={i} className="flex items-center gap-3 text-sm font-bold uppercase tracking-wider text-primary group hover:translate-x-2 transition-transform duration-300">
+                                        <div className="w-1.5 h-1.5 bg-accent rounded-full" /> {item}
                                     </li>
                                 ))}
                             </ul>
@@ -86,7 +86,7 @@ export default function DrawingsPage() {
                             </div>
                             <div className="relative overflow-hidden shadow-2xl">
                                 <img
-                                    src="/images/hero/hero-1.jpg"
+                                    src="/images/gallery/drawing-premium.png"
                                     alt="Architectural Visualization Process"
                                     className="w-full h-auto object-cover"
                                 />
