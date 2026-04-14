@@ -278,7 +278,7 @@ export default function HomePage() {
                 <Star className="mb-6 group-hover:text-accent" size={32} />
                 <h3 className="text-2xl font-serif font-bold mb-4 group-hover:text-white">Award-Winning Aesthetics</h3>
                 <p className="text-primary/60 group-hover:text-white/60 mb-8 font-serif italic text-lg line-clamp-2">"Their attention to the mathematical flow of rooms changed how we live."</p>
-                <p className="text-xs uppercase font-black tracking-[0.2em] group-hover:text-accent">— Mr. Selvam, Fairlands</p>
+                <p className="text-xs uppercase font-black tracking-[0.2em] group-hover:text-accent">— Mr. Selvam, Salem</p>
               </div>
             </div>
           </div>

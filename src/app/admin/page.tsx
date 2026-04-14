@@ -561,7 +561,7 @@ export default function AdminDashboard() {
                       value={newGalleryName}
                       onChange={(e) => setNewGalleryName(e.target.value)}
                       className="w-full bg-white/10 border border-white/20 text-white px-5 py-3 rounded-lg focus:outline-none focus:border-accent transition-all placeholder:text-white/30"
-                      placeholder="e.g. Villa Project - Fairlands"
+                      placeholder="e.g. Villa Project - Salem"
                     />
                   </div>
 
@@ -706,7 +706,7 @@ export default function AdminDashboard() {
                         value={newProjectLocation}
                         onChange={(e) => setNewProjectLocation(e.target.value)}
                         className="w-full bg-white/10 border border-white/20 text-white px-5 py-3 rounded-lg focus:outline-none focus:border-accent transition-all placeholder:text-white/30"
-                        placeholder="e.g. Fairlands, Salem"
+                        placeholder="e.g. Salem"
                       />
                     </div>
                   </div>
