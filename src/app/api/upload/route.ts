@@ -1,6 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
 import { v2 as cloudinary } from "cloudinary";
-import { Readable } from 'stream';
 
 cloudinary.config({
   cloud_name: process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME,
@@ -10,6 +9,23 @@ cloudinary.config({
 
 export async function POST(request: NextRequest) {
   try {
+    // Validate Cloudinary config is present
+    if (
+      !process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME ||
+      !process.env.CLOUDINARY_API_KEY ||
+      !process.env.CLOUDINARY_API_SECRET
+    ) {
+      console.error("Missing Cloudinary environment variables:", {
+        cloud_name: !!process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME,
+        api_key: !!process.env.CLOUDINARY_API_KEY,
+        api_secret: !!process.env.CLOUDINARY_API_SECRET,
+      });
+      return NextResponse.json(
+        { error: "Server misconfiguration: Cloudinary credentials missing" },
+        { status: 500 }
+      );
+    }
+
     const formData = await request.formData();
     const file = formData.get("file") as File;
     const folder = (formData.get("folder") as string) || "magizh-builders";
@@ -18,23 +34,16 @@ export async function POST(request: NextRequest) {
       return NextResponse.json({ error: "No file provided" }, { status: 400 });
     }
 
+    // Convert file to base64 data URI for reliable upload
     const bytes = await file.arrayBuffer();
     const buffer = Buffer.from(bytes);
+    const base64 = buffer.toString("base64");
+    const mimeType = file.type || "image/png";
+    const dataUri = `data:${mimeType};base64,${base64}`;
 
-    // Use fast direct stream pipes without slow Base64 string conversions memory hits
-    const result: any = await new Promise((resolve, reject) => {
-      const uploadStream = cloudinary.uploader.upload_stream(
-        {
-          folder: `magizh-builders/${folder}`,
-          resource_type: "auto",
-        },
-        (error, result) => {
-          if (error) reject(error);
-          else resolve(result);
-        }
-      );
-
-      Readable.from(buffer).pipe(uploadStream);
+    const result = await cloudinary.uploader.upload(dataUri, {
+      folder: `magizh-builders/${folder}`,
+      resource_type: "auto",
     });
 
     return NextResponse.json({

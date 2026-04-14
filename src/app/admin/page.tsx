@@ -162,9 +162,67 @@ function AdminLogin({ onLogin }: { onLogin: () => void }) {
   );
 }
 
+/* ─── Client-side Image Compressor ─── */
+function compressImage(file: File, maxWidth = 2048, maxHeight = 2048, quality = 0.8): Promise<File> {
+  return new Promise((resolve, reject) => {
+    // If file is already small enough (<2MB) and not too large in dimensions, skip compression
+    if (file.size < 2 * 1024 * 1024) {
+      resolve(file);
+      return;
+    }
+
+    const img = new window.Image();
+    const url = URL.createObjectURL(file);
+
+    img.onload = () => {
+      URL.revokeObjectURL(url);
+
+      let { width, height } = img;
+
+      // Scale down if exceeding max dimensions (preserves aspect ratio)
+      if (width > maxWidth || height > maxHeight) {
+        const ratio = Math.min(maxWidth / width, maxHeight / height);
+        width = Math.round(width * ratio);
+        height = Math.round(height * ratio);
+      }
+
+      const canvas = document.createElement('canvas');
+      canvas.width = width;
+      canvas.height = height;
+
+      const ctx = canvas.getContext('2d');
+      if (!ctx) { reject(new Error('Canvas context failed')); return; }
+
+      ctx.drawImage(img, 0, 0, width, height);
+
+      canvas.toBlob(
+        (blob) => {
+          if (!blob) { reject(new Error('Compression failed')); return; }
+          const compressedFile = new File([blob], file.name.replace(/\.\w+$/, '.jpg'), {
+            type: 'image/jpeg',
+            lastModified: Date.now(),
+          });
+          console.log(`Compressed: ${(file.size / 1024 / 1024).toFixed(1)}MB → ${(compressedFile.size / 1024 / 1024).toFixed(1)}MB`);
+          resolve(compressedFile);
+        },
+        'image/jpeg',
+        quality
+      );
+    };
+
+    img.onerror = () => {
+      URL.revokeObjectURL(url);
+      reject(new Error('Failed to load image for compression'));
+    };
+
+    img.src = url;
+  });
+}
+
 /* ─── Image Uploader ─── */
 function ImageUploader({ folder, onUpload }: { folder: string; onUpload: (img: { url: string; publicId: string }) => void }) {
   const [uploading, setUploading] = useState(false);
+  const [progress, setProgress] = useState('');
 
   const handleUpload = async (e: React.ChangeEvent<HTMLInputElement>) => {
     const files = e.target.files;
@@ -172,28 +230,36 @@ function ImageUploader({ folder, onUpload }: { folder: string; onUpload: (img: {
 
     setUploading(true);
     for (let i = 0; i < files.length; i++) {
-      const formData = new FormData();
-      formData.append('file', files[i]);
-      formData.append('folder', folder);
+      setProgress(`${i + 1}/${files.length}`);
 
       try {
+        // Compress image client-side before uploading (handles 40MB+ images)
+        const compressed = await compressImage(files[i]);
+
+        const formData = new FormData();
+        formData.append('file', compressed);
+        formData.append('folder', folder);
+
         const res = await fetch('/api/upload', { method: 'POST', body: formData });
         const data = await res.json();
         if (data.url) {
           onUpload({ url: data.url, publicId: data.publicId });
+        } else {
+          console.error('Upload response error:', data.error);
         }
       } catch (err) {
         console.error('Upload failed:', err);
       }
     }
     setUploading(false);
+    setProgress('');
     e.target.value = '';
   };
 
   return (
     <label className="flex items-center gap-3 px-5 py-3 bg-accent/10 border-2 border-dashed border-accent/30 rounded-lg cursor-pointer hover:bg-accent/20 transition-all text-accent text-sm font-bold">
       {uploading ? <Loader2 size={16} className="animate-spin" /> : <ImagePlus size={16} />}
-      {uploading ? 'Uploading...' : 'Add Images'}
+      {uploading ? `Uploading ${progress}...` : 'Add Images'}
       <input type="file" accept="image/*" multiple onChange={handleUpload} className="hidden" disabled={uploading} />
     </label>
   );
@@ -321,13 +387,13 @@ export default function AdminDashboard() {
   };
 
   const deleteGalleryProject = async (id: string) => {
-    if (!confirm('Delete this gallery project?')) return;
     try {
       await deleteDoc(doc(db, 'gallery', id));
       await fetchGallery();
       setToast({ message: 'Gallery project deleted', type: 'success' });
-    } catch (err) {
+    } catch (err: any) {
       console.error(err);
+      alert('Delete Error: ' + (err.message || 'Check console'));
       setToast({ message: 'Failed to delete', type: 'error' });
     }
   };
@@ -389,13 +455,13 @@ export default function AdminDashboard() {
   };
 
   const deleteProject = async (id: string) => {
-    if (!confirm('Delete this project?')) return;
     try {
       await deleteDoc(doc(db, 'projects', id));
       await fetchProjects();
       setToast({ message: 'Project deleted', type: 'success' });
-    } catch (err) {
+    } catch (err: any) {
       console.error(err);
+      alert('Delete Error: ' + (err.message || 'Check console'));
       setToast({ message: 'Failed to delete', type: 'error' });
     }
   };
