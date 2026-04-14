@@ -8,7 +8,7 @@ export async function POST(request: Request) {
 
     const data = await resend.emails.send({
       from: 'onboarding@resend.dev',
-      to: 'magizhbuilderssalem@gmail.com', // Recipient Address
+      to: 'magizhbuilder@gmail.com', // Recipient Address
       subject: `New Enquiry from ${name} - Magizh Builders`,
       html: `
         <!DOCTYPE html>
