@@ -29,7 +29,7 @@ export default function Footer() {
                         </div>
                     </Link>
                     <p className="max-w-sm text-white/70 font-sans leading-relaxed tracking-wide text-sm">
-                        MAGIZH BUILDERS is a premier <strong>construction company</strong> dedicated to high-precision engineering and bespoke architectural aesthetics for residential and villa projects.
+                        MAGIZH BUILDERS is a construction company led by Er. S. P. Hari Baaskar, M.E., our firm operates on the intersection of deep engineering traditions and modern smart-home technologies.
                     </p>
                 </div>
 
