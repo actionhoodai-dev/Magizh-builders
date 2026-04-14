@@ -52,14 +52,14 @@ export async function POST(request: Request) {
                       <a href="mailto:${email}" style="color: #1B6644; font-size: 16px; font-weight: 600; text-decoration: none;">${email}</a>
                     </td>
                   </tr>
-                  ${service ? \`
+                  ${service ? `
                   <tr>
                     <td colspan="2" style="padding: 20px 0 0 0;">
                       <strong style="color: #888888; font-size: 11px; text-transform: uppercase; letter-spacing: 1.5px; display: block; margin-bottom: 10px;">Service of Interest</strong>
-                      <span style="display: inline-block; background-color: #D4AF37; color: #ffffff; padding: 6px 14px; border-radius: 4px; font-size: 12px; font-weight: 800; text-transform: uppercase; letter-spacing: 1.5px;">\${service}</span>
+                      <span style="display: inline-block; background-color: #D4AF37; color: #ffffff; padding: 6px 14px; border-radius: 4px; font-size: 12px; font-weight: 800; text-transform: uppercase; letter-spacing: 1.5px;">${service}</span>
                     </td>
                   </tr>
-                  \` : ''}
+                  ` : ''}
                 </table>
               </div>
 
